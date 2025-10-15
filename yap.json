@@ -5,7 +5,10 @@
   "output": "artifacts",
   "projects": [
     {
-      "name": "package"
+      "name": "directory-server"
+    },
+    {
+      "name": "common-attribute"
     }
   ]
 }
