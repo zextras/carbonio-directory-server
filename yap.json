@@ -1,0 +1,11 @@
+{
+  "buildDir": "/tmp",
+  "description": "Cabronio Directory Server",
+  "name": "carbonio-mailbox-directory-server",
+  "output": "artifacts",
+  "projects": [
+    {
+      "name": "package"
+    }
+  ]
+}

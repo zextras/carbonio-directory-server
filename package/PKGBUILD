@@ -23,7 +23,7 @@ makedepends=(
 )
 
 package() {
-  cd "$(dirname "$(find / -name "yap.json" -print -quit)")/.."
+  cd "$(dirname "$(find / -name "yap.json" -print -quit)")"
 
   install -D src/ldap/externaldirsync/Exchange2000.xml \
     "${pkgdir}/opt/zextras/conf/externaldirsync/Exchange2000.xml"
@@ -55,7 +55,7 @@ package() {
   # systemd units and target
   mkdir -p "${pkgdir}/usr/lib/systemd/system/carbonio.target.wants"
   mkdir -p "${pkgdir}/usr/lib/systemd/system/${pkgname}.target.wants"
-  install -Dm 644 "packages/directory-server/${pkgname}.target" \
+  install -Dm 644 "package/${pkgname}.target" \
     "${pkgdir}/usr/lib/systemd/system/${pkgname}.target"
   ln -sf "/usr/lib/systemd/system/${pkgname}.target" \
     "${pkgdir}/usr/lib/systemd/system/carbonio.target.wants/${pkgname}.target"

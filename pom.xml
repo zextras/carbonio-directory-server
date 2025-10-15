@@ -446,7 +446,7 @@
     <maven-exec-plugin.version>3.1.0</maven-exec-plugin.version>
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
     <generated-resources>${project.build.directory}/generated-resources</generated-resources>
-    <ldap.dir>${project.basedir}/ldap</ldap.dir>
+    <ldap.dir>${project.basedir}/src/ldap</ldap.dir>
     <ldap.generated.dir>${ldap.dir}/generated</ldap.generated.dir>
     <ldap.config.dir>${ldap.dir}/config</ldap.config.dir>
   </properties>
