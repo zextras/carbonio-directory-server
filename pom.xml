@@ -13,6 +13,24 @@
   <groupId>com.zextras</groupId>
   <artifactId>mailbox-attribute-manager</artifactId>
   <version>${revision}${changelist}</version>
+  <distributionManagement>
+    <repository>
+      <id>artifactory</id>
+      <url>https://zextras.jfrog.io/artifactory/public-maven-repo</url>
+    </repository>
+    <snapshotRepository>
+      <id>artifactory</id>
+      <url>https://zextras.jfrog.io/artifactory/maven-snapshot</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <profiles>
+    <profile>
+      <id>prod</id>
+      <properties>
+        <changelist></changelist>
+      </properties>
+    </profile>
+  </profiles>
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -184,10 +202,10 @@
               <configuration>
                 <rules>
                   <!-- No duplicate version of dependency in POM -->
-                  <banDuplicatePomDependencyVersions />
+                  <banDuplicatePomDependencyVersions/>
                   <!-- Dependencies must converge.
                   If it fails use dependency management to declare which one to use. -->
-                  <dependencyConvergence />
+                  <dependencyConvergence/>
                 </rules>
               </configuration>
             </execution>
@@ -261,7 +279,8 @@
                   git log -1 \
                   --pretty=format:%at \
                   ${project.basedir}/src/main/resources/conf/attrs/attrs.xml \
-                  > ${ldap.generated.dir}/attrs-schema</argument>
+                  > ${ldap.generated.dir}/attrs-schema
+                </argument>
               </arguments>
             </configuration>
           </execution>
@@ -360,24 +379,34 @@
             <phase>prepare-package</phase>
             <configuration>
               <target>
-                <copy todir="${ldap.generated.dir}/" file="${ldap.dir}/carbonio.ldif" />
-                <copy todir="${ldap.generated.dir}/" file="${ldap.dir}/mimehandlers.ldif" />
-                <copy todir="${ldap.generated.dir}/schema" file="${ldap.dir}/amavisd.schema" />
-                <copy todir="${ldap.generated.dir}/schema" file="${ldap.dir}/amavisd.ldif" />
-                <copy todir="${ldap.generated.dir}/schema" file="${ldap.dir}/opendkim.ldif" />
+                <copy todir="${ldap.generated.dir}/" file="${ldap.dir}/carbonio.ldif"/>
+                <copy todir="${ldap.generated.dir}/" file="${ldap.dir}/mimehandlers.ldif"/>
+                <copy todir="${ldap.generated.dir}/schema" file="${ldap.dir}/amavisd.schema"/>
+                <copy todir="${ldap.generated.dir}/schema" file="${ldap.dir}/amavisd.ldif"/>
+                <copy todir="${ldap.generated.dir}/schema" file="${ldap.dir}/opendkim.ldif"/>
 
-                <copy todir="${ldap.generated.dir}/config" file="${ldap.config.dir}/cn=config.ldif" />
-                <copy todir="${ldap.generated.dir}/config/cn=config" file="${ldap.config.dir}/cn=config/cn=module{0}.ldif" />
-                <copy todir="${ldap.generated.dir}/config/cn=config" file="${ldap.config.dir}/cn=config/cn=schema.ldif" />
-                <copy todir="${ldap.generated.dir}/config/cn=config" file="${ldap.config.dir}/cn=config/olcDatabase={0}config.ldif" />
-                <copy todir="${ldap.generated.dir}/config/cn=config" file="${ldap.config.dir}/cn=config/olcDatabase={-1}frontend.ldif" />
-                <copy todir="${ldap.generated.dir}/config/cn=config" file="${ldap.config.dir}/cn=config/olcDatabase={1}monitor.ldif" />
-                <copy todir="${ldap.generated.dir}/config/cn=config/" file="${ldap.config.dir}/cn=config/olcDatabase={2}mdb.ldif" />
-                <copy todir="${ldap.generated.dir}/config/cn=config/olcDatabase={2}mdb" file="${ldap.config.dir}/cn=config/olcDatabase={2}mdb/olcOverlay={0}dynlist.ldif" />
-                <copy todir="${ldap.generated.dir}/config/cn=config/olcDatabase={2}mdb" file="${ldap.config.dir}/cn=config/olcDatabase={2}mdb/olcOverlay={1}unique.ldif" />
-                <copy todir="${ldap.generated.dir}/config/cn=config/olcDatabase={2}mdb" file="${ldap.config.dir}/cn=config/olcDatabase={2}mdb/olcOverlay={2}noopsrch.ldif" />
+                <copy todir="${ldap.generated.dir}/config"
+                  file="${ldap.config.dir}/cn=config.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config"
+                  file="${ldap.config.dir}/cn=config/cn=module{0}.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config"
+                  file="${ldap.config.dir}/cn=config/cn=schema.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={0}config.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={-1}frontend.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={1}monitor.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config/"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={2}mdb.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config/olcDatabase={2}mdb"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={2}mdb/olcOverlay={0}dynlist.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config/olcDatabase={2}mdb"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={2}mdb/olcOverlay={1}unique.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config/olcDatabase={2}mdb"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={2}mdb/olcOverlay={2}noopsrch.ldif"/>
                 <copy todir="${ldap.generated.dir}/updates/">
-                  <fileset dir="${ldap.dir}/src/updates/" includes="**" />
+                  <fileset dir="${ldap.dir}/src/updates/" includes="**"/>
                 </copy>
               </target>
             </configuration>
@@ -442,7 +471,7 @@
     <!-- Maven revision: https://maven.apache.org/maven-ci-friendly.html -->
     <changelist>-SNAPSHOT</changelist>
     <!-- Mailbox version -->
-    <revision>25.12.0</revision>
+    <revision>4.23.1</revision>
     <maven-exec-plugin.version>3.1.0</maven-exec-plugin.version>
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
     <generated-resources>${project.build.directory}/generated-resources</generated-resources>

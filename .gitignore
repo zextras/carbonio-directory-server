@@ -1,3 +1,4 @@
 /src/ldap/generated/
 target/
 /artifacts/
+/.flattened-pom.xml
