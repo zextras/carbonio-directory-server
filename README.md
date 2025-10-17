@@ -1,4 +1,6 @@
-# WIP
+# Directory Server
 
-Contains attrs.xml and generates ldap schema.
-Produces carbonio-directory-server
+This repo contains the mailbox library that manages attributes files, as 
+well as generators and rights definitions.
+
+It also contains the carbonio-directory-server package.

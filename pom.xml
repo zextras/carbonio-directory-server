@@ -107,6 +107,18 @@
     </dependency>
   </dependencies>
   <build>
+    <resources>
+      <resource>
+        <directory>${ldap.generated.dir}</directory>
+        <includes>
+          <include>*.ldif</include>
+          <include>config/**</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${project.basedir}/src/main/resources</directory>
+      </resource>
+    </resources>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -275,11 +287,11 @@
               <executable>sh</executable>
               <arguments>
                 <argument>-c</argument>
-                <argument>mkdir -p ${ldap.generated.dir} &amp;&amp; \
+                <argument>mkdir -p ${generated-resources} &amp;&amp; \
                   git log -1 \
                   --pretty=format:%at \
                   ${project.basedir}/src/main/resources/conf/attrs/attrs.xml \
-                  > ${ldap.generated.dir}/attrs-schema
+                  > ${generated-resources}/attrs-schema
                 </argument>
               </arguments>
             </configuration>
@@ -455,6 +467,7 @@
                   <directory>${project.build.directory}/generated-resources</directory>
                   <includes>
                     <include>conf/rights/rights-domainadmin.xml</include>
+                    <include>attrs-schema</include>
                   </includes>
                 </resource>
               </resources>

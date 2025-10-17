@@ -60,11 +60,17 @@ pipeline {
         stage('Build') {
             steps {
                 container('jdk-17') {
-                    sh """
-                        apt update && apt install -y build-essential
-                        mvn ${MVN_OPTS} clean install
-                        cp target/libnative.so package/libnative.so
-                    """
+                    sh "mvn ${MVN_OPTS} clean install -DskipTests"
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                container('jdk-17') {
+                    sh "mvn ${MVN_OPTS} verify"
+                    junit allowEmptyResults: true,
+                            testResults: '**/target/surefire-reports/*.xml,**/target/failsafe-reports/*.xml'
                 }
             }
         }
@@ -100,12 +106,42 @@ pipeline {
             }
         }
 
+        stage('Publish containers') {
+            when {
+                expression {
+                    return isBuildingTag() || env.BRANCH_NAME == 'devel'
+                }
+            }
+            steps {
+                container('dind') {
+                    withDockerRegistry(credentialsId: 'private-registry', url: 'https://registry.dev.zextras.com') {
+                        script {
+                            Set<String> tagVersions = []
+                            if (isBuildingTag()) {
+                                tagVersions = [env.TAG_NAME, 'stable']
+                            } else {
+                                tagVersions = ['devel', 'latest']
+                            }
+                            dockerHelper.buildImage([
+                                    dockerfile: 'docker/openldap/Dockerfile',
+                                    imageName : 'registry.dev.zextras.com/dev/carbonio-openldap',
+                                    imageTags : tagVersions,
+                                    ocLabels  : [
+                                            title          : 'Carbonio OpenLDAP',
+                                            descriptionFile: 'docker/openldap/description.md',
+                                            version        : tagVersions[0]
+                                    ]
+                            ])
+                        }
+                    }
+                }
+            }
+        }
+
         stage('Build deb/rpm') {
             steps {
                 echo 'Building deb/rpm packages'
-                buildStage([
-                        buildFlags: '-s',
-                ])
+                buildStage()
             }
         }
 

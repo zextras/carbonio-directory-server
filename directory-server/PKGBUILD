@@ -55,7 +55,7 @@ package() {
   # systemd units and target
   mkdir -p "${pkgdir}/usr/lib/systemd/system/carbonio.target.wants"
   mkdir -p "${pkgdir}/usr/lib/systemd/system/${pkgname}.target.wants"
-  install -Dm 644 "package/${pkgname}.target" \
+  install -Dm 644 "directory-server/${pkgname}.target" \
     "${pkgdir}/usr/lib/systemd/system/${pkgname}.target"
   ln -sf "/usr/lib/systemd/system/${pkgname}.target" \
     "${pkgdir}/usr/lib/systemd/system/carbonio.target.wants/${pkgname}.target"
