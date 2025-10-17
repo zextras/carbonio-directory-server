@@ -61,9 +61,17 @@ pipeline {
             steps {
                 container('jdk-17') {
                     sh """
-                        apt update && apt install -y build-essential
-                        mvn ${MVN_OPTS} clean install
-                        cp target/libnative.so package/libnative.so
+                        mvn ${MVN_OPTS} clean install -DskipTests
+                    """
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                container('jdk-17') {
+                    sh """
+                        mvn ${MVN_OPTS} clean verify
                     """
                 }
             }
@@ -103,9 +111,7 @@ pipeline {
         stage('Build deb/rpm') {
             steps {
                 echo 'Building deb/rpm packages'
-                buildStage([
-                        buildFlags: '-s',
-                ])
+                buildStage()
             }
         }
 
