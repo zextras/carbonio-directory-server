@@ -60,9 +60,7 @@ pipeline {
         stage('Build') {
             steps {
                 container('jdk-17') {
-                    sh """
-                        mvn ${MVN_OPTS} clean install -DskipTests
-                    """
+                    sh "mvn ${MVN_OPTS} clean install -DskipTests"
                 }
             }
         }
@@ -70,9 +68,9 @@ pipeline {
         stage('Test') {
             steps {
                 container('jdk-17') {
-                    sh """
-                        mvn ${MVN_OPTS} clean verify
-                    """
+                    sh "mvn ${MVN_OPTS} verify"
+                    junit allowEmptyResults: true,
+                            testResults: '**/target/surefire-reports/*.xml,**/target/failsafe-reports/*.xml'
                 }
             }
         }
