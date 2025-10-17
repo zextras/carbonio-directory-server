@@ -6,9 +6,6 @@
   "projects": [
     {
       "name": "directory-server"
-    },
-    {
-      "name": "common-attribute"
     }
   ]
 }

@@ -275,11 +275,11 @@
               <executable>sh</executable>
               <arguments>
                 <argument>-c</argument>
-                <argument>mkdir -p ${ldap.generated.dir} &amp;&amp; \
+                <argument>mkdir -p ${generated-resources} &amp;&amp; \
                   git log -1 \
                   --pretty=format:%at \
                   ${project.basedir}/src/main/resources/conf/attrs/attrs.xml \
-                  > ${ldap.generated.dir}/attrs-schema
+                  > ${generated-resources}/attrs-schema
                 </argument>
               </arguments>
             </configuration>
