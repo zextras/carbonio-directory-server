@@ -107,6 +107,18 @@
     </dependency>
   </dependencies>
   <build>
+    <resources>
+      <resource>
+        <directory>${ldap.generated.dir}</directory>
+        <includes>
+          <include>*.ldif</include>
+          <include>config/**</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${project.basedir}/src/main/resources</directory>
+      </resource>
+    </resources>
     <pluginManagement>
       <plugins>
         <plugin>
