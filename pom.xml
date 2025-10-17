@@ -455,6 +455,7 @@
                   <directory>${project.build.directory}/generated-resources</directory>
                   <includes>
                     <include>conf/rights/rights-domainadmin.xml</include>
+                    <include>attrs-schema</include>
                   </includes>
                 </resource>
               </resources>
