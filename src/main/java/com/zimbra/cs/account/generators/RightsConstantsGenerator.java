@@ -25,6 +25,7 @@ public class RightsConstantsGenerator {
 	private static final String E_RIGHT = "right";
 	private static final String A_NAME = "name";
 	private static final String A_USER_RIGHT = "userRight";
+	private static final String A_DESC = "desc";
 	public static List<String> RIGHTS_FILES = List.of(
 			"/conf/rights/adminconsole-ui.xml",
 			"/conf/rights/rights.xml",
@@ -61,8 +62,7 @@ public class RightsConstantsGenerator {
 				if (name == null) {
 					throw new AttributeManagerException("no name specified");
 				}
-				// TODO: add desc
-				var right = new RightName(name, "");
+				var right = new RightName(name, elem.element(A_DESC).getText());
 				boolean userRight = getBooleanAttr(elem, A_USER_RIGHT);
 				if (userRight) {
 					userRights.add(right);
@@ -235,7 +235,7 @@ public class RightsConstantsGenerator {
 				.append(r.getName()).append("\";").append("\n");
 	}
 
-	private String genMessageProperties() {
+	public String genMessageProperties() {
 		StringBuilder result = new StringBuilder();
 
 		result.append(

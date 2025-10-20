@@ -31,4 +31,10 @@ class RightsConstantsGeneratorTest {
 		Assertions.assertTrue(rightConstsJava.contains("public class AdminRights {"));
 	}
 
+	@Test
+	void shouldGenerateMessagePropertiesWithDescription() {
+		final String messageProperties = generator.genMessageProperties();
+		Assertions.assertTrue(messageProperties.contains("viewFreeBusy = view free/busy"));
+	}
+
 }
