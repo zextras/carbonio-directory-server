@@ -349,7 +349,7 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Unique identifier for an entry</desc>
 </attr>
 
-<attr id="2" name="zimbraAccountStatus" type="enum" value="active,maintenance,locked,closed,lockout,pending" callback="AccountStatus" cardinality="single" requiredIn="account" flags="domainAdminModifiable">
+<attr id="2" name="zimbraAccountStatus" type="enum" value="active,maintenance,locked,closed,lockout,pending" callback="AccountStatus" cardinality="single" requiredIn="account" flags="domainAdminModifiable,accountInfo">
   <desc>account status.
     active      - active
     lockout     - no login until lockout duration is over, mail delivery OK.
