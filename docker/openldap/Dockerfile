@@ -23,12 +23,6 @@ EXPOSE 1389
 
 COPY docker/openldap/ldap-utils/ /ldap-utils/
 COPY --from=build /build/src/ldap/generated/ /opt/zextras/common/etc/openldap/zimbra/
-RUN mkdir -p /opt/zextras/ldap/custom-ldifs \
-            /opt/zextras/data/ldap/state/run \
-            /opt/zextras/data/ldap/config \
-            /opt/zextras/data/ldap/mdb/db \
-            /run/carbonio \
-            /opt/zextras/conf/ca
 
 COPY docker/openldap/entrypoint.sh .
 ENTRYPOINT ["./entrypoint.sh"]
