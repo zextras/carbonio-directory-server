@@ -49,6 +49,11 @@ if [ -f /opt/zextras/data/ldap/config/cn\=config.ldif ]; then
 fi
 
 echo "No installation found, proceeding with bootstrap"
+mkdir -p /opt/zextras/ldap/custom-ldifs /opt/zextras/data/ldap/state/run \
+            /opt/zextras/data/ldap/config \
+            /opt/zextras/data/ldap/mdb/db \
+            /run/carbonio \
+            /opt/zextras/conf/ca
 
 # Generate 10 years self-signed certificate and key
 
