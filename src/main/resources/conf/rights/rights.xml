@@ -450,6 +450,9 @@
   <desc>check exchange auth config</desc>
 </right>
 
+<right name="manageTwoFactorAuthPolicies" type="preset" targetType="domain">
+  <desc>manage 2FA policies (list and set)</desc>
+</right>
 
 <right name="configureExternalGAL" type="setAttrs" targetType="domain">
   <desc>configure attributes for external GAL</desc>
