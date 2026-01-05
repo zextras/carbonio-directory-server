@@ -52,6 +52,10 @@ package() {
     "${pkgdir}/opt/zextras/common/etc/openldap/zimbra/"
   rsync -a src/ldap/generated/ "${pkgdir}/opt/zextras/common/etc/openldap/zimbra/"
 
+  # systemd tmpfiles.d
+  install -Dm644 "directory-server/systemd-tmpfile.conf" \
+    "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
+
   # systemd units and target
   mkdir -p "${pkgdir}/usr/lib/systemd/system/carbonio.target.wants"
   mkdir -p "${pkgdir}/usr/lib/systemd/system/${pkgname}.target.wants"
@@ -81,6 +85,8 @@ postinst__apt() {
 
   chown -R root:root /opt/zextras/common/etc/openldap
 
+  systemd-tmpfiles --create
+
   if [ "$1" = "configure" ] && [ -n "$2" ]; then
     echo "* Starting LDAP upgrade..."
     su - zextras -c "/opt/zextras/libexec/scripts/LDAP/LdapPreFlight.pl"
@@ -106,6 +112,8 @@ postinst__ubuntu_noble() {
   chown -R zextras:zextras /opt/zextras/data/ldap
 
   chown -R root:root /opt/zextras/common/etc/openldap
+
+  systemd-tmpfiles --create
 
   if [ "$1" = "configure" ] && [ -n "$2" ]; then
     if [ -d /run/systemd/system ]; then
@@ -145,6 +153,8 @@ postinst__rocky_8() {
 
   chown -R root:root /opt/zextras/common/etc/openldap
 
+  systemd-tmpfiles --create
+
   if [ "$1" -eq 2 ]; then
     echo "* Starting LDAP upgrade..."
     su - zextras -c "/opt/zextras/libexec/scripts/LDAP/LdapPreFlight.pl"
@@ -170,6 +180,8 @@ postinst__rocky_9() {
   chown -R zextras:zextras /opt/zextras/data/ldap
 
   chown -R root:root /opt/zextras/common/etc/openldap
+
+  systemd-tmpfiles --create
 
   if [ "$1" -eq 2 ]; then
     if [ -d /run/systemd/system ]; then
