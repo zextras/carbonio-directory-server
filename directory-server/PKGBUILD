@@ -52,6 +52,10 @@ package() {
     "${pkgdir}/opt/zextras/common/etc/openldap/zimbra/"
   rsync -a src/ldap/generated/ "${pkgdir}/opt/zextras/common/etc/openldap/zimbra/"
 
+  # systemd tmpfiles.d
+  install -Dm644 "directory-server/systemd-tmpfile.conf" \
+    "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
+
   # systemd units and target
   mkdir -p "${pkgdir}/usr/lib/systemd/system/carbonio.target.wants"
   mkdir -p "${pkgdir}/usr/lib/systemd/system/${pkgname}.target.wants"
@@ -74,12 +78,9 @@ preinst__apt() {
 }
 
 postinst__apt() {
-  mkdir -p /opt/zextras/data/ldap/state/run
-  mkdir -p /opt/zextras/data/ldap/config
-  mkdir -p /opt/zextras/data/ldap/mdb/db
-  chown -R zextras:zextras /opt/zextras/data/ldap
-
+  # Schema files must be owned by root (not managed by tmpfiles.d as they are package-owned)
   chown -R root:root /opt/zextras/common/etc/openldap
+  systemd-tmpfiles --create /usr/lib/tmpfiles.d/carbonio-directory-server.conf >/dev/null 2>&1 || :
 
   if [ "$1" = "configure" ] && [ -n "$2" ]; then
     echo "* Starting LDAP upgrade..."
@@ -100,12 +101,9 @@ preinst__ubuntu_noble() {
   fi
 }
 postinst__ubuntu_noble() {
-  mkdir -p /opt/zextras/data/ldap/state/run
-  mkdir -p /opt/zextras/data/ldap/config
-  mkdir -p /opt/zextras/data/ldap/mdb/db
-  chown -R zextras:zextras /opt/zextras/data/ldap
-
+  # Schema files must be owned by root (not managed by tmpfiles.d as they are package-owned)
   chown -R root:root /opt/zextras/common/etc/openldap
+  systemd-tmpfiles --create /usr/lib/tmpfiles.d/carbonio-directory-server.conf >/dev/null 2>&1 || :
 
   if [ "$1" = "configure" ] && [ -n "$2" ]; then
     if [ -d /run/systemd/system ]; then
@@ -138,12 +136,9 @@ preinst__rocky_8() {
   fi
 }
 postinst__rocky_8() {
-  mkdir -p /opt/zextras/data/ldap/state/run
-  mkdir -p /opt/zextras/data/ldap/config
-  mkdir -p /opt/zextras/data/ldap/mdb/db
-  chown -R zextras:zextras /opt/zextras/data/ldap
-
+  # Schema files must be owned by root (not managed by tmpfiles.d as they are package-owned)
   chown -R root:root /opt/zextras/common/etc/openldap
+  systemd-tmpfiles --create /usr/lib/tmpfiles.d/carbonio-directory-server.conf >/dev/null 2>&1 || :
 
   if [ "$1" -eq 2 ]; then
     echo "* Starting LDAP upgrade..."
@@ -164,12 +159,9 @@ preinst__rocky_9() {
   fi
 }
 postinst__rocky_9() {
-  mkdir -p /opt/zextras/data/ldap/state/run
-  mkdir -p /opt/zextras/data/ldap/config
-  mkdir -p /opt/zextras/data/ldap/mdb/db
-  chown -R zextras:zextras /opt/zextras/data/ldap
-
+  # Schema files must be owned by root (not managed by tmpfiles.d as they are package-owned)
   chown -R root:root /opt/zextras/common/etc/openldap
+  systemd-tmpfiles --create /usr/lib/tmpfiles.d/carbonio-directory-server.conf >/dev/null 2>&1 || :
 
   if [ "$1" -eq 2 ]; then
     if [ -d /run/systemd/system ]; then
