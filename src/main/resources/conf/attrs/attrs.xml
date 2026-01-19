@@ -3082,13 +3082,15 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Whether to index junk messages</desc>
 </attr>
 
-<attr id="580" name="zimbraMemcachedBindPort" type="port" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" callback="CheckPortConflict" requiresRestart="memcached" since="5.0.0">
+<attr id="580" name="zimbraMemcachedBindPort" type="port" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" callback="CheckPortConflict" requiresRestart="memcached" since="5.0.0" deprecatedSince="26.3.0">
   <globalConfigValue>11211</globalConfigValue>
   <desc>port number on which memcached server should listen</desc>
+  <deprecateDesc>Legacy Memcached port info for proxy cache purge; replaced by carbonioMemcachedEndpoint</deprecateDesc>
 </attr>
 
-<attr id="581" name="zimbraMemcachedBindAddress" type="string" max="128" cardinality="multi" optionalIn="server"  requiresRestart="memcached" since="5.0.0">
+<attr id="581" name="zimbraMemcachedBindAddress" type="string" max="128" cardinality="multi" optionalIn="server"  requiresRestart="memcached" since="5.0.0" deprecatedSince="26.3.0">
   <desc>interface address on which memcached server should listen</desc>
+  <deprecateDesc>Legacy Memcached port info for proxy cache purge; replaced by carbonioMemcachedEndpoint</deprecateDesc>
 </attr>
 
 <attr id="582" name="zimbraAttachmentsIndexedTextLimit" type="integer" cardinality="single" min="0" optionalIn="globalConfig,server" flags="serverInherited" since="5.0.0">
