@@ -10304,6 +10304,11 @@ deprecatedSince="23.9.0">
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>Whether the Tasks feature enabled for account or COS</desc>
 </attr>
+
+    <attr id="3167" name="carbonioMemcachedEndpoint" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="26.3.0">
+        <globalConfigValue>127.78.0.7:20006</globalConfigValue>
+        <desc>define Memcached endpoint (address:port)</desc>
+    </attr>
 </attrs>
 
 
