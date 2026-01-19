@@ -81,17 +81,30 @@ pipeline {
             }
         }
 
-        stage('Publish to maven') {
+        stage('Publish SNAPSHOT to maven') {
             when {
-                expression {
-                    return isBuildingTag() || env.BRANCH_NAME == 'devel'
-                }
+                not { buildingTag() }
             }
             steps {
                 container('jdk-17') {
                     withCredentials([file(credentialsId: 'jenkins-maven-settings.xml', variable: 'SETTINGS_PATH')]) {
                         script {
                             sh "mvn ${MVN_OPTS} -s " + SETTINGS_PATH + " deploy -DskipTests=true"
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Publish to maven') {
+            when {
+                buildingTag()
+            }
+            steps {
+                container('jdk-17') {
+                    withCredentials([file(credentialsId: 'jenkins-maven-settings.xml', variable: 'SETTINGS_PATH')]) {
+                        script {
+                            sh "mvn ${MVN_OPTS} -s " + SETTINGS_PATH + " deploy -Dchangelist= -DskipTests=true"
                         }
                     }
                 }

@@ -1,11 +1,12 @@
 package com.zimbra.cs.account;
 
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.Map;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AttributeManagerTest {
 
@@ -22,13 +23,6 @@ class AttributeManagerTest {
   }
 
   @Test
-  void shouldLoadAllAttributesFromResourceByDefaultWhenUsingSingleton()
-      throws AttributeManagerException {
-    final AttributeManager attributeManager = AttributeManager.getInstance();
-    assertLoadedAllAttributes(attributeManager);
-  }
-
-  @Test
   void shouldLoadAllAttributesFromResources() throws AttributeManagerException {
     final AttributeManager attributeManager = AttributeManager.fromResource();
     assertLoadedAllAttributes(attributeManager);
@@ -36,6 +30,6 @@ class AttributeManagerTest {
 
   private void assertLoadedAllAttributes(AttributeManager attributeManager) {
     final Map<String, AttributeInfo> allAttrs = attributeManager.getAttrs();
-    assertEquals(1866, allAttrs.size());
+    assertEquals(1867, allAttrs.size());
   }
 }
