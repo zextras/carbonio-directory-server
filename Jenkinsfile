@@ -51,7 +51,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                container('jdk-17') {
+                container('jdk-21') {
                     sh "mvn ${MVN_OPTS} clean install -DskipTests"
                 }
             }
@@ -59,7 +59,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                container('jdk-17') {
+                container('jdk-21') {
                     sh "mvn ${MVN_OPTS} verify"
                     junit allowEmptyResults: true,
                             testResults: '**/target/surefire-reports/*.xml,**/target/failsafe-reports/*.xml'
@@ -69,7 +69,7 @@ pipeline {
 
         stage('Sonarqube Analysis') {
             steps {
-                container('jdk-17') {
+                container('jdk-21') {
                     withSonarQubeEnv(credentialsId: 'sonarqube-user-token', installationName: 'SonarQube instance') {
                         sh """
                             mvn ${MVN_OPTS} -DskipTests \
@@ -86,7 +86,7 @@ pipeline {
                 not { buildingTag() }
             }
             steps {
-                container('jdk-17') {
+                container('jdk-21') {
                     withCredentials([file(credentialsId: 'jenkins-maven-settings.xml', variable: 'SETTINGS_PATH')]) {
                         script {
                             sh "mvn ${MVN_OPTS} -s " + SETTINGS_PATH + " deploy -DskipTests=true"
@@ -101,7 +101,7 @@ pipeline {
                 buildingTag()
             }
             steps {
-                container('jdk-17') {
+                container('jdk-21') {
                     withCredentials([file(credentialsId: 'jenkins-maven-settings.xml', variable: 'SETTINGS_PATH')]) {
                         script {
                             sh "mvn ${MVN_OPTS} -s " + SETTINGS_PATH + " deploy -Dchangelist= -DskipTests=true"
