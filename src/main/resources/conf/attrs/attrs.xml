@@ -10309,6 +10309,12 @@ deprecatedSince="23.9.0">
         <globalConfigValue>127.78.0.7:20006</globalConfigValue>
         <desc>define Memcached endpoint (address:port)</desc>
     </attr>
+
+<attr id="3168" name="carbonioOtpWizardFromUntrusted" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="26.3.0">
+  <defaultCOSValue>FALSE</defaultCOSValue>
+  <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
+  <desc>Enables OTP setup wizard for users on untrusted networks or devices</desc>
+</attr>
 </attrs>
 
 
