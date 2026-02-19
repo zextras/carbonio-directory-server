@@ -444,7 +444,7 @@
         <executions>
           <execution>
             <id>generate-domainadmin-rights-xml-early</id>
-            <phase>prepare-package</phase>
+            <phase>process-test-classes</phase>
             <goals>
               <goal>java</goal>
             </goals>
@@ -465,7 +465,7 @@
         <executions>
           <execution>
             <id>copy-late-generated-resource</id>
-            <phase>prepare-package</phase> <!-- after compile -->
+            <phase>process-test-classes</phase> <!-- before test, after compile -->
             <goals>
               <goal>copy-resources</goal>
             </goals>
