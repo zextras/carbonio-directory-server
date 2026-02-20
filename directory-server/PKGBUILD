@@ -59,12 +59,9 @@ _package() {
 
 _package_systemd() {
   local sysdir="${pkgdir}/usr/lib/systemd/system"
-  mkdir -p "${sysdir}/carbonio.target.wants"
 
   install -Dm644 "directory-server/${pkgname}.target" \
     "${sysdir}/${pkgname}.target"
-  ln -sf "/usr/lib/systemd/system/${pkgname}.target" \
-    "${sysdir}/carbonio.target.wants/${pkgname}.target"
 }
 
 _ldap_upgrade_legacy() {
