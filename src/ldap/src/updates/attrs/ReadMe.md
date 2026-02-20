@@ -28,7 +28,7 @@ in `/opt/zextras/common/etc/openldap/zimbra/updates/attrs/`
 ### Naming of update files
 
 Update files are named as the value of last timestamp of last commit on `attrs.xml`(this can be retrieved
-using `git log -1 --pretty=format:%at carbonio-mailbox/store/src/main/resources/conf/attrs/attrs.xml`).
+using `git log -1 --pretty=format:%at src/main/resources/conf/attrs/attrs.xml`).
 
 ## How update files are consumed by ldapattributeupdate script?
 
