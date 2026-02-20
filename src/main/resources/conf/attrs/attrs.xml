@@ -9162,9 +9162,10 @@ deprecatedSince="23.9.0">
   <desc>Maximum period in days for export, including start and end date. No limit if set to non-positive integer or unset.</desc>
 </attr>
 
-<attr id="2057" name="zimbraPrefChatEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.7.0,9.0.0">
+<attr id="2057" name="zimbraPrefChatEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.7.0,9.0.0" deprecatedSince="26.3.0">
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>If FALSE, chat features are disabled in the client and user presence is shown as offline to all other users.</desc>
+  <deprecateDesc>Zimbra Chats feature has been removed. Carbonio uses WSC. See: carbonioFeatureWscEnabled</deprecateDesc>
 </attr>
 
 <attr id="2058" name="zimbraTwoFactorAuthLastReset" type="gentime" cardinality="single" optionalIn="cos" immutable="1" since="8.7.0,9.0.0">
@@ -9406,14 +9407,16 @@ deprecatedSince="23.9.0">
   <deprecateDesc>no longer in use</deprecateDesc>
 </attr>
 
-<attr id="2103" name="zimbraChatHistoryEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.7.6">
+<attr id="2103" name="zimbraChatHistoryEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.7.6" deprecatedSince="26.3.0">
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>enable chat history saving</desc>
+  <deprecateDesc>Chat history on zimbra is no longer supported</deprecateDesc>
 </attr>
 
-<attr id="2104" name="zimbraChatConversationAuditEnabled" type="boolean" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.7.6">
+<attr id="2104" name="zimbraChatConversationAuditEnabled" type="boolean" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.7.6" deprecatedSince="26.3.0">
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>enable dedicated log for the chat conversation (needed by some jurisdictions)</desc>
+  <deprecateDesc>Chat conversation audit on zimbra is no longer supported</deprecateDesc>
 </attr>
 
 <attr id="2105" name="zimbraChatXmppSslPortEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" requiresRestart="mailbox" flags="serverInherited" since="8.7.6" deprecatedSince="25.3.0">
@@ -9440,8 +9443,9 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Feature removed</deprecateDesc>
 </attr>
 
-<attr id="2109" name="zimbraChatAllowDlMemberAddAsFriend" type="boolean" cardinality="single" optionalIn="distributionList" since="8.7.6">
+<attr id="2109" name="zimbraChatAllowDlMemberAddAsFriend" type="boolean" cardinality="single" optionalIn="distributionList" since="8.7.6" deprecatedSince="26.3.0">
   <desc>make distribution list members friends</desc>
+  <deprecateDesc>Feature removed</deprecateDesc>
 </attr>
 
 <attr id="2110" name="zimbraDriveOwnCloudURL" type="string" cardinality="single" optionalIn="domain" since="8.7.6">
@@ -10056,10 +10060,11 @@ deprecatedSince="23.9.0">
   <desc>Whether the Files App usages enabled for account or COS</desc>
 </attr>
 
-<attr id="3122" name="carbonioFeatureChatsAppEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="23.1.0">
-  <defaultCOSValue>TRUE</defaultCOSValue>
+<attr id="3122" name="carbonioFeatureChatsAppEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="23.1.0" deprecatedSince="26.3.0">
+  <defaultCOSValue>FALSE</defaultCOSValue>
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>Whether the Chat App usages enabled for account or COS</desc>
+  <deprecateDesc>Chats App is not supported anymore</deprecateDesc>
 </attr>
 
 <attr id="3123" name="carbonioFeatureMailsAppEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="23.1.0">
@@ -10092,22 +10097,25 @@ deprecatedSince="23.9.0">
   <desc>Whether or not Amavis should skip virus-checking</desc>
 </attr>
 
-<attr id="3130" name="carbonioFeatureChatsEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="23.5.0">
+<attr id="3130" name="carbonioFeatureChatsEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="23.5.0" deprecatedSince="26.3.0">
   <defaultCOSValue>FALSE</defaultCOSValue>
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>Whether the Chats feature enabled for account or COS</desc>
+  <deprecateDesc>Chats feature is not supported anymore</deprecateDesc>
 </attr>
 
-<attr id="3131" name="carbonioFeatureMeetingEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="23.5.0">
+<attr id="3131" name="carbonioFeatureMeetingEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="23.5.0" deprecatedSince="26.3.0">
   <defaultCOSValue>FALSE</defaultCOSValue>
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>Whether the Meeting feature enabled for account or COS</desc>
+  <deprecateDesc>Meeting feature on chats is not supported anymore</deprecateDesc>
 </attr>
 
-<attr id="3132" name="carbonioFeatureTeamEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="23.5.0">
+<attr id="3132" name="carbonioFeatureTeamEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="23.5.0" deprecatedSince="26.3.0">
   <defaultCOSValue>FALSE</defaultCOSValue>
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>Whether the Team feature enabled for account or COS</desc>
+  <deprecateDesc>Team feature is not supported anymore</deprecateDesc>
 </attr>
 
 <attr id="3133" name="carbonioReverseProxyResponseCSPHeader" type="string" cardinality="single" optionalIn="globalConfig,domain" flags="domainInfo,domainInherited" requiresRestart="nginxproxy" since="23.7.0">

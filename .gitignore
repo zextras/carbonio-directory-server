@@ -3,3 +3,4 @@ target/
 /artifacts/
 /.flattened-pom.xml
 .idea
+.vscode
