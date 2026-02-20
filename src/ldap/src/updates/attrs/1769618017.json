@@ -1,8 +1,8 @@
 {
   "zimbra_defaultcos": [
-    "carbonioFeatureTasksEnabled"
+    "carbonioOtpWizardFromUntrusted"
   ],
   "zimbra_defaultexternalcos": [
-    "carbonioFeatureTasksEnabled"
+    "carbonioOtpWizardFromUntrusted"
   ]
 }
