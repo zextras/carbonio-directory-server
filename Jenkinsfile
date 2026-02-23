@@ -1,9 +1,9 @@
 library(
-        identifier: 'jenkins-packages-build-library@1.0.4',
+        identifier: 'jenkins-lib-common@1.1.2',
         retriever: modernSCM([
                 $class       : 'GitSCMSource',
-                remote       : 'git@github.com:zextras/jenkins-packages-build-library.git',
-                credentialsId: 'jenkins-integration-with-github-account'
+                credentialsId: 'jenkins-integration-with-github-account',
+                remote       : 'git@github.com:zextras/jenkins-lib-common.git'
         ])
 )
 
@@ -12,6 +12,8 @@ boolean isBuildingTag() {
 }
 
 String profile = isBuildingTag() ? '-Pprod' : ''
+
+properties(defaultPipelineProperties())
 
 pipeline {
     agent {
@@ -33,22 +35,12 @@ pipeline {
         timeout(time: 2, unit: 'HOURS')
     }
 
-    parameters {
-        booleanParam defaultValue: false,
-                description: 'Upload packages in playground repositories.',
-                name: 'PLAYGROUND'
-    }
-
-    tools {
-        jfrog 'jfrog-cli'
-    }
-
     triggers {
         cron(env.BRANCH_NAME == 'devel' ? 'H 5 * * *' : '')
     }
 
     stages {
-        stage('Checkout') {
+        stage('Setup') {
             steps {
                 checkout scm
                 script {
@@ -59,7 +51,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                container('jdk-17') {
+                container('jdk-21') {
                     sh "mvn ${MVN_OPTS} clean install -DskipTests"
                 }
             }
@@ -67,7 +59,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                container('jdk-17') {
+                container('jdk-21') {
                     sh "mvn ${MVN_OPTS} verify"
                     junit allowEmptyResults: true,
                             testResults: '**/target/surefire-reports/*.xml,**/target/failsafe-reports/*.xml'
@@ -77,7 +69,7 @@ pipeline {
 
         stage('Sonarqube Analysis') {
             steps {
-                container('jdk-17') {
+                container('jdk-21') {
                     withSonarQubeEnv(credentialsId: 'sonarqube-user-token', installationName: 'SonarQube instance') {
                         sh """
                             mvn ${MVN_OPTS} -DskipTests \
@@ -89,17 +81,30 @@ pipeline {
             }
         }
 
-        stage('Publish to maven') {
+        stage('Publish SNAPSHOT to maven') {
             when {
-                expression {
-                    return isBuildingTag() || env.BRANCH_NAME == 'devel'
-                }
+                not { buildingTag() }
             }
             steps {
-                container('jdk-17') {
+                container('jdk-21') {
                     withCredentials([file(credentialsId: 'jenkins-maven-settings.xml', variable: 'SETTINGS_PATH')]) {
                         script {
                             sh "mvn ${MVN_OPTS} -s " + SETTINGS_PATH + " deploy -DskipTests=true"
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Publish to maven') {
+            when {
+                buildingTag()
+            }
+            steps {
+                container('jdk-21') {
+                    withCredentials([file(credentialsId: 'jenkins-maven-settings.xml', variable: 'SETTINGS_PATH')]) {
+                        script {
+                            sh "mvn ${MVN_OPTS} -s " + SETTINGS_PATH + " deploy -Dchangelist= -DskipTests=true"
                         }
                     }
                 }
@@ -145,13 +150,18 @@ pipeline {
             }
         }
 
-        stage('Upload artifacts')
-                {
-                    steps {
-                        uploadStage(
-                                packages: yapHelper.getPackageNames('yap.json')
-                        )
-                    }
-                }
+        stage('Upload artifacts') {
+            when {
+                expression { return uploadStage.shouldUpload() }
+            }
+            tools {
+                jfrog 'jfrog-cli'
+            }
+            steps {
+                uploadStage(
+                        packages: yapHelper.resolvePackageNames('yap.json')
+                )
+            }
+        }
     }
 }

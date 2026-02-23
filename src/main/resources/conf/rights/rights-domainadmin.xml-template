@@ -148,6 +148,7 @@ ${DOMAIN_ATTRS}
         <r n="listCalendarResource"/>
         <r n="listDistributionList"/>        
         <r n="setDomainAdminDomainAttrs"/>
+        <r n="manageTwoFactorAuthPolicies"/>
       </rights>
     </right>
     <right name="domainAdminServerRights" type="combo">

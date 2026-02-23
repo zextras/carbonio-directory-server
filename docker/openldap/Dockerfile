@@ -1,4 +1,4 @@
-FROM maven:3-eclipse-temurin-17-alpine AS build
+FROM maven:3-eclipse-temurin-21-alpine AS build
 RUN apk add --no-cache git
 WORKDIR /build
 
