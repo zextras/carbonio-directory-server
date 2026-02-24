@@ -11,10 +11,6 @@ boolean isBuildingTag() {
     return env.TAG_NAME ? true : false
 }
 
-boolean isCommitTagged() {
-    return env.GIT_TAG ? true : false
-}
-
 String profile = isBuildingTag() ? '-Pprod' : ''
 
 properties(defaultPipelineProperties())
