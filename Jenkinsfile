@@ -11,6 +11,10 @@ boolean isBuildingTag() {
     return env.TAG_NAME ? true : false
 }
 
+boolean isCommitTagged() {
+    return env.GIT_TAG ? true : false
+}
+
 String profile = isBuildingTag() ? '-Pprod' : ''
 
 properties(defaultPipelineProperties())
@@ -161,6 +165,41 @@ pipeline {
                 uploadStage(
                         packages: yapHelper.resolvePackageNames('yap.json')
                 )
+            }
+        }
+
+        stage('Bump version') {
+            agent {
+                node {
+                    label 'nodejs-v1'
+                }
+            }
+            when {
+                allOf {
+                    branch 'main'
+                    expression { !isCommitTagged() }
+                }
+            }
+            steps {
+                script {
+                    checkout scm
+                    gitMetadata()
+                    container('nodejs-20') {
+                        withCredentials([usernamePassword(credentialsId: 'jenkins-integration-with-github-account', usernameVariable: 'GH_USERNAME', passwordVariable: 'GH_TOKEN')]) {
+                            sh 'apt-get update && apt-get install -y jq openssh-client'
+                            sh """
+                            npx \
+                            --package semantic-release \
+                            --package @semantic-release/commit-analyzer \
+                            --package @semantic-release/release-notes-generator \
+                            --package @semantic-release/exec \
+                            --package @semantic-release/git \
+                            --package conventional-changelog-conventionalcommits \
+                            semantic-release
+                        """
+                        }
+                    }
+                }
             }
         }
     }
