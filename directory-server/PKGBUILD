@@ -64,6 +64,18 @@ _package_systemd() {
     "${sysdir}/${pkgname}.target"
 }
 
+_ldap_fix_setcap() {
+  # Set permissions and capabilities on slapd binary (from carbonio-openldap)
+  # This must run here because openldap is installed before this package,
+  # but the zextras user/group is created by carbonio-core via sysusers.d
+  # Note: chmod resets capabilities, so setcap must run after chmod
+  if [ -f /opt/zextras/common/libexec/slapd ]; then
+    chown root:zextras /opt/zextras/common/libexec/slapd
+    chmod 750 /opt/zextras/common/libexec/slapd
+    setcap CAP_NET_BIND_SERVICE=+ep /opt/zextras/common/libexec/slapd
+  fi
+}
+
 _ldap_upgrade_legacy() {
   echo "* Starting LDAP upgrade..."
   su - zextras -c "/opt/zextras/libexec/scripts/LDAP/LdapPreFlight.pl"
@@ -152,6 +164,7 @@ preinst__ubuntu_noble() {
 postinst__rocky_8() {
   _postinst_common
   if [ "$1" -eq 2 ]; then
+    _ldap_fix_setcap
     _ldap_upgrade_legacy
   fi
 }
@@ -161,8 +174,8 @@ postinst__rocky_9() {
 
   if [ "$1" -eq 2 ] \
     && [ -d /run/systemd/system ]; then
+    _ldap_fix_setcap
     _ldap_upgrade_systemd
-    systemctl start carbonio-openldap.service &>/dev/null || :
   fi
 
   _postinst_systemd_enable
@@ -172,6 +185,7 @@ postinst__ubuntu_jammy() {
   _postinst_common
   if [ "$1" = "configure" ] \
     && [ -n "$2" ]; then
+    _ldap_fix_setcap
     _ldap_upgrade_legacy
   fi
 }
@@ -181,9 +195,10 @@ postinst__ubuntu_noble() {
   if [ "$1" = "configure" ] \
     && [ -n "$2" ] \
     && [ -d /run/systemd/system ]; then
+    _ldap_fix_setcap
     _ldap_upgrade_systemd
-    systemctl start carbonio-openldap.service &>/dev/null || :
   fi
+
   _postinst_systemd_enable
 }
 
