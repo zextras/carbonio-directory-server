@@ -30,6 +30,6 @@ class AttributeManagerTest {
 
   private void assertLoadedAllAttributes(AttributeManager attributeManager) {
     final Map<String, AttributeInfo> allAttrs = attributeManager.getAttrs();
-    assertEquals(1868, allAttrs.size());
+    assertEquals(1870, allAttrs.size());
   }
 }
