@@ -1,0 +1,10 @@
+{
+  "zimbra_defaultcos": [
+    "carbonioOtpGracePeriodEnabled",
+    "carbonioOtpGracePeriodEndingTime"
+  ],
+  "zimbra_defaultexternalcos": [
+    "carbonioOtpGracePeriodEnabled",
+    "carbonioOtpGracePeriodEndingTime"
+  ]
+}
