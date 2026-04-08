@@ -146,9 +146,7 @@ pipeline {
         stage('Build deb/rpm') {
             steps {
                 echo 'Building deb/rpm packages'
-                buildStage([
-                    addCarbonioRepos: true
-                ])
+                buildStage(buildFlags: ' -sd ')
             }
         }
 
