@@ -18,9 +18,6 @@ depends=(
   "carbonio-core"
   "carbonio-prometheus-openldap-exporter"
 )
-makedepends=(
-  "rsync"
-)
 
 _package() {
   cd "$(dirname "$(find / -name "yap.json" -print -quit)")"
@@ -41,7 +38,7 @@ _package() {
 
   local migrdir="${pkgdir}/opt/zextras/libexec/scripts/LDAP/migrations"
   mkdir -p "${migrdir}"
-  rsync -a src/ldap/src/migrations/ "${migrdir}/"
+  cp -a src/ldap/src/migrations/* "${migrdir}/"
   chmod -R +x "${migrdir}/"
 
   install -D src/ldap/src/LdapMigrationUtils.pm \
@@ -51,7 +48,7 @@ _package() {
 
   local schemadir="${pkgdir}/opt/zextras/common/etc/openldap/zimbra"
   install -Ddm755 src/ldap/generated/ "${schemadir}/"
-  rsync -a src/ldap/generated/ "${schemadir}/"
+  cp -a src/ldap/generated/* "${schemadir}/"
 
   install -Dm644 "directory-server/systemd-tmpfile.conf" \
     "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
