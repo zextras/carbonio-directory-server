@@ -39,6 +39,25 @@ Build deb/rpm packages via the YAP docker image:
 
 Artifacts are written to `artifacts/<os>/`.
 
+## Attribute docs bundle
+
+The build also produces a self-contained, searchable static docs site for every attribute and objectclass defined in `src/main/resources/conf/attrs/*.xml`. Output lands in `target/attr-docs/` (unzipped) and `target/carbonio-attrs-docs-<version>.zip`:
+
+```
+target/attr-docs/
+  index.html     search UI (single page, vanilla JS)
+  app.js
+  style.css
+  attrs.js       ~1.1 MB — window.ATTRS_DATA with all attrs + objectclasses
+  version.js     window.VERSION_DATA = { version, commit, generatedAt }
+```
+
+Data is shipped as JS globals loaded via `<script>` tags (not `fetch()`) so the bundle works both from `file://` (local preview) and over HTTP. Open `target/attr-docs/index.html` directly in a browser to preview. The zip is archived by Jenkins on every successful build and is intended for the docs team to upload to the Carbonio documentation site per release. Regenerate on demand with:
+
+```bash
+mvn -DskipTests=true prepare-package
+```
+
 ## Container image
 
 The `carbonio-openldap` container is built from `docker/openldap/Dockerfile`:
