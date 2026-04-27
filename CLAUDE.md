@@ -42,6 +42,7 @@ Maven enforces strict dependency hygiene — `maven-dependency-plugin` fails the
   - `schema/carbonio.schema` + `schema/carbonio.ldif` (from `carbonio.schema-template`)
   - `zimbra_globalconfig.ldif`
   - `zimbra_defaultcos.ldif` / `zimbra_defaultexternalcos.ldif`
+  - `generateAttrDocs` → `target/attr-docs/` (static HTML/JS/CSS + `attrs.json` + `version.json`) — the searchable admin docs bundle. Also zipped to `target/carbonio-attrs-docs-<version>.zip` by an antrun step and archived by Jenkins (`Archive attribute docs` stage). Implemented in `com.zimbra.cs.account.AttrDocsGenerator`; UI assets live in `src/main/resources/docs/`.
 - `RightDomainAdminResourceGenerator` runs in `process-test-classes` to generate `conf/rights/rights-domainadmin.xml` from the `.xml-template` by intersecting modifiable attrs across `account`/`calendarResource`/`distributionList`/`domain` classes.
 - `LdifProvider` (`src/main/java/com/zextras/ldap/LdifProvider.java`) is how downstream Java code reads the generated LDIFs out of the packaged jar resources.
 
