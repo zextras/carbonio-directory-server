@@ -1285,7 +1285,7 @@ public class AttributeManager {
     else return mAttrs.get(name.toLowerCase());
   }
 
-  private enum ObjectClassType {
+  enum ObjectClassType {
     ABSTRACT,
     AUXILIARY,
     STRUCTURAL

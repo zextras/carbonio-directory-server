@@ -389,6 +389,28 @@
               </arguments>
             </configuration>
           </execution>
+          <execution>
+            <id>generate-attr-docs</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>com.zimbra.cs.account.AttributeManagerUtil</mainClass>
+              <arguments>
+                <argument>-a</argument>
+                <argument>generateAttrDocs</argument>
+                <argument>-o</argument>
+                <argument>${attr-docs.dir}</argument>
+              </arguments>
+              <systemProperties>
+                <systemProperty>
+                  <key>carbonio.docs.version</key>
+                  <value>${revision}${changelist}</value>
+                </systemProperty>
+              </systemProperties>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -429,6 +451,19 @@
                 <copy todir="${ldap.generated.dir}/updates/">
                   <fileset dir="${ldap.dir}/src/updates/" includes="**"/>
                 </copy>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>zip-attr-docs</id>
+            <phase>package</phase>
+            <configuration>
+              <target>
+                <zip destfile="${project.build.directory}/carbonio-attrs-docs-${revision}${changelist}.zip"
+                     basedir="${attr-docs.dir}"/>
               </target>
             </configuration>
             <goals>
@@ -500,5 +535,6 @@
     <ldap.dir>${project.basedir}/src/ldap</ldap.dir>
     <ldap.generated.dir>${ldap.dir}/generated</ldap.generated.dir>
     <ldap.config.dir>${ldap.dir}/config</ldap.config.dir>
+    <attr-docs.dir>${project.build.directory}/attr-docs</attr-docs.dir>
   </properties>
 </project>

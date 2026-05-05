@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carbonio Directory Attributes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Carbonio Directory Attributes</h1>
+      <span class="version" id="version-label">loading…</span>
+    </div>
+    <input
+      id="search"
+      type="search"
+      placeholder="Search name, description, flags…"
+      autocomplete="off"
+      autofocus>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section>
+        <h2>View</h2>
+        <div class="tabs">
+          <button data-view="attrs" class="tab active">Attributes</button>
+          <button data-view="ocs" class="tab">Object classes</button>
+        </div>
+      </section>
+
+      <section id="facet-attrs">
+        <h2>Class</h2>
+        <div id="facet-class" class="facet-list"></div>
+
+        <h2>Type</h2>
+        <div id="facet-type" class="facet-list"></div>
+
+        <h2>Flags</h2>
+        <div id="facet-flag" class="facet-list"></div>
+
+        <h2>State</h2>
+        <label><input type="checkbox" id="facet-deprecated"> Deprecated only</label>
+        <label><input type="checkbox" id="facet-immutable"> Immutable only</label>
+      </section>
+    </aside>
+
+    <section class="content">
+      <div class="results-meta">
+        <span id="count">—</span>
+        <button id="reset" class="linky">Reset filters</button>
+      </div>
+      <ul id="results" class="results"></ul>
+    </section>
+  </main>
+
+  <div id="detail" class="detail hidden" role="dialog" aria-modal="true"></div>
+
+  <script src="attrs.js"></script>
+  <script src="version.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

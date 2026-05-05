@@ -150,6 +150,16 @@ pipeline {
             }
         }
 
+        stage('Archive attribute docs') {
+            steps {
+                archiveArtifacts(
+                        artifacts: 'target/carbonio-attrs-docs-*.zip',
+                        allowEmptyArchive: false,
+                        onlyIfSuccessful: true
+                )
+            }
+        }
+
         stage('Upload artifacts') {
             when {
                 expression { return uploadStage.shouldUpload() }
