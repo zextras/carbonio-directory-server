@@ -10323,6 +10323,17 @@ deprecatedSince="23.9.0">
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>Enables OTP setup wizard for users on untrusted networks or devices</desc>
 </attr>
+
+<attr id="3169" name="carbonioOtpGracePeriodEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="26.6.0">
+  <defaultCOSValue>FALSE</defaultCOSValue>
+  <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
+  <desc>Enables OTPs grace period</desc>
+</attr>
+
+<attr id="3170" name="carbonioOtpGracePeriodEndingTime" type="gentime" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="26.6.0">
+  <desc>OTPs grace period ending time</desc>
+</attr>
+
 </attrs>
 
 
