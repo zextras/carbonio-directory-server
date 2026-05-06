@@ -1,5 +1,5 @@
 library(
-        identifier: 'jenkins-lib-common@1.1.2',
+        identifier: 'jenkins-lib-common@1.7.2',
         retriever: modernSCM([
                 $class       : 'GitSCMSource',
                 credentialsId: 'jenkins-integration-with-github-account',
@@ -146,7 +146,17 @@ pipeline {
         stage('Build deb/rpm') {
             steps {
                 echo 'Building deb/rpm packages'
-                buildStage()
+                buildStage(buildFlags: ' -sd ')
+            }
+        }
+
+        stage('Archive attribute docs') {
+            steps {
+                archiveArtifacts(
+                        artifacts: 'target/carbonio-attrs-docs-*.zip',
+                        allowEmptyArchive: false,
+                        onlyIfSuccessful: true
+                )
             }
         }
 
@@ -161,6 +171,14 @@ pipeline {
                 uploadStage(
                         packages: yapHelper.resolvePackageNames('yap.json')
                 )
+            }
+        }
+
+        stage('Bump version') {
+            steps {
+                script {
+                    dt2_semanticRelease()
+                }
             }
         }
     }

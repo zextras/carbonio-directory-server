@@ -826,6 +826,19 @@ public class AttributeManagerUtil {
         }
       }
 
+      if (action == Action.GENERATE_ATTR_DOCS) {
+        if (!commandLine.hasOption('o')) {
+          usage("generateAttrDocs requires -o <output directory>");
+          return;
+        }
+        new AttrDocsGenerator(am).generate(
+            Paths.get(commandLine.getOptionValue('o')),
+            System.getProperty("carbonio.docs.version"),
+            System.getProperty("carbonio.docs.commit"));
+        logger.info("Finished generating attribute docs");
+        return;
+      }
+
       PrintWriter printWriter;
       final boolean outputToFile = commandLine.hasOption('o');
       if (outputToFile) {
@@ -840,6 +853,9 @@ public class AttributeManagerUtil {
       try {
         AttributeManagerUtil attributeManagerUtil = new AttributeManagerUtil(am);
         switch (action) {
+          case GENERATE_ATTR_DOCS:
+            // handled above; keeps the exhaustive switch happy
+            break;
           case GENERATE_DEFAULT_COS_LDIF:
             attributeManagerUtil.generateDefaultCOSLdif(printWriter);
             break;
@@ -1750,6 +1766,7 @@ public class AttributeManagerUtil {
   }
 
   private enum Action {
+    GENERATE_ATTR_DOCS,
     GENERATE_DEFAULT_COS_LDIF,
     GENERATE_DEFAULT_EXTERNAL_COS_LDIF,
     GENERATE_GETTERS,
