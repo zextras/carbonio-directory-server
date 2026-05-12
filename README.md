@@ -52,7 +52,7 @@ target/attr-docs/
   version.js     window.VERSION_DATA = { version, commit, generatedAt }
 ```
 
-Data is shipped as JS globals loaded via `<script>` tags (not `fetch()`) so the bundle works both from `file://` (local preview) and over HTTP. Open `target/attr-docs/index.html` directly in a browser to preview. The zip is archived by Jenkins on every successful build and is intended for the docs team to upload to the Carbonio documentation site per release. Regenerate on demand with:
+Data is shipped as JS globals loaded via `<script>` tags (not `fetch()`) so the bundle works both from `file://` (local preview) and over HTTP. Open `target/attr-docs/index.html` directly in a browser to preview. Deprecated attributes are hidden by default — tick the "Show deprecated" filter in the sidebar to include them. The zip is archived by Jenkins on every successful build and is intended for the docs team to upload to the Carbonio documentation site per release. Regenerate on demand with:
 
 ```bash
 mvn -DskipTests=true prepare-package

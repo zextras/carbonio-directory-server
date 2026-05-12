@@ -10,7 +10,7 @@
       classes: new Set(),
       types: new Set(),
       flags: new Set(),
-      deprecated: false,
+      showDeprecated: false,
       immutable: false,
     },
   };
@@ -92,7 +92,7 @@
       render();
     });
     $('#facet-deprecated').addEventListener('change', (e) => {
-      state.filters.deprecated = e.target.checked;
+      state.filters.showDeprecated = e.target.checked;
       render();
     });
     $('#facet-immutable').addEventListener('change', (e) => {
@@ -114,7 +114,7 @@
       state.filters.classes.clear();
       state.filters.types.clear();
       state.filters.flags.clear();
-      state.filters.deprecated = false;
+      state.filters.showDeprecated = false;
       state.filters.immutable = false;
       $('#facet-deprecated').checked = false;
       $('#facet-immutable').checked = false;
@@ -169,7 +169,7 @@
           '\n' + a.flags.join(' ').toLowerCase();
         if (!hay.includes(state.q)) return false;
       }
-      if (f.deprecated && !a.deprecated) return false;
+      if (!f.showDeprecated && a.deprecated) return false;
       if (f.immutable && !a.immutable) return false;
       if (f.types.size && !f.types.has(a.type)) return false;
       if (f.flags.size && !a.flags.some((x) => f.flags.has(x))) return false;
