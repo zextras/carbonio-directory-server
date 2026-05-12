@@ -13,7 +13,7 @@ license=(
 url="https://github.com/zextras"
 section="mail"
 priority="optional"
-arch=('x86_64')
+arch=('any')
 depends=(
   "carbonio-core"
   "carbonio-prometheus-openldap-exporter"
