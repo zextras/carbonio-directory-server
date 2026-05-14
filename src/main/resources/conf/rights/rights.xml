@@ -319,6 +319,10 @@
   <desc>remove member from distribution list</desc>
 </right>
 
+<right name="modifyAdminDistributionListMember" type="preset" targetType="dl">
+    <desc>add, modify, remove member from admin group distribution list</desc>
+</right>
+
 
 <!--
 ========================================================
