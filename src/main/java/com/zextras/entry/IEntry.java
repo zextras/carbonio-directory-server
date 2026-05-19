@@ -21,7 +21,7 @@ import java.util.Date;
  * is intentionally narrow so it can live in a tooling module without dragging
  * in mailbox runtime dependencies.
  */
-public interface IEntry {
+public interface IEntry<X extends IServiceException> {
 
   String getAttr(String name, String defaultValue);
   String getAttr(String name, boolean applyDefaults, boolean skipEphemeralCheck);
@@ -50,10 +50,10 @@ public interface IEntry {
   String[] getMultiAttr(String name, boolean applyDefaults);
   String[] getMultiAttr(String name, boolean applyDefaults, boolean skipEphemeralCheck);
 
-  EphemeralResult getEphemeralAttr(String key, String dynamicComponent) throws IServiceException;
-  void modifyEphemeralAttr(String key, String dynamicComponent, String value, boolean update, Expiration expiration) throws IServiceException;
-  void deleteEphemeralAttr(String key) throws IServiceException;
-  void deleteEphemeralAttr(String key, String dynamicComponent, String value) throws IServiceException;
-  void purgeEphemeralAttr(String key) throws IServiceException;
-  boolean hasEphemeralAttr(String key, String dynamicComponent) throws IServiceException;
+  EphemeralResult getEphemeralAttr(String key, String dynamicComponent) throws X;
+  void modifyEphemeralAttr(String key, String dynamicComponent, String value, boolean update, Expiration expiration) throws X;
+  void deleteEphemeralAttr(String key) throws X;
+  void deleteEphemeralAttr(String key, String dynamicComponent, String value) throws X;
+  void purgeEphemeralAttr(String key) throws X;
+  boolean hasEphemeralAttr(String key, String dynamicComponent) throws X;
 }

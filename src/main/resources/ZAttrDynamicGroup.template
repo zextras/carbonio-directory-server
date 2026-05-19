@@ -10,6 +10,7 @@ import static com.zimbra.common.account.ProvisioningConstants.TRUE;
 
 import com.zextras.entry.IEntry;
 import com.zextras.entry.IProvisioning;
+import com.zextras.entry.IServiceException;
 import com.zimbra.common.account.ZAttr;
 import com.zimbra.common.account.ZAttrProvisioning;
 import com.zimbra.common.util.StringUtil;
@@ -19,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /** AUTO-GENERATED. DO NOT EDIT. */
-public interface ZAttrDynamicGroup<T extends IProvisioning> extends IEntry {
+public interface ZAttrDynamicGroup<T extends IProvisioning<X>, X extends IServiceException> extends IEntry<X> {
 
   T getProvisioning();
 

@@ -10,6 +10,7 @@ import static com.zimbra.common.account.ProvisioningConstants.TRUE;
 
 import com.zextras.entry.IEntry;
 import com.zextras.entry.IProvisioning;
+import com.zextras.entry.IServiceException;
 import com.zimbra.common.account.ZAttr;
 import com.zimbra.common.account.ZAttrProvisioning;
 import com.zimbra.cs.ldap.LdapDateUtil;
@@ -18,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /** AUTO-GENERATED. DO NOT EDIT. */
-public interface ZAttrCalendarResource<T extends IProvisioning> extends ZAttrAccount<T> {
+public interface ZAttrCalendarResource<T extends IProvisioning<X>, X extends IServiceException> extends ZAttrAccount<T, X> {
 
   ///// BEGIN-AUTO-GEN-REPLACE
 

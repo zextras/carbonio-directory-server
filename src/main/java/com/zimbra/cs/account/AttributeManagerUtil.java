@@ -448,7 +448,7 @@ public class AttributeManagerUtil {
       result.append("     * Ephemeral attribute - requests routed to EphemeralStore\n");
       result.append("     *\n");
       result.append(
-          "     * @throws com.zextras.entry.IServiceException if error on accessing"
+          "     * @throws X if error on accessing"
               + " ephemeral data\n");
     }
     result.append("     *\n");
@@ -466,7 +466,7 @@ public class AttributeManagerUtil {
             methodName,
             Boolean.TRUE.equals(ai.isDynamic()) ? "String dynamicComponent" : ""));
     if (Boolean.TRUE.equals(ai.isEphemeral())) {
-      result.append(" throws com.zextras.entry.IServiceException");
+      result.append(" throws X");
     }
     result.append(String.format(" {%n        %s%n    }%n", javaBody));
   }
@@ -662,7 +662,7 @@ public class AttributeManagerUtil {
       result.append("     * @return populated map to pass into Provisioning.modifyAttrs\n");
     } else {
       result.append(
-          "     * @throws com.zextras.entry.IServiceException if error during update\n");
+          "     * @throws X if error during update\n");
     }
     if (attributeInfo.getSince() != null) {
       result.append("     *\n");
@@ -681,7 +681,7 @@ public class AttributeManagerUtil {
           case SET:
             result.append(
                 String.format(
-                    "    default void %s(%s %s%s) throws com.zextras.entry.IServiceException"
+                    "    default void %s(%s %s%s) throws X"
                         + " {%n",
                     methodName, javaType, name, expiryParam));
             break;
@@ -690,13 +690,13 @@ public class AttributeManagerUtil {
               result.append(
                   String.format(
                       "    default void %s(String dynamicComponent, %s %s%s) throws"
-                          + " com.zextras.entry.IServiceException {%n",
+                          + " X {%n",
                       methodName, javaType, name, expiryParam));
             } else {
               result.append(
                   String.format(
                       "    default void %s(%s %s%s) throws"
-                          + " com.zextras.entry.IServiceException {%n",
+                          + " X {%n",
                       methodName, javaType, name, expiryParam));
             }
             break;
@@ -704,7 +704,7 @@ public class AttributeManagerUtil {
           case PURGE:
             result.append(
                 String.format(
-                    "    default void %s() throws com.zextras.entry.IServiceException {%n",
+                    "    default void %s() throws X {%n",
                     methodName));
             break;
           case REMOVE:
@@ -712,12 +712,12 @@ public class AttributeManagerUtil {
               result.append(
                   String.format(
                       "    default void %s(String dynamicComponent, %s %s) throws"
-                          + " com.zextras.entry.IServiceException {%n",
+                          + " X {%n",
                       methodName, javaType, name));
             } else {
               result.append(
                   String.format(
-                      "    default void %s(%s %s) throws com.zextras.entry.IServiceException"
+                      "    default void %s(%s %s) throws X"
                           + " {%n",
                       methodName, javaType, name));
             }
@@ -727,12 +727,12 @@ public class AttributeManagerUtil {
               result.append(
                   String.format(
                       "    default boolean %s(String dynamicComponent) throws"
-                          + " com.zextras.entry.IServiceException {%n",
+                          + " X {%n",
                       methodName));
             } else {
               result.append(
                   String.format(
-                      "    default boolean %s() throws com.zextras.entry.IServiceException"
+                      "    default boolean %s() throws X"
                           + " {%n",
                       methodName));
             }
@@ -742,12 +742,12 @@ public class AttributeManagerUtil {
         if (setterType != SetterType.UNSET) {
           result.append(
               String.format(
-                  "    default void %s(%s %s) throws com.zextras.entry.IServiceException {%n",
+                  "    default void %s(%s %s) throws X {%n",
                   methodName, javaType, name));
         } else {
           result.append(
               String.format(
-                  "    default void %s() throws com.zextras.entry.IServiceException {%n",
+                  "    default void %s() throws X {%n",
                   methodName));
         }
       }

@@ -16,7 +16,7 @@ import java.util.Map;
  * dependency-free; concrete implementations narrow the throws clause to their
  * own checked exception type.
  */
-public interface IProvisioning {
+public interface IProvisioning<X extends IServiceException> {
 
-  void modifyAttrs(IEntry entry, Map<String, ? extends Object> attrs) throws IServiceException;
+  void modifyAttrs(IEntry<X> entry, Map<String, ? extends Object> attrs) throws X;
 }
