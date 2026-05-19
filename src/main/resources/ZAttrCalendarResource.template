@@ -18,9 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /** AUTO-GENERATED. DO NOT EDIT. */
-public interface ZAttrCalendarResource<T extends IProvisioning> extends IEntry {
-
-  T getProvisioning();
+public interface ZAttrCalendarResource<T extends IProvisioning> extends ZAttrAccount<T> {
 
   ///// BEGIN-AUTO-GEN-REPLACE
 
