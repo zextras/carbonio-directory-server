@@ -21,7 +21,7 @@ class AttributeManagerUtilTest {
 		final Path path = Paths.get(testDir.toURI().getPath(), "ZAttrConfig.java");
 		attributeManagerUtil.generateGetters("globalConfig", path.toString());
 		final String output = Files.readString(path);
-		assertTrue(output.contains("public abstract class ZAttrConfig extends Entry {"), output);
+		assertTrue(output.contains("public interface ZAttrConfig<T extends IProvisioning<X>, X extends IServiceException> extends IEntry<X> {"), output);
 	}
 
 
@@ -31,7 +31,7 @@ class AttributeManagerUtilTest {
 		final Path path = Paths.get(testDir.toURI().getPath(), "ZAttrCos.java");
 		attributeManagerUtil.generateGetters("cos", path.toString());
 		final String output = Files.readString(path);
-		assertTrue(output.contains("public abstract class ZAttrCos extends NamedEntry {"), output);
+		assertTrue(output.contains("public interface ZAttrCos<T extends IProvisioning<X>, X extends IServiceException> extends IEntry<X> {"), output);
 	}
 
 	@Test
@@ -40,7 +40,7 @@ class AttributeManagerUtilTest {
 		final Path path = Paths.get(testDir.toURI().getPath(), "ZAttrAccount.java");
 		attributeManagerUtil.generateGetters("account", path.toString());
 		final String output = Files.readString(path);
-		assertTrue(output.contains("public abstract class ZAttrAccount extends MailTarget {"), output);
+		assertTrue(output.contains("public interface ZAttrAccount<T extends IProvisioning<X>, X extends IServiceException> extends IEntry<X> {"), output);
 	}
 
 	@Test
@@ -49,7 +49,7 @@ class AttributeManagerUtilTest {
 		final Path path = Paths.get(testDir.toURI().getPath(), "ZAttrServer.java");
 		attributeManagerUtil.generateGetters("server", path.toString());
 		final String output = Files.readString(path);
-		assertTrue(output.contains("public abstract class ZAttrServer extends NamedEntry {"), output);
+		assertTrue(output.contains("public interface ZAttrServer<T extends IProvisioning<X>, X extends IServiceException> extends IEntry<X> {"), output);
 	}
 
 	@Test
@@ -58,7 +58,7 @@ class AttributeManagerUtilTest {
 		final Path path = Paths.get(testDir.toURI().getPath(), "ZAttrDistributionList.java");
 		attributeManagerUtil.generateGetters("distributionList", path.toString());
 		final String output = Files.readString(path);
-		assertTrue(output.contains("public abstract class ZAttrDistributionList extends Group {"), output);
+		assertTrue(output.contains("public interface ZAttrDistributionList<T extends IProvisioning<X>, X extends IServiceException> extends IEntry<X> {"), output);
 	}
 
 	@Test
@@ -67,7 +67,7 @@ class AttributeManagerUtilTest {
 		final Path path = Paths.get(testDir.toURI().getPath(), "ZAttrDynamicGroup.java");
 		attributeManagerUtil.generateGetters("group", path.toString());
 		final String output = Files.readString(path);
-		assertTrue(output.contains("public abstract class ZAttrDynamicGroup extends Group {"), output);
+		assertTrue(output.contains("public interface ZAttrDynamicGroup<T extends IProvisioning<X>, X extends IServiceException> extends IEntry<X> {"), output);
 	}
 
 	@Test
@@ -76,7 +76,7 @@ class AttributeManagerUtilTest {
 		final Path path = Paths.get(testDir.toURI().getPath(), "ZAttrShareLocator.java");
 		attributeManagerUtil.generateGetters("shareLocator", path.toString());
 		final String output = Files.readString(path);
-		assertTrue(output.contains("public abstract class ZAttrShareLocator extends NamedEntry {"), output);
+		assertTrue(output.contains("public interface ZAttrShareLocator<T extends IProvisioning<X>, X extends IServiceException> extends IEntry<X> {"), output);
 	}
 
 	@Test
@@ -85,6 +85,6 @@ class AttributeManagerUtilTest {
 		final Path path = Paths.get(testDir.toURI().getPath(), "ZAttrProvisioning.java");
 		attributeManagerUtil.generateProvisioningConstants(path.toString());
 		final String output = Files.readString(path);
-		assertTrue( output.contains("public class ZAttrProvisioning {"), output);
+		assertTrue( output.contains("public interface ZAttrProvisioning {"), output);
 	}
 }
