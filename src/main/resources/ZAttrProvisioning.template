@@ -5,7 +5,7 @@
 
 package com.zimbra.common.account;
 
-import com.zimbra.common.service.ServiceException;
+import com.zextras.entry.IServiceException;
 import java.util.Arrays;
 
 /**

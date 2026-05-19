@@ -18,5 +18,5 @@ import java.util.Map;
  */
 public interface IProvisioning {
 
-  void modifyAttrs(IEntry entry, Map<String, ? extends Object> attrs);
+  void modifyAttrs(IEntry entry, Map<String, ? extends Object> attrs) throws IServiceException;
 }

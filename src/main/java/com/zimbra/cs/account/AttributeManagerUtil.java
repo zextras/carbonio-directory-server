@@ -137,13 +137,13 @@ public class AttributeManagerUtil {
     result.append(String.format("        public String toString() { return mValue; }%n"));
     result.append(
         String.format(
-            "        public static %s fromString(String s) throws ServiceException {%n", enumName));
+            "        public static %s fromString(String s) throws IServiceException {%n", enumName));
     result.append(String.format("            for (%s value : values()) {%n", enumName));
     result.append(String.format("                if (value.mValue.equals(s)) return value;%n"));
     result.append(String.format("             }%n"));
     result.append(
         String.format(
-            "             throw ServiceException.INVALID_REQUEST(\"invalid value: \"+s+\", valid"
+            "             throw IServiceException.INVALID_REQUEST(\"invalid value: \"+s+\", valid"
                 + " values: \"+ Arrays.asList(values()), null);%n"));
     result.append(String.format("        }%n"));
     for (Map.Entry<String, String> entry : set) {
@@ -311,14 +311,14 @@ public class AttributeManagerUtil {
               String.format(
                   "try { String v = getEphemeralAttr(ZAttrProvisioning.A_%s, %s).getValue(); return"
                       + " v == null ? %s : ZAttrProvisioning.%s.fromString(v); }"
-                      + " catch(com.zimbra.common.service.ServiceException e) { return %s; }",
+                      + " catch(com.zextras.entry.IServiceException e) { return %s; }",
                   name, dynamic, defaultValue, enumName(ai), defaultValue);
         } else {
           javaBody =
               String.format(
                   "try { String v = getAttr(ZAttrProvisioning.A_%s, true, true); return v == null ?"
                       + " %s : ZAttrProvisioning.%s.fromString(v); }"
-                      + " catch(com.zimbra.common.service.ServiceException e) { return %s; }",
+                      + " catch(com.zextras.entry.IServiceException e) { return %s; }",
                   name, defaultValue, enumName(ai), defaultValue);
         }
         javaDocReturns = String.format(", or %s if unset and/or has invalid value", defaultValue);
@@ -448,7 +448,7 @@ public class AttributeManagerUtil {
       result.append("     * Ephemeral attribute - requests routed to EphemeralStore\n");
       result.append("     *\n");
       result.append(
-          "     * @throws com.zimbra.common.service.ServiceException if error on accessing"
+          "     * @throws com.zextras.entry.IServiceException if error on accessing"
               + " ephemeral data\n");
     }
     result.append("     *\n");
@@ -466,7 +466,7 @@ public class AttributeManagerUtil {
             methodName,
             Boolean.TRUE.equals(ai.isDynamic()) ? "String dynamicComponent" : ""));
     if (Boolean.TRUE.equals(ai.isEphemeral())) {
-      result.append(" throws com.zimbra.common.service.ServiceException");
+      result.append(" throws com.zextras.entry.IServiceException");
     }
     result.append(String.format(" {%n        %s%n    }%n", javaBody));
   }
@@ -662,7 +662,7 @@ public class AttributeManagerUtil {
       result.append("     * @return populated map to pass into Provisioning.modifyAttrs\n");
     } else {
       result.append(
-          "     * @throws com.zimbra.common.service.ServiceException if error during update\n");
+          "     * @throws com.zextras.entry.IServiceException if error during update\n");
     }
     if (attributeInfo.getSince() != null) {
       result.append("     *\n");
@@ -681,7 +681,7 @@ public class AttributeManagerUtil {
           case SET:
             result.append(
                 String.format(
-                    "    default void %s(%s %s%s) throws com.zimbra.common.service.ServiceException"
+                    "    default void %s(%s %s%s) throws com.zextras.entry.IServiceException"
                         + " {%n",
                     methodName, javaType, name, expiryParam));
             break;
@@ -690,13 +690,13 @@ public class AttributeManagerUtil {
               result.append(
                   String.format(
                       "    default void %s(String dynamicComponent, %s %s%s) throws"
-                          + " com.zimbra.common.service.ServiceException {%n",
+                          + " com.zextras.entry.IServiceException {%n",
                       methodName, javaType, name, expiryParam));
             } else {
               result.append(
                   String.format(
                       "    default void %s(%s %s%s) throws"
-                          + " com.zimbra.common.service.ServiceException {%n",
+                          + " com.zextras.entry.IServiceException {%n",
                       methodName, javaType, name, expiryParam));
             }
             break;
@@ -704,7 +704,7 @@ public class AttributeManagerUtil {
           case PURGE:
             result.append(
                 String.format(
-                    "    default void %s() throws com.zimbra.common.service.ServiceException {%n",
+                    "    default void %s() throws com.zextras.entry.IServiceException {%n",
                     methodName));
             break;
           case REMOVE:
@@ -712,12 +712,12 @@ public class AttributeManagerUtil {
               result.append(
                   String.format(
                       "    default void %s(String dynamicComponent, %s %s) throws"
-                          + " com.zimbra.common.service.ServiceException {%n",
+                          + " com.zextras.entry.IServiceException {%n",
                       methodName, javaType, name));
             } else {
               result.append(
                   String.format(
-                      "    default void %s(%s %s) throws com.zimbra.common.service.ServiceException"
+                      "    default void %s(%s %s) throws com.zextras.entry.IServiceException"
                           + " {%n",
                       methodName, javaType, name));
             }
@@ -727,12 +727,12 @@ public class AttributeManagerUtil {
               result.append(
                   String.format(
                       "    default boolean %s(String dynamicComponent) throws"
-                          + " com.zimbra.common.service.ServiceException {%n",
+                          + " com.zextras.entry.IServiceException {%n",
                       methodName));
             } else {
               result.append(
                   String.format(
-                      "    default boolean %s() throws com.zimbra.common.service.ServiceException"
+                      "    default boolean %s() throws com.zextras.entry.IServiceException"
                           + " {%n",
                       methodName));
             }
@@ -742,12 +742,12 @@ public class AttributeManagerUtil {
         if (setterType != SetterType.UNSET) {
           result.append(
               String.format(
-                  "    default void %s(%s %s) throws com.zimbra.common.service.ServiceException {%n",
+                  "    default void %s(%s %s) throws com.zextras.entry.IServiceException {%n",
                   methodName, javaType, name));
         } else {
           result.append(
               String.format(
-                  "    default void %s() throws com.zimbra.common.service.ServiceException {%n",
+                  "    default void %s() throws com.zextras.entry.IServiceException {%n",
                   methodName));
         }
       }

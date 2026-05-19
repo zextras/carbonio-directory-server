@@ -6,7 +6,11 @@
 
 package com.zextras.entry;
 
+import com.zimbra.cs.ephemeral.EphemeralInput.Expiration;
+import com.zimbra.cs.ephemeral.EphemeralResult;
 import java.util.Date;
+
+
 
 /**
  * Minimal attribute-access contract for LDAP-backed entries.
@@ -32,6 +36,9 @@ public interface IEntry {
   long getLongAttr(String name, long defaultValue);
   long getLongAttr(String name, long defaultValue, boolean applyDefaults);
 
+  byte[] getBinaryAttr(String name);
+  byte[] getBinaryAttr(String name, boolean applyDefaults);
+
   long getTimeInterval(String name, long defaultValue);
   long getTimeInterval(String name, long defaultValue, boolean applyDefaults);
 
@@ -41,4 +48,12 @@ public interface IEntry {
   String toGeneralizedTime(Date date);
 
   String[] getMultiAttr(String name, boolean applyDefaults);
+  String[] getMultiAttr(String name, boolean applyDefaults, boolean skipEphemeralCheck);
+
+  EphemeralResult getEphemeralAttr(String key, String dynamicComponent) throws IServiceException;
+  void modifyEphemeralAttr(String key, String dynamicComponent, String value, boolean update, Expiration expiration) throws IServiceException;
+  void deleteEphemeralAttr(String key) throws IServiceException;
+  void deleteEphemeralAttr(String key, String dynamicComponent, String value) throws IServiceException;
+  void purgeEphemeralAttr(String key) throws IServiceException;
+  boolean hasEphemeralAttr(String key, String dynamicComponent) throws IServiceException;
 }
