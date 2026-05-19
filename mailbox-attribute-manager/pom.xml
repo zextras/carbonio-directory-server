@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ SPDX-FileCopyrightText: 2025 Zextras <https://www.zextras.com>
+  ~
+  ~ SPDX-License-Identifier: AGPL-3.0-only
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.zextras</groupId>
+    <artifactId>mailbox-attribute-manager-parent</artifactId>
+    <version>${revision}${changelist}</version>
+  </parent>
+
+  <artifactId>mailbox-attribute-manager</artifactId>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <artifactId>guava</artifactId>
+      <groupId>com.google.guava</groupId>
+    </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-cli</groupId>
+      <artifactId>commons-cli</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>${ldap.generated.dir}</directory>
+        <includes>
+          <include>*.ldif</include>
+          <include>config/**</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${project.basedir}/src/main/resources</directory>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>generate-ldap-version</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>sh</executable>
+              <arguments>
+                <argument>-c</argument>
+                <argument>mkdir -p ${generated-resources} &amp;&amp; \
+                  git log -1 \
+                  --pretty=format:%at \
+                  ${project.basedir}/src/main/resources/conf/attrs/attrs.xml \
+                  > ${generated-resources}/attrs-schema
+                </argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-ldap-schema</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>com.zimbra.cs.account.AttributeManagerUtil</mainClass>
+              <arguments>
+                <argument>-a</argument>
+                <argument>generateLdapSchema</argument>
+                <argument>-t</argument>
+                <argument>${ldap.dir}/carbonio.schema-template</argument>
+                <argument>-o</argument>
+                <argument>${ldap.generated.dir}/schema/carbonio.schema</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-schema-ldif</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>com.zimbra.cs.account.AttributeManagerUtil</mainClass>
+              <arguments>
+                <argument>-a</argument>
+                <argument>generateSchemaLdif</argument>
+                <argument>-t</argument>
+                <argument>${ldap.dir}/carbonio.schema-template</argument>
+                <argument>-o</argument>
+                <argument>${ldap.generated.dir}/schema/carbonio.ldif</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-globalconfig-ldif</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>com.zimbra.cs.account.AttributeManagerUtil</mainClass>
+              <arguments>
+                <argument>-a</argument>
+                <argument>generateGlobalConfigLdif</argument>
+                <argument>-o</argument>
+                <argument>${ldap.generated.dir}/zimbra_globalconfig.ldif</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-defaultCOS-ldif</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>com.zimbra.cs.account.AttributeManagerUtil</mainClass>
+              <arguments>
+                <argument>-a</argument>
+                <argument>generateDefaultCOSLdif</argument>
+                <argument>-o</argument>
+                <argument>${ldap.generated.dir}/zimbra_defaultcos.ldif</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-defaultExternalCOS-ldif</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>com.zimbra.cs.account.AttributeManagerUtil</mainClass>
+              <arguments>
+                <argument>-a</argument>
+                <argument>generateDefaultExternalCOSLdif</argument>
+                <argument>-o</argument>
+                <argument>${ldap.generated.dir}/zimbra_defaultexternalcos.ldif</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-attr-docs</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>com.zimbra.cs.account.AttributeManagerUtil</mainClass>
+              <arguments>
+                <argument>-a</argument>
+                <argument>generateAttrDocs</argument>
+                <argument>-o</argument>
+                <argument>${attr-docs.dir}</argument>
+              </arguments>
+              <systemProperties>
+                <systemProperty>
+                  <key>carbonio.docs.version</key>
+                  <value>${revision}${changelist}</value>
+                </systemProperty>
+              </systemProperties>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-domainadmin-rights-xml-early</id>
+            <phase>process-test-classes</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>com.zimbra.cs.account.generators.RightDomainAdminResourceGenerator</mainClass>
+              <arguments>
+                <argument>-o</argument>
+                <argument>${generated-resources}/conf/rights</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-ldap-files</id>
+            <phase>prepare-package</phase>
+            <configuration>
+              <target>
+                <copy todir="${ldap.generated.dir}/" file="${ldap.dir}/carbonio.ldif"/>
+                <copy todir="${ldap.generated.dir}/" file="${ldap.dir}/mimehandlers.ldif"/>
+                <copy todir="${ldap.generated.dir}/schema" file="${ldap.dir}/amavisd.schema"/>
+                <copy todir="${ldap.generated.dir}/schema" file="${ldap.dir}/amavisd.ldif"/>
+                <copy todir="${ldap.generated.dir}/schema" file="${ldap.dir}/opendkim.ldif"/>
+
+                <copy todir="${ldap.generated.dir}/config"
+                  file="${ldap.config.dir}/cn=config.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config"
+                  file="${ldap.config.dir}/cn=config/cn=module{0}.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config"
+                  file="${ldap.config.dir}/cn=config/cn=schema.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={0}config.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={-1}frontend.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={1}monitor.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config/"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={2}mdb.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config/olcDatabase={2}mdb"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={2}mdb/olcOverlay={0}dynlist.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config/olcDatabase={2}mdb"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={2}mdb/olcOverlay={1}unique.ldif"/>
+                <copy todir="${ldap.generated.dir}/config/cn=config/olcDatabase={2}mdb"
+                  file="${ldap.config.dir}/cn=config/olcDatabase={2}mdb/olcOverlay={2}noopsrch.ldif"/>
+                <copy todir="${ldap.generated.dir}/updates/">
+                  <fileset dir="${ldap.dir}/src/updates/" includes="**"/>
+                </copy>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>zip-attr-docs</id>
+            <phase>package</phase>
+            <configuration>
+              <target>
+                <zip destfile="${project.build.directory}/carbonio-attrs-docs-${revision}${changelist}.zip"
+                     basedir="${attr-docs.dir}"/>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-late-generated-resource</id>
+            <phase>process-test-classes</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${project.build.directory}/generated-resources</directory>
+                  <includes>
+                    <include>conf/rights/rights-domainadmin.xml</include>
+                    <include>attrs-schema</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <properties>
+    <generated-resources>${project.build.directory}/generated-resources</generated-resources>
+    <ldap.dir>${project.basedir}/src/ldap</ldap.dir>
+    <ldap.generated.dir>${ldap.dir}/generated</ldap.generated.dir>
+    <ldap.config.dir>${ldap.dir}/config</ldap.config.dir>
+    <attr-docs.dir>${project.build.directory}/attr-docs</attr-docs.dir>
+  </properties>
+</project>
