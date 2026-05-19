@@ -1,5 +1,5 @@
 pkgname="carbonio-directory-server"
-pkgver="4.31.0"
+pkgver="4.32.0"
 pkgrel="1"
 pkgdesc="An open-source, community-driven email server"
 maintainer="Zextras <packages@zextras.com>"
@@ -19,45 +19,52 @@ depends=(
   "carbonio-prometheus-openldap-exporter"
 )
 
-_package() {
-  cd "$(dirname "$(find / -name "yap.json" -print -quit)")"
+source=(
+  "${pkgname}.target"
+  'systemd-tmpfile.conf'
+)
+sha256sums=(
+  '845e893eebd6b382c0340e9e10bfa36643286c1498535b2eed73286d7031a970'
+  'c726e5af1eb1b6ae531add9bd980e0af798a1ac51fe0e63aeb734c0e2eb87be5'
+)
 
+_package() {
   local confdir="${pkgdir}/opt/zextras/conf/externaldirsync"
-  install -D src/ldap/externaldirsync/Exchange2000.xml \
+  install -D "${repodir}/src/ldap/externaldirsync/Exchange2000.xml" \
     "${confdir}/Exchange2000.xml"
-  install -D src/ldap/externaldirsync/Exchange2003.xml \
+  install -D "${repodir}/src/ldap/externaldirsync/Exchange2003.xml" \
     "${confdir}/Exchange2003.xml"
-  install -D src/ldap/externaldirsync/Exchange5.5.xml \
+  install -D "${repodir}/src/ldap/externaldirsync/Exchange5.5.xml" \
     "${confdir}/Exchange5.5.xml"
-  install -D src/ldap/externaldirsync/domino.xml \
+  install -D "${repodir}/src/ldap/externaldirsync/domino.xml" \
     "${confdir}/domino.xml"
-  install -D src/ldap/externaldirsync/novellGroupWise.xml \
+  install -D "${repodir}/src/ldap/externaldirsync/novellGroupWise.xml" \
     "${confdir}/novellGroupWise.xml"
-  install -D src/ldap/externaldirsync/openldap.xml \
+  install -D "${repodir}/src/ldap/externaldirsync/openldap.xml" \
     "${confdir}/openldap.xml"
 
   local migrdir="${pkgdir}/opt/zextras/libexec/scripts/LDAP/migrations"
   mkdir -p "${migrdir}"
-  cp -a src/ldap/src/migrations/* "${migrdir}/"
+  cp -a "${repodir}/src/ldap/src/migrations/"* "${migrdir}/"
   chmod -R +x "${migrdir}/"
 
-  install -D src/ldap/src/LdapMigrationUtils.pm \
+  install -D "${repodir}/src/ldap/src/LdapMigrationUtils.pm" \
     "${pkgdir}/opt/zextras/common/lib/perl5/Zextras/LdapMigrationUtils.pm"
-  install -D src/ldap/src/LdapPreFlight.pl \
+  install -D "${repodir}/src/ldap/src/LdapPreFlight.pl" \
     "${pkgdir}/opt/zextras/libexec/scripts/LDAP/LdapPreFlight.pl"
 
   local schemadir="${pkgdir}/opt/zextras/common/etc/openldap/zimbra"
-  install -Ddm755 src/ldap/generated/ "${schemadir}/"
-  cp -a src/ldap/generated/* "${schemadir}/"
+  install -Ddm755 "${repodir}/src/ldap/generated/" "${schemadir}/"
+  cp -a "${repodir}/src/ldap/generated/"* "${schemadir}/"
 
-  install -Dm644 "directory-server/systemd-tmpfile.conf" \
+  install -Dm644 "${srcdir}/systemd-tmpfile.conf" \
     "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
 }
 
 _package_systemd() {
   local sysdir="${pkgdir}/usr/lib/systemd/system"
 
-  install -Dm644 "directory-server/${pkgname}.target" \
+  install -Dm644 "${srcdir}/${pkgname}.target" \
     "${sysdir}/${pkgname}.target"
 }
 
