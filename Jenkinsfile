@@ -1,5 +1,5 @@
 library(
-        identifier: 'jenkins-lib-common@1.7.5',
+        identifier: 'jenkins-lib-common@v2.7.0',
         retriever: modernSCM([
                 $class       : 'GitSCMSource',
                 credentialsId: 'jenkins-integration-with-github-account',
@@ -120,24 +120,25 @@ pipeline {
             steps {
                 container('dind') {
                     withDockerRegistry(credentialsId: 'private-registry', url: 'https://registry.dev.zextras.com') {
-                        script {
-                            Set<String> tagVersions = []
-                            if (isBuildingTag()) {
-                                tagVersions = [env.TAG_NAME, 'stable']
-                            } else {
-                                tagVersions = ['devel', 'latest']
+                            script {
+                                Set<String> tagVersions = []
+                                if (isBuildingTag()) {
+                                    tagVersions = [env.TAG_NAME, 'stable']
+                                } else {
+                                    tagVersions = ['devel', 'latest']
+                                }
+                                dockerHelper.buildImage([
+                                        dockerfile: 'docker/openldap/Dockerfile',
+                                        imageName : 'registry.dev.zextras.com/dev/carbonio-openldap',
+                                        imageTags : tagVersions,
+                                        platforms : ['linux/amd64', 'linux/arm64'] as Set,
+                                        ocLabels  : [
+                                                title          : 'Carbonio OpenLDAP',
+                                                descriptionFile: 'docker/openldap/description.md',
+                                                version        : tagVersions[0]
+                                        ]
+                                ])
                             }
-                            dockerHelper.buildImage([
-                                    dockerfile: 'docker/openldap/Dockerfile',
-                                    imageName : 'registry.dev.zextras.com/dev/carbonio-openldap',
-                                    imageTags : tagVersions,
-                                    ocLabels  : [
-                                            title          : 'Carbonio OpenLDAP',
-                                            descriptionFile: 'docker/openldap/description.md',
-                                            version        : tagVersions[0]
-                                    ]
-                            ])
-                        }
                     }
                 }
             }
@@ -146,7 +147,7 @@ pipeline {
         stage('Build deb/rpm') {
             steps {
                 echo 'Building deb/rpm packages'
-                buildStage(buildFlags: ' -sd ')
+                buildStage(buildFlags: ' -sd ', useDefaultExcludes: false)
             }
         }
 
