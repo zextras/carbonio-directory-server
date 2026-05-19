@@ -8,6 +8,8 @@ package com.zimbra.cs.account;
 import static com.zimbra.common.account.ProvisioningConstants.FALSE;
 import static com.zimbra.common.account.ProvisioningConstants.TRUE;
 
+import com.zextras.entry.IEntry;
+import com.zextras.entry.IProvisioning;
 import com.zimbra.common.account.ZAttr;
 import com.zimbra.common.account.ZAttrProvisioning;
 import com.zimbra.common.util.ByteUtil;
@@ -18,17 +20,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /** AUTO-GENERATED. DO NOT EDIT. */
-public abstract class ZAttrAccount extends MailTarget {
+public interface ZAttrAccount<T extends IProvisioning> extends IEntry {
 
-  protected ZAttrAccount(
-      String name,
-      String id,
-      Map<String, Object> attrs,
-      Map<String, Object> defaults,
-      Provisioning prov) {
-    super(name, id, attrs, defaults, prov);
-  }
-
+  T getProvisioning();
 
   ///// BEGIN-AUTO-GEN-REPLACE
 

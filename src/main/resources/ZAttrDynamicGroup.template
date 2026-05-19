@@ -8,27 +8,22 @@ package com.zimbra.cs.account;
 import static com.zimbra.common.account.ProvisioningConstants.FALSE;
 import static com.zimbra.common.account.ProvisioningConstants.TRUE;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
+import com.zextras.entry.IEntry;
+import com.zextras.entry.IProvisioning;
 import com.zimbra.common.account.ZAttr;
 import com.zimbra.common.account.ZAttrProvisioning;
 import com.zimbra.common.util.StringUtil;
 import com.zimbra.cs.ldap.LdapDateUtil;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
-/**
- * AUTO-GENERATED. DO NOT EDIT.
- *
- */
-public abstract class ZAttrDynamicGroup extends Group {
+/** AUTO-GENERATED. DO NOT EDIT. */
+public interface ZAttrDynamicGroup<T extends IProvisioning> extends IEntry {
 
-    protected ZAttrDynamicGroup(String name, String id, Map<String, Object> attrs, Provisioning prov) {
-        super(name, id, attrs, prov);
-    }
+  T getProvisioning();
 
   ///// BEGIN-AUTO-GEN-REPLACE
 
   ///// END-AUTO-GEN-REPLACE
-
- }
+}
