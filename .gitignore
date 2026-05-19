@@ -1,6 +1,8 @@
-/src/ldap/generated/
+mailbox-attribute-manager/src/ldap/generated/
 target/
 /artifacts/
 /.flattened-pom.xml
 .idea
 .vscode
+/zattr/.flattened-pom.xml
+/mailbox-attribute-manager/.flattened-pom.xml
