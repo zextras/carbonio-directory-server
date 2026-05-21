@@ -7,7 +7,7 @@ package com.zimbra.cs.util;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * A helper class for converting human readable size strings to bytes.
