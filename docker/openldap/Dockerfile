@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM maven:3-eclipse-temurin-21-alpine AS build
+FROM --platform=$BUILDPLATFORM docker.io/library/maven:3-eclipse-temurin-21-alpine AS build
 RUN apk add --no-cache git
 WORKDIR /build
 
@@ -9,7 +9,7 @@ COPY src src
 
 RUN --mount=type=cache,target=/root/.m2 mvn clean install -DskipTests
 
-FROM --platform=$BUILDPLATFORM ubuntu:jammy AS openldap-installer
+FROM --platform=$BUILDPLATFORM docker.io/library/ubuntu:jammy AS openldap-installer
 
 ARG TARGETARCH
 ARG BUILDARCH=amd64
@@ -59,7 +59,7 @@ RUN apt-get update \
  && cp /etc/passwd /etc/group /staging/etc/ \
  && rm -rf /var/lib/apt/lists/*
 
-FROM --platform=$TARGETPLATFORM ubuntu:jammy
+FROM --platform=$TARGETPLATFORM docker.io/library/ubuntu:jammy
 
 # Copy extracted openldap tree — no RUN needed, no QEMU required
 COPY --from=openldap-installer /staging/opt /opt
