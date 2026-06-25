@@ -1,5 +1,5 @@
 library(
-        identifier: 'jenkins-lib-common@v2.10.0',
+        identifier: 'jenkins-lib-common@v2.11.3',
         retriever: modernSCM([
                 $class       : 'GitSCMSource',
                 credentialsId: 'jenkins-integration-with-github-account',
@@ -43,9 +43,7 @@ pipeline {
         stage('Setup') {
             steps {
                 checkout scm
-                script {
-                    gitMetadata()
-                }
+                gitMetadata()
             }
         }
 
@@ -111,36 +109,23 @@ pipeline {
             }
         }
 
-        stage('Publish containers') {
+
+        stage('Docker images') {
             when {
                 expression {
                     return isBuildingTag() || env.BRANCH_NAME == 'devel'
                 }
             }
             steps {
-                container('dind') {
-                    withDockerRegistry(credentialsId: 'private-registry', url: 'https://registry.dev.zextras.com') {
-                            script {
-                                Set<String> tagVersions = []
-                                if (isBuildingTag()) {
-                                    tagVersions = [env.TAG_NAME, 'stable']
-                                } else {
-                                    tagVersions = ['devel', 'latest']
-                                }
-                                dockerHelper.buildImage([
-                                        dockerfile: 'docker/openldap/Dockerfile',
-                                        imageName : 'registry.dev.zextras.com/dev/carbonio-openldap',
-                                        imageTags : tagVersions,
-                                        platforms : ['linux/amd64', 'linux/arm64'] as Set,
-                                        ocLabels  : [
-                                                title          : 'Carbonio OpenLDAP',
-                                                descriptionFile: 'docker/openldap/description.md',
-                                                version        : tagVersions[0]
-                                        ]
-                                ])
-                            }
-                    }
-                }
+                dockerStage([
+                        dockerfile: 'docker/openldap/Dockerfile',
+                        imageName : 'carbonio-openldap',
+                        ocLabels  : [
+                                title          : 'Carbonio OpenLDAP',
+                                descriptionFile: 'docker/openldap/description.md'
+                        ],
+                        platforms : ['linux/amd64', 'linux/arm64'] as Set,
+                ])
             }
         }
 
@@ -162,9 +147,6 @@ pipeline {
         }
 
         stage('Upload artifacts') {
-            when {
-                expression { return uploadStage.shouldUpload() }
-            }
             tools {
                 jfrog 'jfrog-cli'
             }
@@ -173,11 +155,9 @@ pipeline {
             }
         }
 
-        stage('Bump version') {
+        stage('Semantic Release') {
             steps {
-                script {
-                    dt2_semanticRelease()
-                }
+                semanticRelease()
             }
         }
     }

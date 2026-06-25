@@ -16,6 +16,7 @@ priority="optional"
 arch=('any')
 depends=(
   "carbonio-core"
+  "carbonio-openldap"
   "carbonio-prometheus-openldap-exporter"
 )
 
