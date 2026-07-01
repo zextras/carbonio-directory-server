@@ -14,7 +14,6 @@ public enum AttributeServerType {
     mta,
     mailbox,
     logger,
-    snmp,
     ldap,
     spell,
     memcached,
