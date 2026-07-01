@@ -7020,7 +7020,8 @@ deprecatedSince="23.9.0">
   <desc>Specifies whether the http server should bound to localhost or not. This is an immutable property and is generated based on zimbraMailMode and zimbraMailBindAddress.</desc>
 </attr>
 
-<attr id="1381" name="zimbraFeatureCrocodocEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited"  since="8.0.0">
+<attr id="1381" name="zimbraFeatureCrocodocEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited"  since="8.0.0" deprecatedSince="26.6.0">
+  <deprecateDesc>Feature no longer supported</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>whether Crocodoc feature is enabled in the web client</desc>
 </attr>
