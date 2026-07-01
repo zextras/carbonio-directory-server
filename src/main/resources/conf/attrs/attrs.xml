@@ -7020,7 +7020,7 @@ deprecatedSince="23.9.0">
   <desc>Specifies whether the http server should bound to localhost or not. This is an immutable property and is generated based on zimbraMailMode and zimbraMailBindAddress.</desc>
 </attr>
 
-<attr id="1381" name="zimbraFeatureCrocodocEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited"  since="8.0.0" deprecatedSince="26.6.0">
+<attr id="1381" name="zimbraFeatureCrocodocEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited"  since="8.0.0" deprecatedSince="26.9.0">
   <deprecateDesc>Feature no longer supported</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>whether Crocodoc feature is enabled in the web client</desc>
@@ -7056,13 +7056,13 @@ deprecatedSince="23.9.0">
   <desc>Domains hosted on this deployment, accounts and groups of which are considered internal during sharing.  Applicable when zimbraInternalSharingCrossDomainEnabled is set to FALSE.</desc>
 </attr>
 
-<attr id="1388" name="zimbraFeatureSocialcastEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited"  since="8.0.0" deprecatedSince="26.6.0">
+<attr id="1388" name="zimbraFeatureSocialcastEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited"  since="8.0.0" deprecatedSince="26.9.0">
   <deprecateDesc>Feature no longer supported</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>whether Socialcast integration is enabled in the web client</desc>
 </attr>
 
-<attr id="1389" name="zimbraSocialcastURL" type="string" max="256" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited"  since="8.0.0" deprecatedSince="26.6.0">
+<attr id="1389" name="zimbraSocialcastURL" type="string" max="256" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited"  since="8.0.0" deprecatedSince="26.9.0">
   <deprecateDesc>Feature no longer supported</deprecateDesc>
   <desc>URL for Socialcast integration</desc>
 </attr>
@@ -7202,7 +7202,8 @@ deprecatedSince="23.9.0">
     This attribute is applicable for accounts having zimbraIsExternalVirtualAccount set to TRUE.</desc>
 </attr>
 
-<attr id="1415" name="zimbraMessageChannelPort" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" callback="CheckPortConflict" requiresRestart="mailbox" since="8.0.0">
+<attr id="1415" name="zimbraMessageChannelPort" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" callback="CheckPortConflict" requiresRestart="mailbox" since="8.0.0" deprecatedSince="26.9.0">
+  <deprecateDesc>Feature no longer supported</deprecateDesc>
   <globalConfigValue>7285</globalConfigValue>
   <desc>port number on which message channel should listen</desc>
 </attr>
@@ -7216,7 +7217,8 @@ deprecatedSince="23.9.0">
   <desc>Regex for identifying client types</desc>
 </attr>
 
-<attr id="1417" name="zimbraMessageChannelEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.0.0">
+<attr id="1417" name="zimbraMessageChannelEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.0.0" deprecatedSince="26.9.0">
+  <deprecateDesc>Feature no longer supported</deprecateDesc>
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>whether message channel service is enabled on this server</desc>
 </attr>
