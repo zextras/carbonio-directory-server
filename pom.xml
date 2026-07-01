@@ -411,6 +411,21 @@
               </systemProperties>
             </configuration>
           </execution>
+          <execution>
+            <id>generate-domainadmin-rights-xml-early</id>
+            <phase>process-test-classes</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>com.zimbra.cs.account.generators.RightDomainAdminResourceGenerator
+              </mainClass>
+              <arguments>
+                <argument>-o</argument>
+                <argument>${generated-resources}/conf/rights</argument>
+              </arguments>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -469,28 +484,6 @@
             <goals>
               <goal>run</goal>
             </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
-            <id>generate-domainadmin-rights-xml-early</id>
-            <phase>process-test-classes</phase>
-            <goals>
-              <goal>java</goal>
-            </goals>
-            <configuration>
-              <mainClass>com.zimbra.cs.account.generators.RightDomainAdminResourceGenerator
-              </mainClass>
-              <arguments>
-                <argument>-o</argument>
-                <argument>${generated-resources}/conf/rights</argument>
-              </arguments>
-            </configuration>
           </execution>
         </executions>
       </plugin>
