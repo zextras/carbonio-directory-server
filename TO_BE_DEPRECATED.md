@@ -1,9 +1,9 @@
 # To Be Deprecated
 
-- `zimbraAdminConsoleCatchAllAddressEnabled`
-- `zimbraAdminConsoleLDAPAuthEnabled`
-- `zimbraAdminConsoleLoginMessage`
-- `zimbraAdminConsoleLogoutURL`
+- ✅ `zimbraAdminConsoleCatchAllAddressEnabled`
+- ✅ `zimbraAdminConsoleLDAPAuthEnabled`
+- ✅ `zimbraAdminConsoleLoginMessage`
+- ⚠️ `zimbraAdminConsoleLogoutURL`
 - `zimbraAdminConsoleSkinEnabled`
 - `zimbraAdminImapImportNumThreads`
 - `zimbraAmavisDomainDisclaimerHTML`
