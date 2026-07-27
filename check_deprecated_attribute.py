@@ -27,13 +27,21 @@ def run_gh(*arguments: str) -> str:
     return result.stdout
 
 
-def first_unmarked_attribute(lines: list[str]) -> tuple[int, str, str] | None:
+def unmarked_attributes(lines: list[str]) -> list[tuple[int, str, str]]:
+    entries = []
     for index, line in enumerate(lines):
         body = line.rstrip("\r\n")
         match = ENTRY_PATTERN.fullmatch(body)
         if match and match.group("marker") is None:
-            return index, match.group("prefix"), match.group("attribute")
-    return None
+            entries.append((index, match.group("prefix"), match.group("attribute")))
+    return entries
+
+
+def is_rate_limit_error(error: subprocess.CalledProcessError) -> bool:
+    message = "\n".join(
+        part for part in (error.stderr, error.stdout, str(error)) if part
+    )
+    return bool(re.search(r"\brate[\s_-]?limit(?:ed|er|ing)?\b", message, re.IGNORECASE))
 
 
 def is_mock_path(path: str) -> bool:
@@ -75,20 +83,41 @@ def is_used_in_active_repository(attribute: str) -> bool:
 
 def main() -> int:
     lines = ATTRIBUTES_FILE.read_text(encoding="utf-8").splitlines(keepends=True)
-    entry = first_unmarked_attribute(lines)
-    if entry is None:
+    entries = unmarked_attributes(lines)
+    if not entries:
         print("Nessun attributo senza emoji da controllare.")
         return 0
 
-    index, prefix, attribute = entry
-    used = is_used_in_active_repository(attribute)
-    marker = "⚠️" if used else "✅"
-    line_ending = lines[index][len(lines[index].rstrip("\r\n")) :]
-    lines[index] = f"{prefix}{marker} `{attribute}`{line_ending}"
-    ATTRIBUTES_FILE.write_text("".join(lines), encoding="utf-8")
+    checked = 0
+    for index, prefix, attribute in entries:
+        try:
+            used = is_used_in_active_repository(attribute)
+        except subprocess.CalledProcessError as error:
+            message = (error.stderr or "").strip() or str(error)
+            if is_rate_limit_error(error):
+                print(
+                    f"Rate limit GitHub raggiunto durante il controllo di {attribute}: "
+                    f"{message}",
+                    file=sys.stderr,
+                )
+                return 2
 
-    status = "utilizzato" if used else "non utilizzato"
-    print(f"{marker} {attribute} {status} nei repository attivi di {ORGANIZATION}.")
+            print(
+                f"Errore di gh durante il controllo di {attribute}: {message}",
+                file=sys.stderr,
+            )
+            return 1
+
+        marker = "⚠️" if used else "✅"
+        line_ending = lines[index][len(lines[index].rstrip("\r\n")) :]
+        lines[index] = f"{prefix}{marker} `{attribute}`{line_ending}"
+        ATTRIBUTES_FILE.write_text("".join(lines), encoding="utf-8")
+
+        checked += 1
+        status = "utilizzato" if used else "non utilizzato"
+        print(f"{marker} {attribute} {status} nei repository attivi di {ORGANIZATION}.")
+
+    print(f"Controllo completato: {checked} attributi controllati.")
     return 0
 
 
@@ -97,8 +126,4 @@ if __name__ == "__main__":
         raise SystemExit(main())
     except FileNotFoundError as error:
         print(f"Errore: comando o file non trovato: {error.filename}", file=sys.stderr)
-        raise SystemExit(1)
-    except subprocess.CalledProcessError as error:
-        message = error.stderr.strip() or str(error)
-        print(f"Errore durante l'esecuzione di gh: {message}", file=sys.stderr)
         raise SystemExit(1)

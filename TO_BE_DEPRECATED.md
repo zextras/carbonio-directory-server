@@ -4,9 +4,9 @@
 - ✅ `zimbraAdminConsoleLDAPAuthEnabled`
 - ✅ `zimbraAdminConsoleLoginMessage`
 - ⚠️ `zimbraAdminConsoleLogoutURL`
-- `zimbraAdminConsoleSkinEnabled`
-- `zimbraAdminImapImportNumThreads`
-- `zimbraAmavisDomainDisclaimerHTML`
+- ✅ `zimbraAdminConsoleSkinEnabled`
+- ⚠️ `zimbraAdminImapImportNumThreads`
+- ⚠️ `zimbraAmavisDomainDisclaimerHTML`
 - `zimbraAmavisDomainDisclaimerText`
 - `zimbraAmavisDSPAMEnabled`
 - `zimbraAmavisEnableDKIMVerification`
