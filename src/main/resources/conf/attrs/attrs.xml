@@ -408,9 +408,10 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>mail delivery status (enabled/disabled)</desc>
 </attr>
 
-<attr id="16" name="zimbraMailQuota" type="long" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable">
+<attr id="16" name="zimbraMailQuota" type="long" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" deprecatedSince="26.9.0">
   <defaultCOSValue>0</defaultCOSValue>
   <desc>mail quota in bytes</desc>
+  <deprecateDesc>deprecated in favor of the new unified quota management system</deprecateDesc>
 </attr>
 
 <attr id="17" name="zimbraPrefMailSignature" type="string" cardinality="single" optionalIn="account,identity,signature" flags="domainAdminModifiable" callback="MailSignature">
@@ -6703,35 +6704,41 @@ deprecatedSince="23.9.0">
   <desc>how long a file version is kept around</desc>
 </attr>
 
-<attr id="1326" name="zimbraMailDomainQuota" type="long" min="0" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0">
+<attr id="1326" name="zimbraMailDomainQuota" type="long" min="0" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0" deprecatedSince="26.9.0">
   <globalConfigValue>0</globalConfigValue>
   <desc>
     Maximum mailbox quota for the domain in bytes.
     The effective quota for a mailbox would be the minimum of this and zimbraMailQuota.
   </desc>
+  <deprecateDesc>deprecated in favor of the new unified quota management system</deprecateDesc>
 </attr>
 
-<attr id="1327" name="zimbraDomainAggregateQuota" type="long" min="0" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0">
+<attr id="1327" name="zimbraDomainAggregateQuota" type="long" min="0" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0" deprecatedSince="26.9.0">
   <globalConfigValue>0</globalConfigValue>
   <desc>maximum aggregate quota for the domain in bytes</desc>
+  <deprecateDesc>deprecated in favor of the new unified quota management system</deprecateDesc>
 </attr>
 
-<attr id="1328" name="zimbraAggregateQuotaLastUsage" type="long" min="0" cardinality="single" optionalIn="domain" since="8.0.0">
+<attr id="1328" name="zimbraAggregateQuotaLastUsage" type="long" min="0" cardinality="single" optionalIn="domain" since="8.0.0" deprecatedSince="26.9.0">
   <desc>last calculated aggregate quota usage for the domain in bytes</desc>
+  <deprecateDesc>deprecated in favor of the new unified quota management system</deprecateDesc>
 </attr>
 
-<attr id="1329" name="zimbraDomainAggregateQuotaPolicy" type="enum" value="ALLOWSENDRECEIVE,BLOCKSEND,BLOCKSENDRECEIVE" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0">
+<attr id="1329" name="zimbraDomainAggregateQuotaPolicy" type="enum" value="ALLOWSENDRECEIVE,BLOCKSEND,BLOCKSENDRECEIVE" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0" deprecatedSince="26.9.0">
   <globalConfigValue>ALLOWSENDRECEIVE</globalConfigValue>
   <desc>policy for a domain whose quota usage is above zimbraDomainAggregateQuota</desc>
+  <deprecateDesc>deprecated in favor of the new unified quota management system</deprecateDesc>
 </attr>
 
-<attr id="1330" name="zimbraDomainAggregateQuotaWarnPercent" type="integer" min="0" max="100" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0">
+<attr id="1330" name="zimbraDomainAggregateQuotaWarnPercent" type="integer" min="0" max="100" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0" deprecatedSince="26.9.0">
   <globalConfigValue>80</globalConfigValue>
   <desc>percentage threshold for domain aggregate quota warnings</desc>
+  <deprecateDesc>deprecated in favor of the new unified quota management system</deprecateDesc>
 </attr>
 
-<attr id="1331" name="zimbraDomainAggregateQuotaWarnEmailRecipient" type="email" cardinality="multi" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0">
+<attr id="1331" name="zimbraDomainAggregateQuotaWarnEmailRecipient" type="email" cardinality="multi" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0" deprecatedSince="26.9.0">
   <desc>email recipients to be notified when zimbraAggregateQuotaLastUsage reaches zimbraDomainAggregateQuotaWarnPercent of the zimbraDomainAggregateQuota</desc>
+  <deprecateDesc>deprecated in favor of the new unified quota management system</deprecateDesc>
 </attr>
 
 <attr id="1332" name="zimbraReverseProxyErrorHandlerURL" type="string" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" since="8.0.0">
