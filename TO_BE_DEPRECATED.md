@@ -7,519 +7,519 @@
 - ✅ `zimbraAdminConsoleSkinEnabled`
 - ⚠️ `zimbraAdminImapImportNumThreads`
 - ⚠️ `zimbraAmavisDomainDisclaimerHTML`
-- `zimbraAmavisDomainDisclaimerText`
-- `zimbraAmavisDSPAMEnabled`
-- `zimbraAmavisEnableDKIMVerification`
-- `zimbraAmavisFinalSpamDestiny`
-- `zimbraAmavisLogLevel`
-- `zimbraAmavisMaxServers`
-- `zimbraAmavisOriginatingBypassSA`
-- `zimbraAmavisOutboundDisclaimersOnly`
-- `zimbraAmavisSALogLevel`
-- `zimbraAPNSCertificate`
-- `zimbraAPNSCertificatePassword`
-- `zimbraAPNSProduction`
-- `zimbraAppSpecificPasswordLength`
-- `zimbraArchiveMailFrom`
-- `zimbraAttachmentsScanClass`
-- `zimbraAvailableSkin`
-- `zimbraBackupAutoGroupedInterval`
-- `zimbraBackupAutoGroupedNumGroups`
-- `zimbraBackupAutoGroupedThrottled`
-- `zimbraBackupMinFreeSpace`
-- `zimbraBackupMode`
-- `zimbraBackupReportEmailRecipients`
-- `zimbraBackupReportEmailSender`
-- `zimbraBackupReportEmailSubjectPrefix`
-- `zimbraBackupSkipBlobs`
-- `zimbraBackupSkipHsmBlobs`
-- `zimbraBackupSkipSearchIndex`
-- `zimbraBackupTarget`
-- `zimbraCalendarCalDavDefaultCalendarId`
-- `zimbraCalendarCompatibilityMode`
-- `zimbraCalendarLocationDisabledFields`
-- `zimbraCBPolicydAccessControlEnabled`
-- `zimbraCBPolicydAccountingEnabled`
-- `zimbraCBPolicydAmavisEnabled`
-- `zimbraCBPolicydBindPort`
-- `zimbraCBPolicydBypassMode`
-- `zimbraCBPolicydBypassTimeout`
-- `zimbraCBPolicydCheckHeloEnabled`
-- `zimbraCBPolicydCheckSPFEnabled`
-- `zimbraCBPolicydGreylistingBlacklistMsg`
-- `zimbraCBPolicydGreylistingDeferMsg`
-- `zimbraCBPolicydGreylistingEnabled`
-- `zimbraCBPolicydGreylistingTrainingEnabled`
-- `zimbraCBPolicydLogLevel`
-- `zimbraCBPolicydMaxRequests`
-- `zimbraCBPolicydMaxServers`
-- `zimbraCBPolicydMaxSpareServers`
-- `zimbraCBPolicydMinServers`
-- `zimbraCBPolicydMinSpareServers`
-- `zimbraCBPolicydQuotasEnabled`
-- `zimbraCBPolicydTimeoutBusy`
-- `zimbraCBPolicydTimeoutIdle`
-- `zimbraCertAuthorityCertSelfSigned`
-- `zimbraCertAuthorityKeySelfSigned`
-- `zimbraClamAVBindAddress`
-- `zimbraClamAVDatabaseMirror`
-- `zimbraClamAVListenPort`
-- `zimbraClamAVMaxThreads`
-- `zimbraClientTypeRegex`
-- `zimbraClusterType`
-- `zimbraCommunityAPIClientID`
-- `zimbraCommunityAPIClientSecret`
-- `zimbraCommunityBaseURL`
-- `zimbraCommunityHomeURL`
-- `zimbraCommunityID`
-- `zimbraCommunityUsernameMapping`
-- `zimbraComponentAvailable`
-- `zimbraConfiguredServerIDForBlobDirEnabled`
-- `zimbraContactSearchDecomposition`
-- `zimbraConvertdURL`
-- `zimbraConverterHints`
-- `zimbraConvertPoolTimeout`
-- `zimbraCsrfAllowedRefererHosts`
-- `zimbraCsrfRefererCheckEnabled`
-- `zimbraCustomerCareTier`
-- `zimbraCustomMimeHeaderNameAllowed`
-- `zimbraDataSourceIsZmgProxy`
-- `zimbraDebugInfo`
-- `zimbraDefaultFolderFlags`
-- `zimbraDeviceCalendarSoftDeleteExcludePattern`
-- `zimbraDevicePasscodeLockoutDuration`
-- `zimbraDNSTCPUpstream`
-- `zimbraDomainAggregateQuota`
-- `zimbraDomainAggregateQuotaPolicy`
-- `zimbraDomainAggregateQuotaWarnEmailRecipient`
-- `zimbraDomainAggregateQuotaWarnPercent`
-- `zimbraDomainMandatoryMailSignatureEnabled`
-- `zimbraDriveOwnCloudURL`
-- `zimbraEmptyFolderOpTimeout`
-- `zimbraErrorReportUrl`
-- `zimbraExtensionBindAddress`
-- `zimbraExternalAccountDisabledTime`
-- `zimbraExternalAccountStatusCheckInterval`
-- `zimbraExternalGroupHandlerClass`
-- `zimbraExternalGroupLdapSearchBase`
-- `zimbraExternalShareInvitationUrlExpiration`
-- `zimbraExternalShareWhitelistDomain`
-- `zimbraFeatureCalendarUpsellURL`
-- `zimbraFeatureContactsUpsellURL`
-- `zimbraFeatureMailUpsellURL`
-- `zimbraFeatureSocialExternalURL`
-- `zimbraFeatureSocialName`
-- `zimbraFeatureVoiceUpsellURL`
-- `zimbraFileDeletionNotificationBody`
-- `zimbraFileDeletionNotificationSubject`
-- `zimbraFileExpirationWarningBody`
-- `zimbraFileExpirationWarningSubject`
-- `zimbraFileExpirationWarningThreshold`
-- `zimbraFileLifetime`
-- `zimbraFileVersioningEnabled`
-- `zimbraFileVersionLifetime`
-- `zimbraForceClearCookies`
-- `zimbraForeignNameHandler`
-- `zimbraFreebusyPropagationRetryInterval`
-- `zimbraGalSyncMaxConcurrentClients`
-- `zimbraGalSyncSizeLimit`
-- `zimbraGCMAuthorizationKey`
-- `zimbraGCMSenderId`
-- `zimbraGCMUrl`
-- `zimbraGlobalConfigExtraObjectClass`
-- `zimbraHelpAdminURL`
-- `zimbraHelpAdvancedURL`
-- `zimbraHelpDelegatedURL`
-- `zimbraHelpStandardURL`
-- `zimbraHierarchicalAddressBookRoot`
-- `zimbraHsmBatchSize`
-- `zimbraHsmMovePreviousRevisions`
-- `zimbraHttpCompressionEnabled`
-- `zimbraHttpConnectorMaxIdleTimeMillis`
-- `zimbraHttpContextPathBasedThreadPoolBalancingFilterRules`
-- `zimbraHttpDosFilterDelayMillis`
-- `zimbraHttpDosFilterMaxRequestsPerSec`
-- `zimbraHttpHeaderCacheSize`
-- `zimbraHttpMaxFormContentSize`
-- `zimbraHttpNumThreads`
-- `zimbraHttpOutputBufferSize`
-- `zimbraHttpRequestHeaderSize`
-- `zimbraHttpResponseHeaderSize`
-- `zimbraHttpThreadPoolMaxIdleTimeMillis`
-- `zimbraHttpThrottleSafeIPs`
-- `zimbraImapBindOnStartup`
-- `zimbraImapDisplayMailFoldersOnly`
-- `zimbraImapInactiveSessionEhcacheMaxDiskSize`
-- `zimbraImapLoadBalancingAlgorithm`
-- `zimbraImapSSLBindOnStartup`
-- `zimbraInternalSendersDomain`
-- `zimbraInternalSharingCrossDomainEnabled`
-- `zimbraInternalSharingDomain`
-- `zimbraInvalidLoginFilterDelayInMinBetwnReqBeforeReinstating`
-- `zimbraInvalidLoginFilterMaxFailedLogin`
-- `zimbraInvalidLoginFilterMaxSizeOfFailedIpDb`
-- `zimbraInvalidLoginFilterReinstateIpTaskIntervalInMin`
-- `zimbraIPMode`
-- `zimbraIsCustomerCareAccount`
-- `zimbraIsMobileGatewayAppAccount`
-- `zimbraIsMonitorHost`
-- `zimbraItemActionBatchSize`
-- `zimbraLastPurgeMaxDuration`
-- `zimbraLdapGalSyncDisabled`
-- `zimbraLdapGentimeFractionalSecondsEnabled`
-- `zimbraLDAPSchemaVersion`
-- `zimbraLmtpBindOnStartup`
-- `zimbraLogRawLifetime`
-- `zimbraLogSummaryLifetime`
-- `zimbraLogToSyslog`
-- `zimbraMailAddressValidationRegex`
-- `zimbraMailboxdSSLRenegotiationAllowed`
-- `zimbraMailboxLocationBeforeMove`
-- `zimbraMailboxMoveFailedCleanupTaskInterval`
-- `zimbraMailboxMoveSkipBlobs`
-- `zimbraMailboxMoveSkipHsmBlobs`
-- `zimbraMailboxMoveSkipSearchIndex`
-- `zimbraMailboxMoveTempDir`
-- `zimbraMailboxThrottleReapInterval`
-- `zimbraMailContentMaxSize`
-- `zimbraMailEmptyFolderBatchSize`
-- `zimbraMailFileDescriptorBufferSize`
-- `zimbraMailProxyMaxFails`
-- `zimbraMailProxyReconnectTimeout`
-- `zimbraMailRedirectSetEnvelopeSender`
-- `zimbraMailSSLClientCertBindAddress`
-- `zimbraMailSSLClientCertOCSPEnabled`
-- `zimbraMailSSLClientCertPrincipalMapLdapFilterEnabled`
-- `zimbraMailUseDirectBuffers`
-- `zimbraMessageIdDedupeCacheSize`
-- `zimbraMessageIdDedupeCacheTimeout`
-- `zimbraMobileGatewayDefaultAppAccountDomainId`
-- `zimbraMobileGatewayDefaultProxyAccountDomainId`
-- `zimbraMobileGatewayProxyImapConnectionType`
-- `zimbraMobileGatewayProxyImapHost`
-- `zimbraMobileGatewayProxyImapPort`
-- `zimbraMobileGatewayProxySmtpConnectionType`
-- `zimbraMobileGatewayProxySmtpHost`
-- `zimbraMobileGatewayProxySmtpPort`
-- `zimbraMobileItemsToTrackPerFolderMaxSize`
-- `zimbraMobileMaxMessageSize`
-- `zimbraMobileMetadataMaxSizeEnabled`
-- `zimbraMobileMetadataRetentionPolicy`
-- `zimbraMobileNotificationAdminAddress`
-- `zimbraMobilePolicyApprovedApplication`
-- `zimbraMobileSyncKeyFormatConvertedFolders`
-- `zimbraMtaAddressVerifyNegativeRefreshTime`
-- `zimbraMtaAddressVerifyPollCount`
-- `zimbraMtaAddressVerifyPollDelay`
-- `zimbraMtaAddressVerifyPositiveRefreshTime`
-- `zimbraMtaAliasMaps`
-- `zimbraMtaAlwaysAddMissingHeaders`
-- `zimbraMtaAntiSpamLockMethod`
-- `zimbraMtaAuthBindAddress`
-- `zimbraMtaBlockedExtension`
-- `zimbraMtaBlockedExtensionWarnAdmin`
-- `zimbraMtaBlockedExtensionWarnRecipient`
-- `zimbraMtaBounceNoticeRecipient`
-- `zimbraMtaBounceQueueLifetime`
-- `zimbraMtaBrokenSaslAuthClients`
-- `zimbraMtaCanonicalMaps`
-- `zimbraMtaCommandDirectory`
-- `zimbraMtaCommonBlockedExtension`
-- `zimbraMtaDaemonDirectory`
-- `zimbraMtaDefaultProcessLimit`
-- `zimbraMtaDelayWarningTime`
-- `zimbraMtaEnableSmtpdPolicyd`
-- `zimbraMtaFallbackRelayHost`
-- `zimbraMtaHeaderChecks`
-- `zimbraMtaHopcountLimit`
-- `zimbraMtaImportEnvironment`
-- `zimbraMtaInFlowDelay`
-- `zimbraMtaLmdbMapSize`
-- `zimbraMtaLmtpConnectionCacheDestinations`
-- `zimbraMtaLmtpConnectionCacheTimeLimit`
-- `zimbraMtaLmtpHostLookup`
-- `zimbraMtaLmtpTlsCAfile`
-- `zimbraMtaLmtpTlsCApath`
-- `zimbraMtaLmtpTlsCiphers`
-- `zimbraMtaLmtpTlsExcludeCiphers`
-- `zimbraMtaLmtpTlsLoglevel`
-- `zimbraMtaLmtpTlsMandatoryCiphers`
-- `zimbraMtaLmtpTlsMandatoryProtocols`
-- `zimbraMtaLmtpTlsProtocols`
-- `zimbraMtaLmtpTlsSecurityLevel`
-- `zimbraMtaMailqPath`
-- `zimbraMtaManpageDirectory`
-- `zimbraMtaMaximalBackoffTime`
-- `zimbraMtaMaximalQueueLifetime`
-- `zimbraMtaMaxUse`
-- `zimbraMtaMilterCommandTimeout`
-- `zimbraMtaMilterConnectTimeout`
-- `zimbraMtaMilterContentTimeout`
-- `zimbraMtaMilterDefaultAction`
-- `zimbraMtaMinimalBackoffTime`
-- `zimbraMtaMyDestination`
-- `zimbraMtaMyHostname`
-- `zimbraMtaMyNetworks`
-- `zimbraMtaMyOrigin`
-- `zimbraMtaNewaliasesPath`
-- `zimbraMtaNonSmtpdMilters`
-- `zimbraMtaNotifyClasses`
-- `zimbraMtaPolicyTimeLimit`
-- `zimbraMtaPostscreenAccessList`
-- `zimbraMtaPostscreenBareNewlineAction`
-- `zimbraMtaPostscreenBareNewlineEnable`
-- `zimbraMtaPostscreenBareNewlineTTL`
-- `zimbraMtaPostscreenBlacklistAction`
-- `zimbraMtaPostscreenCacheCleanupInterval`
-- `zimbraMtaPostscreenCacheRetentionTime`
-- `zimbraMtaPostscreenCommandCountLimit`
-- `zimbraMtaPostscreenDnsblAction`
-- `zimbraMtaPostscreenDnsblMaxTTL`
-- `zimbraMtaPostscreenDnsblMinTTL`
-- `zimbraMtaPostscreenDnsblReplyMap`
-- `zimbraMtaPostscreenDnsblSites`
-- `zimbraMtaPostscreenDnsblThreshold`
-- `zimbraMtaPostscreenDnsblTimeout`
-- `zimbraMtaPostscreenDnsblTTL`
-- `zimbraMtaPostscreenDnsblWhitelistThreshold`
-- `zimbraMtaPostscreenGreetAction`
-- `zimbraMtaPostscreenGreetTTL`
-- `zimbraMtaPostscreenNonSmtpCommandAction`
-- `zimbraMtaPostscreenNonSmtpCommandEnable`
-- `zimbraMtaPostscreenNonSmtpCommandTTL`
-- `zimbraMtaPostscreenPipeliningAction`
-- `zimbraMtaPostscreenPipeliningEnable`
-- `zimbraMtaPostscreenPipeliningTTL`
-- `zimbraMtaPostscreenWatchdogTimeout`
-- `zimbraMtaPostscreenWhitelistInterfaces`
-- `zimbraMtaPropagateUnmatchedExtensions`
-- `zimbraMtaQueueDirectory`
-- `zimbraMtaQueueRunDelay`
-- `zimbraMtaRestriction`
-- `zimbraMtaSaslAuthEnable`
-- `zimbraMtaSaslSmtpdMechList`
-- `zimbraMtaSenderCanonicalMaps`
-- `zimbraMtaSendmailPath`
-- `zimbraMtaSmtpCnameOverridesServername`
-- `zimbraMtaSmtpdBanner`
-- `zimbraMtaSmtpdClientAuthRateLimit`
-- `zimbraMtaSmtpdClientPortLogging`
-- `zimbraMtaSmtpdClientRestrictions`
-- `zimbraMtaSmtpdDataRestrictions`
-- `zimbraMtaSmtpdErrorSleepTime`
-- `zimbraMtaSmtpdHardErrorLimit`
-- `zimbraMtaSmtpdHeloRequired`
-- `zimbraMtaSmtpdMilters`
-- `zimbraMtaSmtpDnsSupportLevel`
-- `zimbraMtaSmtpdProxyTimeout`
-- `zimbraMtaSmtpdSaslAuthenticatedHeader`
-- `zimbraMtaSmtpdSaslSecurityOptions`
-- `zimbraMtaSmtpdSaslTlsSecurityOptions`
-- `zimbraMtaSmtpdSoftErrorLimit`
-- `zimbraMtaSmtpdTlsAskCcert`
-- `zimbraMtaSmtpdTlsCAfile`
-- `zimbraMtaSmtpdTlsCApath`
-- `zimbraMtaSmtpdTlsCcertVerifydepth`
-- `zimbraMtaSmtpdTlsCiphers`
-- `zimbraMtaSmtpdTlsExcludeCiphers`
-- `zimbraMtaSmtpdTlsLoglevel`
-- `zimbraMtaSmtpdTlsMandatoryCiphers`
-- `zimbraMtaSmtpdTlsMandatoryProtocols`
-- `zimbraMtaSmtpdTlsProtocols`
-- `zimbraMtaSmtpdTlsReceivedHeader`
-- `zimbraMtaSmtpdVirtualTransport`
-- `zimbraMtaSmtpGenericMaps`
-- `zimbraMtaSmtpHeloName`
-- `zimbraMtaSmtpSaslAuthEnable`
-- `zimbraMtaSmtpSaslMechanismFilter`
-- `zimbraMtaSmtpSaslPasswordMaps`
-- `zimbraMtaSmtpSaslSecurityOptions`
-- `zimbraMtaSmtpTlsCAfile`
-- `zimbraMtaSmtpTlsCApath`
-- `zimbraMtaSmtpTlsCiphers`
-- `zimbraMtaSmtpTlsDaneInsecureMXPolicy`
-- `zimbraMtaSmtpTlsLoglevel`
-- `zimbraMtaSmtpTlsMandatoryCiphers`
-- `zimbraMtaSmtpTlsMandatoryProtocols`
-- `zimbraMtaSmtpTlsProtocols`
-- `zimbraMtaSmtpTlsSecurityLevel`
-- `zimbraMtaSmtpTransportRateDelay`
-- `zimbraMtaTlsAppendDefaultCA`
-- `zimbraMtaTlsAuthOnly`
-- `zimbraMtaTlsSecurityLevel`
-- `zimbraMtaTransportMaps`
-- `zimbraMtaUnverifiedRecipientDeferCode`
-- `zimbraMtaVirtualAliasDomains`
-- `zimbraMtaVirtualAliasExpansionLimit`
-- `zimbraMtaVirtualAliasMaps`
-- `zimbraMtaVirtualMailboxDomains`
-- `zimbraMtaVirtualMailboxMaps`
-- `zimbraMyoneloginSamlSigningCert`
-- `zimbraNetworkActivation`
-- `zimbraNetworkAdminNGEnabled`
-- `zimbraNetworkLicense`
-- `zimbraNetworkModulesNGEnabled`
-- `zimbraOAuthConsumerAPIScope`
-- `zimbraOAuthConsumerRedirectUri`
-- `zimbraObjectHandlerClass`
-- `zimbraObjectHandlerConfig`
-- `zimbraObjectIndexingEnabled`
-- `zimbraObjectStoreMatched`
-- `zimbraObjectType`
-- `zimbraOpenidConsumerAllowedOPEndpointURL`
-- `zimbraOpenidConsumerStatelessModeEnabled`
-- `zimbraOpenImapFolderRequestChunkSize`
-- `zimbraPop3BindOnStartup`
-- `zimbraPop3SSLBindOnStartup`
-- `zimbraPrefAcceptedClientTOS`
-- `zimbraPrefCalendarAcceptSignatureId`
-- `zimbraPrefCalendarDeclineSignatureId`
-- `zimbraPrefCalendarInitialCheckedCalendars`
-- `zimbraPrefCalendarReminderDeviceInfo`
-- `zimbraPrefCalendarTentativeSignatureId`
-- `zimbraPrefComposeDirection`
-- `zimbraPrefFont`
-- `zimbraPrefFromAddressType`
-- `zimbraPrefLabel`
-- `zimbraPrefListViewColumns`
-- `zimbraPrefMailFoldersCheckedForNewMsgIndicator`
-- `zimbraPrefOutOfOfficeExternalReplyEnabled`
-- `zimbraPrefOutOfOfficeFreeBusyStatus`
-- `zimbraPrefOutOfOfficeSpecificDomains`
-- `zimbraPrefOutOfOfficeSuppressExternalReply`
-- `zimbraPrefQuickCommand`
-- `zimbraPrefSortOrder`
-- `zimbraPrefSpellIgnorePattern`
-- `zimbraPrefTasksFilterBy`
-- `zimbraPrefWebClientOfflineBrowserKey`
-- `zimbraPrimaryEmailChangeHistory`
-- `zimbraProduct`
-- `zimbraPurgedConversationsQueueSize`
-- `zimbraRegexMaxAccessesWhenMatching`
-- `zimbraReverseProxyAcceptMutex`
-- `zimbraReverseProxyAdminEnabled`
-- `zimbraReverseProxyCacheEntryTTL`
-- `zimbraReverseProxyCacheFetchTimeout`
-- `zimbraReverseProxyCacheReconnectInterval`
-- `zimbraReverseProxyClientCertCA`
-- `zimbraReverseProxyClientCertMode`
-- `zimbraReverseProxyConnectTimeout`
-- `zimbraReverseProxyDefaultRealm`
-- `zimbraReverseProxyErrorHandlerURL`
-- `zimbraReverseProxyExactServerVersionCheck`
-- `zimbraReverseProxyGenConfigPerVirtualHostname`
-- `zimbraReverseProxyHttpEnabled`
-- `zimbraReverseProxyImapExposeVersionOnBanner`
-- `zimbraReverseProxyImapSaslGssapiEnabled`
-- `zimbraReverseProxyImapSaslPlainEnabled`
-- `zimbraReverseProxyImapStartTlsMode`
-- `zimbraReverseProxyIPLoginImapLimit`
-- `zimbraReverseProxyIPLoginImapLimitTime`
-- `zimbraReverseProxyIPLoginLimit`
-- `zimbraReverseProxyIPLoginLimitTime`
-- `zimbraReverseProxyIPLoginPop3Limit`
-- `zimbraReverseProxyIPLoginPop3LimitTime`
-- `zimbraReverseProxyIpThrottleMsg`
-- `zimbraReverseProxyIPThrottleWhitelist`
-- `zimbraReverseProxyIPThrottleWhitelistTime`
-- `zimbraReverseProxyLogLevel`
-- `zimbraReverseProxyMailEnabled`
-- `zimbraReverseProxyMailImapEnabled`
-- `zimbraReverseProxyMailImapsEnabled`
-- `zimbraReverseProxyMailPop3Enabled`
-- `zimbraReverseProxyMailPop3sEnabled`
-- `zimbraReverseProxyPassErrors`
-- `zimbraReverseProxyPop3EnabledCapability`
-- `zimbraReverseProxyPop3ExposeVersionOnBanner`
-- `zimbraReverseProxyPop3SaslGssapiEnabled`
-- `zimbraReverseProxyPop3SaslPlainEnabled`
-- `zimbraReverseProxyPop3StartTlsMode`
-- `zimbraReverseProxyRouteLookupTimeout`
-- `zimbraReverseProxyRouteLookupTimeoutCache`
-- `zimbraReverseProxySendImapId`
-- `zimbraReverseProxySendPop3Xoip`
-- `zimbraReverseProxySNIEnabled`
-- `zimbraReverseProxySSLCiphers`
-- `zimbraReverseProxySSLECDHCurve`
-- `zimbraReverseProxySSLProtocols`
-- `zimbraReverseProxySSLSessionCacheSize`
-- `zimbraReverseProxySSLSessionTimeout`
-- `zimbraReverseProxySSLToUpstreamEnabled`
-- `zimbraReverseProxyStrictServerNameEnabled`
-- `zimbraReverseProxyUpstreamConnectTimeout`
-- `zimbraReverseProxyUpstreamFairShmSize`
-- `zimbraReverseProxyUpstreamImapServers`
-- `zimbraReverseProxyUpstreamReadTimeout`
-- `zimbraReverseProxyUpstreamSendTimeout`
-- `zimbraReverseProxyUserLoginLimit`
-- `zimbraReverseProxyUserLoginLimitTime`
-- `zimbraReverseProxyUserThrottleMsg`
-- `zimbraReverseProxyWorkerConnections`
-- `zimbraReverseProxyWorkerProcesses`
-- `zimbraReverseProxyZmlookupCachingEnabled`
-- `zimbraScheduledTaskInitialRetryDelay`
-- `zimbraScheduledTaskMaxRetries`
-- `zimbraScheduledTaskMaxRetryDelay`
-- `zimbraScheduledTaskRetry`
-- `zimbraScheduledTaskRetryPolicy`
-- `zimbraServerId`
-- `zimbraShareNotificationMtaAuthAccount`
-- `zimbraShareNotificationMtaAuthPassword`
-- `zimbraShareNotificationMtaConnectionType`
-- `zimbraShareNotificationMtaEnabled`
-- `zimbraShareNotificationMtaHostname`
-- `zimbraShareNotificationMtaPort`
-- `zimbraSharingUpdatePublishInterval`
-- `zimbraShortTermAllEffectiveRightsCacheExpiration`
-- `zimbraShortTermAllEffectiveRightsCacheSize`
-- `zimbraShortTermGranteeCacheExpiration`
-- `zimbraShortTermGranteeCacheSize`
-- `zimbraSmtpEnableTrace`
-- `zimbraSmtpSendAddAuthenticatedUser`
-- `zimbraSmtpSendAddMailer`
-- `zimbraSmtpSendAddOriginatingIP`
-- `zimbraSpamKillPercent`
-- `zimbraSpamReportEnvelopeFrom`
-- `zimbraSpamReportSenderHeader`
-- `zimbraSpamReportTypeHam`
-- `zimbraSpamReportTypeHeader`
-- `zimbraSpamReportTypeSpam`
-- `zimbraSpamSubjectTag`
-- `zimbraSpamTagPercent`
-- `zimbraSpamTrainingSubjectPrefix`
-- `zimbraSpamTrashAlias`
-- `zimbraSpellAvailableDictionary`
-- `zimbraSSDBResourcePoolSize`
-- `zimbraSSDBResourcePoolTimeout`
-- `zimbraSshPublicKey`
-- `zimbraSslCaCert`
-- `zimbraSslCaKey`
-- `zimbraSSLDHParam`
-- `zimbraStandardClientCustomPrefTab`
-- `zimbraStatThreadNamePrefix`
-- `zimbraThreadMonitorEnabled`
-- `zimbraTwoFactorAuthHashAlgorithm`
-- `zimbraTwoFactorAuthLastReset`
-- `zimbraTwoFactorAuthLockoutFailureTime`
-- `zimbraTwoFactorAuthScratchCodeEncoding`
-- `zimbraTwoFactorAuthSecretEncoding`
-- `zimbraTwoFactorAuthSecretLength`
-- `zimbraTwoFactorAuthTrustedDeviceTokenKey`
-- `zimbraTwoFactorCodeLength`
-- `zimbraTwoFactorScratchCodeLength`
-- `zimbraTwoFactorTimeWindowLength`
-- `zimbraTwoFactorTimeWindowOffset`
-- `zimbraVirusBlockEncryptedArchive`
-- `zimbraVirusDefinitionsUpdateFrequency`
-- `zimbraVirusWarnAdmin`
-- `zimbraVirusWarnRecipient`
-- `zimbraWebClientAdminReference`
-- `zimbraWebClientSupportedHelps`
-- `zimbraWebClientURL`
-- `zimbraWebGzipEnabled`
-- `zimbraZimletContentObject`
-- `zimbraZimletDataSensitiveInMixedModeDisabled`
-- `zimbraZimletJspEnabled`
-- `zimbraZimletPanelItem`
-- `zimbraZimletScript`
-- `zimbraZimletStoreMatched`
+- ⚠️ `zimbraAmavisDomainDisclaimerText`
+- ⚠️ `zimbraAmavisDSPAMEnabled`
+- ⚠️ `zimbraAmavisEnableDKIMVerification`
+- ⚠️ `zimbraAmavisFinalSpamDestiny`
+- ⚠️ `zimbraAmavisLogLevel`
+- ⚠️ `zimbraAmavisMaxServers`
+- ⚠️ `zimbraAmavisOriginatingBypassSA`
+- ⚠️ `zimbraAmavisOutboundDisclaimersOnly`
+- ⚠️ `zimbraAmavisSALogLevel`
+- ✅ `zimbraAPNSCertificate`
+- ✅ `zimbraAPNSCertificatePassword`
+- ✅ `zimbraAPNSProduction`
+- ✅ `zimbraAppSpecificPasswordLength`
+- ✅ `zimbraArchiveMailFrom`
+- ✅ `zimbraAttachmentsScanClass`
+- ⚠️ `zimbraAvailableSkin`
+- ⚠️ `zimbraBackupAutoGroupedInterval`
+- ⚠️ `zimbraBackupAutoGroupedNumGroups`
+- ⚠️ `zimbraBackupAutoGroupedThrottled`
+- ✅ `zimbraBackupMinFreeSpace`
+- ⚠️ `zimbraBackupMode`
+- ✅ `zimbraBackupReportEmailRecipients`
+- ✅ `zimbraBackupReportEmailSender`
+- ✅ `zimbraBackupReportEmailSubjectPrefix`
+- ✅ `zimbraBackupSkipBlobs`
+- ✅ `zimbraBackupSkipHsmBlobs`
+- ✅ `zimbraBackupSkipSearchIndex`
+- ✅ `zimbraBackupTarget`
+- ✅ `zimbraCalendarCalDavDefaultCalendarId`
+- ✅ `zimbraCalendarCompatibilityMode`
+- ✅ `zimbraCalendarLocationDisabledFields`
+- ⚠️ `zimbraCBPolicydAccessControlEnabled`
+- ⚠️ `zimbraCBPolicydAccountingEnabled`
+- ⚠️ `zimbraCBPolicydAmavisEnabled`
+- ⚠️ `zimbraCBPolicydBindPort`
+- ⚠️ `zimbraCBPolicydBypassMode`
+- ⚠️ `zimbraCBPolicydBypassTimeout`
+- ⚠️ `zimbraCBPolicydCheckHeloEnabled`
+- ⚠️ `zimbraCBPolicydCheckSPFEnabled`
+- ⚠️ `zimbraCBPolicydGreylistingBlacklistMsg`
+- ⚠️ `zimbraCBPolicydGreylistingDeferMsg`
+- ⚠️ `zimbraCBPolicydGreylistingEnabled`
+- ⚠️ `zimbraCBPolicydGreylistingTrainingEnabled`
+- ⚠️ `zimbraCBPolicydLogLevel`
+- ⚠️ `zimbraCBPolicydMaxRequests`
+- ⚠️ `zimbraCBPolicydMaxServers`
+- ⚠️ `zimbraCBPolicydMaxSpareServers`
+- ⚠️ `zimbraCBPolicydMinServers`
+- ⚠️ `zimbraCBPolicydMinSpareServers`
+- ⚠️ `zimbraCBPolicydQuotasEnabled`
+- ⚠️ `zimbraCBPolicydTimeoutBusy`
+- ⚠️ `zimbraCBPolicydTimeoutIdle`
+- ⚠️ `zimbraCertAuthorityCertSelfSigned`
+- ⚠️ `zimbraCertAuthorityKeySelfSigned`
+- ⚠️ `zimbraClamAVBindAddress`
+- ⚠️ `zimbraClamAVDatabaseMirror`
+- ⚠️ `zimbraClamAVListenPort`
+- ⚠️ `zimbraClamAVMaxThreads`
+- ✅ `zimbraClientTypeRegex`
+- ✅ `zimbraClusterType`
+- ✅ `zimbraCommunityAPIClientID`
+- ✅ `zimbraCommunityAPIClientSecret`
+- ✅ `zimbraCommunityBaseURL`
+- ⚠️ `zimbraCommunityHomeURL`
+- ✅ `zimbraCommunityID`
+- ⚠️ `zimbraCommunityUsernameMapping`
+- ⚠️ `zimbraComponentAvailable`
+- ✅ `zimbraConfiguredServerIDForBlobDirEnabled`
+- ✅ `zimbraContactSearchDecomposition`
+- ✅ `zimbraConvertdURL`
+- ✅ `zimbraConverterHints`
+- ✅ `zimbraConvertPoolTimeout`
+- ✅ `zimbraCsrfAllowedRefererHosts`
+- ⚠️ `zimbraCsrfRefererCheckEnabled`
+- ✅ `zimbraCustomerCareTier`
+- ⚠️ `zimbraCustomMimeHeaderNameAllowed`
+- ✅ `zimbraDataSourceIsZmgProxy`
+- ✅ `zimbraDebugInfo`
+- ✅ `zimbraDefaultFolderFlags`
+- ✅ `zimbraDeviceCalendarSoftDeleteExcludePattern`
+- ✅ `zimbraDevicePasscodeLockoutDuration`
+- ⚠️ `zimbraDNSTCPUpstream`
+- ⚠️ `zimbraDomainAggregateQuota`
+- ⚠️ `zimbraDomainAggregateQuotaPolicy`
+- ⚠️ `zimbraDomainAggregateQuotaWarnEmailRecipient`
+- ⚠️ `zimbraDomainAggregateQuotaWarnPercent`
+- ⚠️ `zimbraDomainMandatoryMailSignatureEnabled`
+- ⚠️ `zimbraDriveOwnCloudURL`
+- ✅ `zimbraEmptyFolderOpTimeout`
+- ⚠️ `zimbraErrorReportUrl`
+- ✅ `zimbraExtensionBindAddress`
+- ✅ `zimbraExternalAccountDisabledTime`
+- ✅ `zimbraExternalAccountStatusCheckInterval`
+- ✅ `zimbraExternalGroupHandlerClass`
+- ✅ `zimbraExternalGroupLdapSearchBase`
+- ✅ `zimbraExternalShareInvitationUrlExpiration`
+- ✅ `zimbraExternalShareWhitelistDomain`
+- ⚠️ `zimbraFeatureCalendarUpsellURL`
+- ⚠️ `zimbraFeatureContactsUpsellURL`
+- ⚠️ `zimbraFeatureMailUpsellURL`
+- ✅ `zimbraFeatureSocialExternalURL`
+- ✅ `zimbraFeatureSocialName`
+- ⚠️ `zimbraFeatureVoiceUpsellURL`
+- ✅ `zimbraFileDeletionNotificationBody`
+- ✅ `zimbraFileDeletionNotificationSubject`
+- ✅ `zimbraFileExpirationWarningBody`
+- ✅ `zimbraFileExpirationWarningSubject`
+- ✅ `zimbraFileExpirationWarningThreshold`
+- ✅ `zimbraFileLifetime`
+- ✅ `zimbraFileVersioningEnabled`
+- ✅ `zimbraFileVersionLifetime`
+- ⚠️ `zimbraForceClearCookies`
+- ✅ `zimbraForeignNameHandler`
+- ✅ `zimbraFreebusyPropagationRetryInterval`
+- ⚠️ `zimbraGalSyncMaxConcurrentClients`
+- ✅ `zimbraGalSyncSizeLimit`
+- ✅ `zimbraGCMAuthorizationKey`
+- ✅ `zimbraGCMSenderId`
+- ✅ `zimbraGCMUrl`
+- ✅ `zimbraGlobalConfigExtraObjectClass`
+- ⚠️ `zimbraHelpAdminURL`
+- ✅ `zimbraHelpAdvancedURL`
+- ⚠️ `zimbraHelpDelegatedURL`
+- ✅ `zimbraHelpStandardURL`
+- ✅ `zimbraHierarchicalAddressBookRoot`
+- ✅ `zimbraHsmBatchSize`
+- ✅ `zimbraHsmMovePreviousRevisions`
+- ⚠️ `zimbraHttpCompressionEnabled`
+- ✅ `zimbraHttpConnectorMaxIdleTimeMillis`
+- ✅ `zimbraHttpContextPathBasedThreadPoolBalancingFilterRules`
+- ⚠️ `zimbraHttpDosFilterDelayMillis`
+- ⚠️ `zimbraHttpDosFilterMaxRequestsPerSec`
+- ✅ `zimbraHttpHeaderCacheSize`
+- ✅ `zimbraHttpMaxFormContentSize`
+- ⚠️ `zimbraHttpNumThreads`
+- ✅ `zimbraHttpOutputBufferSize`
+- ✅ `zimbraHttpRequestHeaderSize`
+- ✅ `zimbraHttpResponseHeaderSize`
+- ✅ `zimbraHttpThreadPoolMaxIdleTimeMillis`
+- ⚠️ `zimbraHttpThrottleSafeIPs`
+- ✅ `zimbraImapBindOnStartup`
+- ✅ `zimbraImapDisplayMailFoldersOnly`
+- ✅ `zimbraImapInactiveSessionEhcacheMaxDiskSize`
+- ✅ `zimbraImapLoadBalancingAlgorithm`
+- ✅ `zimbraImapSSLBindOnStartup`
+- ✅ `zimbraInternalSendersDomain`
+- ✅ `zimbraInternalSharingCrossDomainEnabled`
+- ✅ `zimbraInternalSharingDomain`
+- ✅ `zimbraInvalidLoginFilterDelayInMinBetwnReqBeforeReinstating`
+- ✅ `zimbraInvalidLoginFilterMaxFailedLogin`
+- ✅ `zimbraInvalidLoginFilterMaxSizeOfFailedIpDb`
+- ✅ `zimbraInvalidLoginFilterReinstateIpTaskIntervalInMin`
+- ⚠️ `zimbraIPMode`
+- ✅ `zimbraIsCustomerCareAccount`
+- ✅ `zimbraIsMobileGatewayAppAccount`
+- ✅ `zimbraIsMonitorHost`
+- ✅ `zimbraItemActionBatchSize`
+- ✅ `zimbraLastPurgeMaxDuration`
+- ✅ `zimbraLdapGalSyncDisabled`
+- ✅ `zimbraLdapGentimeFractionalSecondsEnabled`
+- ⚠️ `zimbraLDAPSchemaVersion`
+- ✅ `zimbraLmtpBindOnStartup`
+- ⚠️ `zimbraLogRawLifetime`
+- ⚠️ `zimbraLogSummaryLifetime`
+- ⚠️ `zimbraLogToSyslog`
+- ✅ `zimbraMailAddressValidationRegex`
+- ✅ `zimbraMailboxdSSLRenegotiationAllowed`
+- ⚠️ `zimbraMailboxLocationBeforeMove`
+- ✅ `zimbraMailboxMoveFailedCleanupTaskInterval`
+- ✅ `zimbraMailboxMoveSkipBlobs`
+- ✅ `zimbraMailboxMoveSkipHsmBlobs`
+- ✅ `zimbraMailboxMoveSkipSearchIndex`
+- ✅ `zimbraMailboxMoveTempDir`
+- ✅ `zimbraMailboxThrottleReapInterval`
+- ✅ `zimbraMailContentMaxSize`
+- ✅ `zimbraMailEmptyFolderBatchSize`
+- ✅ `zimbraMailFileDescriptorBufferSize`
+- ⚠️ `zimbraMailProxyMaxFails`
+- ⚠️ `zimbraMailProxyReconnectTimeout`
+- ✅ `zimbraMailRedirectSetEnvelopeSender`
+- ✅ `zimbraMailSSLClientCertBindAddress`
+- ⚠️ `zimbraMailSSLClientCertOCSPEnabled`
+- ⚠️ `zimbraMailSSLClientCertPrincipalMapLdapFilterEnabled`
+- ✅ `zimbraMailUseDirectBuffers`
+- ⚠️ `zimbraMessageIdDedupeCacheSize`
+- ⚠️ `zimbraMessageIdDedupeCacheTimeout`
+- ✅ `zimbraMobileGatewayDefaultAppAccountDomainId`
+- ✅ `zimbraMobileGatewayDefaultProxyAccountDomainId`
+- ✅ `zimbraMobileGatewayProxyImapConnectionType`
+- ✅ `zimbraMobileGatewayProxyImapHost`
+- ✅ `zimbraMobileGatewayProxyImapPort`
+- ✅ `zimbraMobileGatewayProxySmtpConnectionType`
+- ✅ `zimbraMobileGatewayProxySmtpHost`
+- ✅ `zimbraMobileGatewayProxySmtpPort`
+- ✅ `zimbraMobileItemsToTrackPerFolderMaxSize`
+- ✅ `zimbraMobileMaxMessageSize`
+- ⚠️ `zimbraMobileMetadataMaxSizeEnabled`
+- ✅ `zimbraMobileMetadataRetentionPolicy`
+- ✅ `zimbraMobileNotificationAdminAddress`
+- ⚠️ `zimbraMobilePolicyApprovedApplication`
+- ✅ `zimbraMobileSyncKeyFormatConvertedFolders`
+- ⚠️ `zimbraMtaAddressVerifyNegativeRefreshTime`
+- ⚠️ `zimbraMtaAddressVerifyPollCount`
+- ⚠️ `zimbraMtaAddressVerifyPollDelay`
+- ⚠️ `zimbraMtaAddressVerifyPositiveRefreshTime`
+- ⚠️ `zimbraMtaAliasMaps`
+- ⚠️ `zimbraMtaAlwaysAddMissingHeaders`
+- ⚠️ `zimbraMtaAntiSpamLockMethod`
+- ✅ `zimbraMtaAuthBindAddress`
+- ⚠️ `zimbraMtaBlockedExtension`
+- ⚠️ `zimbraMtaBlockedExtensionWarnAdmin`
+- ⚠️ `zimbraMtaBlockedExtensionWarnRecipient`
+- ⚠️ `zimbraMtaBounceNoticeRecipient`
+- ⚠️ `zimbraMtaBounceQueueLifetime`
+- ⚠️ `zimbraMtaBrokenSaslAuthClients`
+- ⚠️ `zimbraMtaCanonicalMaps`
+- ⚠️ `zimbraMtaCommandDirectory`
+- ⚠️ `zimbraMtaCommonBlockedExtension`
+- ⚠️ `zimbraMtaDaemonDirectory`
+- ⚠️ `zimbraMtaDefaultProcessLimit`
+- ⚠️ `zimbraMtaDelayWarningTime`
+- ⚠️ `zimbraMtaEnableSmtpdPolicyd`
+- ⚠️ `zimbraMtaFallbackRelayHost`
+- ⚠️ `zimbraMtaHeaderChecks`
+- ⚠️ `zimbraMtaHopcountLimit`
+- ⚠️ `zimbraMtaImportEnvironment`
+- ⚠️ `zimbraMtaInFlowDelay`
+- ⚠️ `zimbraMtaLmdbMapSize`
+- ⚠️ `zimbraMtaLmtpConnectionCacheDestinations`
+- ⚠️ `zimbraMtaLmtpConnectionCacheTimeLimit`
+- ⚠️ `zimbraMtaLmtpHostLookup`
+- ⚠️ `zimbraMtaLmtpTlsCAfile`
+- ⚠️ `zimbraMtaLmtpTlsCApath`
+- ⚠️ `zimbraMtaLmtpTlsCiphers`
+- ⚠️ `zimbraMtaLmtpTlsExcludeCiphers`
+- ⚠️ `zimbraMtaLmtpTlsLoglevel`
+- ⚠️ `zimbraMtaLmtpTlsMandatoryCiphers`
+- ⚠️ `zimbraMtaLmtpTlsMandatoryProtocols`
+- ⚠️ `zimbraMtaLmtpTlsProtocols`
+- ⚠️ `zimbraMtaLmtpTlsSecurityLevel`
+- ⚠️ `zimbraMtaMailqPath`
+- ⚠️ `zimbraMtaManpageDirectory`
+- ⚠️ `zimbraMtaMaximalBackoffTime`
+- ⚠️ `zimbraMtaMaximalQueueLifetime`
+- ⚠️ `zimbraMtaMaxUse`
+- ⚠️ `zimbraMtaMilterCommandTimeout`
+- ⚠️ `zimbraMtaMilterConnectTimeout`
+- ⚠️ `zimbraMtaMilterContentTimeout`
+- ⚠️ `zimbraMtaMilterDefaultAction`
+- ⚠️ `zimbraMtaMinimalBackoffTime`
+- ⚠️ `zimbraMtaMyDestination`
+- ⚠️ `zimbraMtaMyHostname`
+- ⚠️ `zimbraMtaMyNetworks`
+- ⚠️ `zimbraMtaMyOrigin`
+- ⚠️ `zimbraMtaNewaliasesPath`
+- ⚠️ `zimbraMtaNonSmtpdMilters`
+- ⚠️ `zimbraMtaNotifyClasses`
+- ⚠️ `zimbraMtaPolicyTimeLimit`
+- ⚠️ `zimbraMtaPostscreenAccessList`
+- ⚠️ `zimbraMtaPostscreenBareNewlineAction`
+- ⚠️ `zimbraMtaPostscreenBareNewlineEnable`
+- ⚠️ `zimbraMtaPostscreenBareNewlineTTL`
+- ⚠️ `zimbraMtaPostscreenBlacklistAction`
+- ⚠️ `zimbraMtaPostscreenCacheCleanupInterval`
+- ⚠️ `zimbraMtaPostscreenCacheRetentionTime`
+- ⚠️ `zimbraMtaPostscreenCommandCountLimit`
+- ⚠️ `zimbraMtaPostscreenDnsblAction`
+- ⚠️ `zimbraMtaPostscreenDnsblMaxTTL`
+- ⚠️ `zimbraMtaPostscreenDnsblMinTTL`
+- ⚠️ `zimbraMtaPostscreenDnsblReplyMap`
+- ⚠️ `zimbraMtaPostscreenDnsblSites`
+- ⚠️ `zimbraMtaPostscreenDnsblThreshold`
+- ✅ `zimbraMtaPostscreenDnsblTimeout`
+- ⚠️ `zimbraMtaPostscreenDnsblTTL`
+- ⚠️ `zimbraMtaPostscreenDnsblWhitelistThreshold`
+- ⚠️ `zimbraMtaPostscreenGreetAction`
+- ⚠️ `zimbraMtaPostscreenGreetTTL`
+- ⚠️ `zimbraMtaPostscreenNonSmtpCommandAction`
+- ⚠️ `zimbraMtaPostscreenNonSmtpCommandEnable`
+- ⚠️ `zimbraMtaPostscreenNonSmtpCommandTTL`
+- ⚠️ `zimbraMtaPostscreenPipeliningAction`
+- ⚠️ `zimbraMtaPostscreenPipeliningEnable`
+- ⚠️ `zimbraMtaPostscreenPipeliningTTL`
+- ⚠️ `zimbraMtaPostscreenWatchdogTimeout`
+- ⚠️ `zimbraMtaPostscreenWhitelistInterfaces`
+- ⚠️ `zimbraMtaPropagateUnmatchedExtensions`
+- ⚠️ `zimbraMtaQueueDirectory`
+- ⚠️ `zimbraMtaQueueRunDelay`
+- ⚠️ `zimbraMtaRestriction`
+- ⚠️ `zimbraMtaSaslAuthEnable`
+- ⚠️ `zimbraMtaSaslSmtpdMechList`
+- ⚠️ `zimbraMtaSenderCanonicalMaps`
+- ⚠️ `zimbraMtaSendmailPath`
+- ✅ `zimbraMtaSmtpCnameOverridesServername`
+- ⚠️ `zimbraMtaSmtpdBanner`
+- ⚠️ `zimbraMtaSmtpdClientAuthRateLimit`
+- ⚠️ `zimbraMtaSmtpdClientPortLogging`
+- ⚠️ `zimbraMtaSmtpdClientRestrictions`
+- ⚠️ `zimbraMtaSmtpdDataRestrictions`
+- ⚠️ `zimbraMtaSmtpdErrorSleepTime`
+- ⚠️ `zimbraMtaSmtpdHardErrorLimit`
+- ⚠️ `zimbraMtaSmtpdHeloRequired`
+- ⚠️ `zimbraMtaSmtpdMilters`
+- ⚠️ `zimbraMtaSmtpDnsSupportLevel`
+- ⚠️ `zimbraMtaSmtpdProxyTimeout`
+- ⚠️ `zimbraMtaSmtpdSaslAuthenticatedHeader`
+- ⚠️ `zimbraMtaSmtpdSaslSecurityOptions`
+- ⚠️ `zimbraMtaSmtpdSaslTlsSecurityOptions`
+- ⚠️ `zimbraMtaSmtpdSoftErrorLimit`
+- ⚠️ `zimbraMtaSmtpdTlsAskCcert`
+- ⚠️ `zimbraMtaSmtpdTlsCAfile`
+- ⚠️ `zimbraMtaSmtpdTlsCApath`
+- ⚠️ `zimbraMtaSmtpdTlsCcertVerifydepth`
+- ⚠️ `zimbraMtaSmtpdTlsCiphers`
+- ⚠️ `zimbraMtaSmtpdTlsExcludeCiphers`
+- ⚠️ `zimbraMtaSmtpdTlsLoglevel`
+- ⚠️ `zimbraMtaSmtpdTlsMandatoryCiphers`
+- ⚠️ `zimbraMtaSmtpdTlsMandatoryProtocols`
+- ⚠️ `zimbraMtaSmtpdTlsProtocols`
+- ⚠️ `zimbraMtaSmtpdTlsReceivedHeader`
+- ⚠️ `zimbraMtaSmtpdVirtualTransport`
+- ⚠️ `zimbraMtaSmtpGenericMaps`
+- ⚠️ `zimbraMtaSmtpHeloName`
+- ⚠️ `zimbraMtaSmtpSaslAuthEnable`
+- ⚠️ `zimbraMtaSmtpSaslMechanismFilter`
+- ⚠️ `zimbraMtaSmtpSaslPasswordMaps`
+- ⚠️ `zimbraMtaSmtpSaslSecurityOptions`
+- ⚠️ `zimbraMtaSmtpTlsCAfile`
+- ⚠️ `zimbraMtaSmtpTlsCApath`
+- ⚠️ `zimbraMtaSmtpTlsCiphers`
+- ⚠️ `zimbraMtaSmtpTlsDaneInsecureMXPolicy`
+- ⚠️ `zimbraMtaSmtpTlsLoglevel`
+- ⚠️ `zimbraMtaSmtpTlsMandatoryCiphers`
+- ✅ `zimbraMtaSmtpTlsMandatoryProtocols`
+- ⚠️ `zimbraMtaSmtpTlsProtocols`
+- ⚠️ `zimbraMtaSmtpTlsSecurityLevel`
+- ⚠️ `zimbraMtaSmtpTransportRateDelay`
+- ⚠️ `zimbraMtaTlsAppendDefaultCA`
+- ⚠️ `zimbraMtaTlsAuthOnly`
+- ⚠️ `zimbraMtaTlsSecurityLevel`
+- ⚠️ `zimbraMtaTransportMaps`
+- ⚠️ `zimbraMtaUnverifiedRecipientDeferCode`
+- ⚠️ `zimbraMtaVirtualAliasDomains`
+- ⚠️ `zimbraMtaVirtualAliasExpansionLimit`
+- ⚠️ `zimbraMtaVirtualAliasMaps`
+- ⚠️ `zimbraMtaVirtualMailboxDomains`
+- ⚠️ `zimbraMtaVirtualMailboxMaps`
+- ⚠️ `zimbraMyoneloginSamlSigningCert`
+- ✅ `zimbraNetworkActivation`
+- ⚠️ `zimbraNetworkAdminNGEnabled`
+- ✅ `zimbraNetworkLicense`
+- ⚠️ `zimbraNetworkModulesNGEnabled`
+- ✅ `zimbraOAuthConsumerAPIScope`
+- ✅ `zimbraOAuthConsumerRedirectUri`
+- ✅ `zimbraObjectHandlerClass`
+- ✅ `zimbraObjectHandlerConfig`
+- ✅ `zimbraObjectIndexingEnabled`
+- ✅ `zimbraObjectStoreMatched`
+- ✅ `zimbraObjectType`
+- ✅ `zimbraOpenidConsumerAllowedOPEndpointURL`
+- ✅ `zimbraOpenidConsumerStatelessModeEnabled`
+- ✅ `zimbraOpenImapFolderRequestChunkSize`
+- ✅ `zimbraPop3BindOnStartup`
+- ✅ `zimbraPop3SSLBindOnStartup`
+- ⚠️ `zimbraPrefAcceptedClientTOS`
+- ✅ `zimbraPrefCalendarAcceptSignatureId`
+- ✅ `zimbraPrefCalendarDeclineSignatureId`
+- ⚠️ `zimbraPrefCalendarInitialCheckedCalendars`
+- ✅ `zimbraPrefCalendarReminderDeviceInfo`
+- ✅ `zimbraPrefCalendarTentativeSignatureId`
+- ✅ `zimbraPrefComposeDirection`
+- ⚠️ `zimbraPrefFont`
+- ⚠️ `zimbraPrefFromAddressType`
+- ✅ `zimbraPrefLabel`
+- ✅ `zimbraPrefListViewColumns`
+- ✅ `zimbraPrefMailFoldersCheckedForNewMsgIndicator`
+- ⚠️ `zimbraPrefOutOfOfficeExternalReplyEnabled`
+- ⚠️ `zimbraPrefOutOfOfficeFreeBusyStatus`
+- ✅ `zimbraPrefOutOfOfficeSpecificDomains`
+- ⚠️ `zimbraPrefOutOfOfficeSuppressExternalReply`
+- ✅ `zimbraPrefQuickCommand`
+- ⚠️ `zimbraPrefSortOrder`
+- ✅ `zimbraPrefSpellIgnorePattern`
+- ✅ `zimbraPrefTasksFilterBy`
+- ⚠️ `zimbraPrefWebClientOfflineBrowserKey`
+- ✅ `zimbraPrimaryEmailChangeHistory`
+- ⚠️ `zimbraProduct`
+- ✅ `zimbraPurgedConversationsQueueSize`
+- ✅ `zimbraRegexMaxAccessesWhenMatching`
+- ⚠️ `zimbraReverseProxyAcceptMutex`
+- ⚠️ `zimbraReverseProxyAdminEnabled`
+- ⚠️ `zimbraReverseProxyCacheEntryTTL`
+- ⚠️ `zimbraReverseProxyCacheFetchTimeout`
+- ⚠️ `zimbraReverseProxyCacheReconnectInterval`
+- ⚠️ `zimbraReverseProxyClientCertCA`
+- ⚠️ `zimbraReverseProxyClientCertMode`
+- ⚠️ `zimbraReverseProxyConnectTimeout`
+- ⚠️ `zimbraReverseProxyDefaultRealm`
+- ⚠️ `zimbraReverseProxyErrorHandlerURL`
+- ⚠️ `zimbraReverseProxyExactServerVersionCheck`
+- ⚠️ `zimbraReverseProxyGenConfigPerVirtualHostname`
+- ⚠️ `zimbraReverseProxyHttpEnabled`
+- ⚠️ `zimbraReverseProxyImapExposeVersionOnBanner`
+- ⚠️ `zimbraReverseProxyImapSaslGssapiEnabled`
+- ⚠️ `zimbraReverseProxyImapSaslPlainEnabled`
+- ⚠️ `zimbraReverseProxyImapStartTlsMode`
+- ⚠️ `zimbraReverseProxyIPLoginImapLimit`
+- ⚠️ `zimbraReverseProxyIPLoginImapLimitTime`
+- ⚠️ `zimbraReverseProxyIPLoginLimit`
+- ⚠️ `zimbraReverseProxyIPLoginLimitTime`
+- ⚠️ `zimbraReverseProxyIPLoginPop3Limit`
+- ⚠️ `zimbraReverseProxyIPLoginPop3LimitTime`
+- ⚠️ `zimbraReverseProxyIpThrottleMsg`
+- ⚠️ `zimbraReverseProxyIPThrottleWhitelist`
+- ⚠️ `zimbraReverseProxyIPThrottleWhitelistTime`
+- ⚠️ `zimbraReverseProxyLogLevel`
+- ⚠️ `zimbraReverseProxyMailEnabled`
+- ⚠️ `zimbraReverseProxyMailImapEnabled`
+- ⚠️ `zimbraReverseProxyMailImapsEnabled`
+- ⚠️ `zimbraReverseProxyMailPop3Enabled`
+- ⚠️ `zimbraReverseProxyMailPop3sEnabled`
+- ⚠️ `zimbraReverseProxyPassErrors`
+- ⚠️ `zimbraReverseProxyPop3EnabledCapability`
+- ⚠️ `zimbraReverseProxyPop3ExposeVersionOnBanner`
+- ⚠️ `zimbraReverseProxyPop3SaslGssapiEnabled`
+- ⚠️ `zimbraReverseProxyPop3SaslPlainEnabled`
+- ⚠️ `zimbraReverseProxyPop3StartTlsMode`
+- ⚠️ `zimbraReverseProxyRouteLookupTimeout`
+- ⚠️ `zimbraReverseProxyRouteLookupTimeoutCache`
+- ⚠️ `zimbraReverseProxySendImapId`
+- ⚠️ `zimbraReverseProxySendPop3Xoip`
+- ⚠️ `zimbraReverseProxySNIEnabled`
+- ⚠️ `zimbraReverseProxySSLCiphers`
+- ⚠️ `zimbraReverseProxySSLECDHCurve`
+- ⚠️ `zimbraReverseProxySSLProtocols`
+- ⚠️ `zimbraReverseProxySSLSessionCacheSize`
+- ⚠️ `zimbraReverseProxySSLSessionTimeout`
+- ⚠️ `zimbraReverseProxySSLToUpstreamEnabled`
+- ⚠️ `zimbraReverseProxyStrictServerNameEnabled`
+- ⚠️ `zimbraReverseProxyUpstreamConnectTimeout`
+- ⚠️ `zimbraReverseProxyUpstreamFairShmSize`
+- ⚠️ `zimbraReverseProxyUpstreamImapServers`
+- ⚠️ `zimbraReverseProxyUpstreamReadTimeout`
+- ⚠️ `zimbraReverseProxyUpstreamSendTimeout`
+- ⚠️ `zimbraReverseProxyUserLoginLimit`
+- ⚠️ `zimbraReverseProxyUserLoginLimitTime`
+- ⚠️ `zimbraReverseProxyUserThrottleMsg`
+- ⚠️ `zimbraReverseProxyWorkerConnections`
+- ⚠️ `zimbraReverseProxyWorkerProcesses`
+- ⚠️ `zimbraReverseProxyZmlookupCachingEnabled`
+- ✅ `zimbraScheduledTaskInitialRetryDelay`
+- ⚠️ `zimbraScheduledTaskMaxRetries`
+- ⚠️ `zimbraScheduledTaskMaxRetryDelay`
+- ✅ `zimbraScheduledTaskRetry`
+- ✅ `zimbraScheduledTaskRetryPolicy`
+- ✅ `zimbraServerId`
+- ✅ `zimbraShareNotificationMtaAuthAccount`
+- ✅ `zimbraShareNotificationMtaAuthPassword`
+- ✅ `zimbraShareNotificationMtaConnectionType`
+- ✅ `zimbraShareNotificationMtaEnabled`
+- ✅ `zimbraShareNotificationMtaHostname`
+- ✅ `zimbraShareNotificationMtaPort`
+- ✅ `zimbraSharingUpdatePublishInterval`
+- ✅ `zimbraShortTermAllEffectiveRightsCacheExpiration`
+- ✅ `zimbraShortTermAllEffectiveRightsCacheSize`
+- ✅ `zimbraShortTermGranteeCacheExpiration`
+- ✅ `zimbraShortTermGranteeCacheSize`
+- ✅ `zimbraSmtpEnableTrace`
+- ⚠️ `zimbraSmtpSendAddAuthenticatedUser`
+- ✅ `zimbraSmtpSendAddMailer`
+- ⚠️ `zimbraSmtpSendAddOriginatingIP`
+- ⚠️ `zimbraSpamKillPercent`
+- ✅ `zimbraSpamReportEnvelopeFrom`
+- ✅ `zimbraSpamReportSenderHeader`
+- ✅ `zimbraSpamReportTypeHam`
+- ✅ `zimbraSpamReportTypeHeader`
+- ✅ `zimbraSpamReportTypeSpam`
+- ⚠️ `zimbraSpamSubjectTag`
+- ⚠️ `zimbraSpamTagPercent`
+- ✅ `zimbraSpamTrainingSubjectPrefix`
+- ✅ `zimbraSpamTrashAlias`
+- ✅ `zimbraSpellAvailableDictionary`
+- ✅ `zimbraSSDBResourcePoolSize`
+- ✅ `zimbraSSDBResourcePoolTimeout`
+- ⚠️ `zimbraSshPublicKey`
+- ✅ `zimbraSslCaCert`
+- ✅ `zimbraSslCaKey`
+- ⚠️ `zimbraSSLDHParam`
+- ⚠️ `zimbraStandardClientCustomPrefTab`
+- ✅ `zimbraStatThreadNamePrefix`
+- ✅ `zimbraThreadMonitorEnabled`
+- ✅ `zimbraTwoFactorAuthHashAlgorithm`
+- ✅ `zimbraTwoFactorAuthLastReset`
+- ✅ `zimbraTwoFactorAuthLockoutFailureTime`
+- ✅ `zimbraTwoFactorAuthScratchCodeEncoding`
+- ✅ `zimbraTwoFactorAuthSecretEncoding`
+- ✅ `zimbraTwoFactorAuthSecretLength`
+- ✅ `zimbraTwoFactorAuthTrustedDeviceTokenKey`
+- ✅ `zimbraTwoFactorCodeLength`
+- ✅ `zimbraTwoFactorScratchCodeLength`
+- ✅ `zimbraTwoFactorTimeWindowLength`
+- ✅ `zimbraTwoFactorTimeWindowOffset`
+- ⚠️ `zimbraVirusBlockEncryptedArchive`
+- ⚠️ `zimbraVirusDefinitionsUpdateFrequency`
+- ⚠️ `zimbraVirusWarnAdmin`
+- ⚠️ `zimbraVirusWarnRecipient`
+- ⚠️ `zimbraWebClientAdminReference`
+- ⚠️ `zimbraWebClientSupportedHelps`
+- ✅ `zimbraWebClientURL`
+- ✅ `zimbraWebGzipEnabled`
+- ✅ `zimbraZimletContentObject`
+- ✅ `zimbraZimletDataSensitiveInMixedModeDisabled`
+- ✅ `zimbraZimletJspEnabled`
+- ✅ `zimbraZimletPanelItem`
+- ✅ `zimbraZimletScript`
+- ✅ `zimbraZimletStoreMatched`

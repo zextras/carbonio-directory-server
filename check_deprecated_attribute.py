@@ -4,11 +4,13 @@ import json
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 
 ORGANIZATION = "zextras"
 ATTRIBUTES_FILE = Path(__file__).with_name("TO_BE_DEPRECATED.md")
+CHECK_INTERVAL_SECONDS = 10
 ENTRY_PATTERN = re.compile(
     r"^(?P<prefix>\s*-\s+)(?:(?P<marker>⚠️?|✅)\s+)?"
     r"`(?P<attribute>[^`]+)`\s*$"
@@ -58,8 +60,6 @@ def is_used_in_active_repository(attribute: str) -> bool:
         attribute,
         "--owner",
         ORGANIZATION,
-        "--limit",
-        "1000",
         "--json",
         "repository,path",
     )
@@ -89,7 +89,10 @@ def main() -> int:
         return 0
 
     checked = 0
-    for index, prefix, attribute in entries:
+    for position, (index, prefix, attribute) in enumerate(entries):
+        if position > 0:
+            time.sleep(CHECK_INTERVAL_SECONDS)
+
         try:
             used = is_used_in_active_repository(attribute)
         except subprocess.CalledProcessError as error:
