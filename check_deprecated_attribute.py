@@ -9,6 +9,7 @@ from pathlib import Path
 
 
 ORGANIZATION = "zextras"
+CURRENT_REPOSITORY = f"{ORGANIZATION}/carbonio-directory-server"
 ATTRIBUTES_FILE = Path(__file__).with_name("TO_BE_DEPRECATED.md")
 CHECK_INTERVAL_SECONDS = 10
 ENTRY_PATTERN = re.compile(
@@ -67,7 +68,8 @@ def is_used_in_active_repository(attribute: str) -> bool:
     repositories = {
         result["repository"]["nameWithOwner"]
         for result in results
-        if Path(result["path"]).name != ATTRIBUTES_FILE.name
+        if result["repository"]["nameWithOwner"] != CURRENT_REPOSITORY
+        and Path(result["path"]).name != ATTRIBUTES_FILE.name
         and not is_mock_path(result["path"])
     }
 
