@@ -1,5 +1,5 @@
 library(
-        identifier: 'jenkins-lib-common@v4.1.4',
+        identifier: 'jenkins-lib-common@v4.3.0',
         retriever: modernSCM([
                 $class       : 'GitSCMSource',
                 credentialsId: 'jenkins-integration-with-github-account',
@@ -85,11 +85,11 @@ pipeline {
             }
             steps {
                 container('jdk-21') {
-                    withCredentials([file(credentialsId: 'jenkins-maven-settings.xml', variable: 'SETTINGS_PATH')]) {
-                        script {
-                            sh "mvn ${MVN_OPTS} -s " + SETTINGS_PATH + " deploy -DskipTests=true"
-                        }
-                    }
+                    mavenDeploy(
+                            mvnOpts: MVN_OPTS,
+                            extraArgs: '-DskipTests=true',
+                            logFile: 'mvn-deploy-snapshot.log'
+                    )
                 }
             }
         }
@@ -100,11 +100,11 @@ pipeline {
             }
             steps {
                 container('jdk-21') {
-                    withCredentials([file(credentialsId: 'jenkins-maven-settings.xml', variable: 'SETTINGS_PATH')]) {
-                        script {
-                            sh "mvn ${MVN_OPTS} -s " + SETTINGS_PATH + " deploy -Dchangelist= -DskipTests=true"
-                        }
-                    }
+                    mavenDeploy(
+                            mvnOpts: MVN_OPTS,
+                            extraArgs: '-Dchangelist= -DskipTests=true',
+                            logFile: 'mvn-deploy-release.log'
+                    )
                 }
             }
         }
