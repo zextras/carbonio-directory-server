@@ -1520,16 +1520,14 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>URL of the server running the spell checking service.  Multi-valued attribute that allows multiple spell check servers to be specified.  If the request to the first server fails, a request to the second server is sent and so on.</desc>
 </attr>
 
-<attr id="268" name="zimbraImapBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" deprecatedSince="26.9.0">
+<attr id="268" name="zimbraImapBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox">
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>Whether to bind to port on startup irrespective of whether the server is enabled.  Useful when port to bind is privileged and must be bound early.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="269" name="zimbraImapSSLBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" deprecatedSince="26.9.0">
+<attr id="269" name="zimbraImapSSLBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox">
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>Whether to bind to port on startup irrespective of whether the server is enabled.  Useful when port to bind is privileged and must be bound early.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="270" name="zimbraLmtpBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" deprecatedSince="26.9.0">
@@ -2486,28 +2484,24 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <deprecateDesc>Zimbra IM has been discontinued. Zimbra Chat feature uses a new set of configuration attributes.</deprecateDesc>
 </attr>
 
-<attr id="465" name="zimbraSpamReportSenderHeader" type="string" cardinality="single" optionalIn="globalConfig" deprecatedSince="26.9.0">
+<attr id="465" name="zimbraSpamReportSenderHeader" type="string" cardinality="single" optionalIn="globalConfig">
   <globalConfigValue>X-Zimbra-Spam-Report-Sender</globalConfigValue>
   <desc>mail header name for sender in spam report</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="466" name="zimbraSpamReportTypeHeader" type="string" cardinality="single" optionalIn="globalConfig" deprecatedSince="26.9.0">
+<attr id="466" name="zimbraSpamReportTypeHeader" type="string" cardinality="single" optionalIn="globalConfig">
   <globalConfigValue>X-Zimbra-Spam-Report-Type</globalConfigValue>
   <desc>mail header name for report type in spam report</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="467" name="zimbraSpamReportTypeSpam" type="string" cardinality="single" optionalIn="globalConfig" deprecatedSince="26.9.0">
+<attr id="467" name="zimbraSpamReportTypeSpam" type="string" cardinality="single" optionalIn="globalConfig">
   <globalConfigValue>spam</globalConfigValue>
   <desc>spam report type value for spam</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="468" name="zimbraSpamReportTypeHam" type="string" cardinality="single" optionalIn="globalConfig" deprecatedSince="26.9.0">
+<attr id="468" name="zimbraSpamReportTypeHam" type="string" cardinality="single" optionalIn="globalConfig">
   <globalConfigValue>ham</globalConfigValue>
   <desc>spam report type value for ham</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="469" name="zimbraPrefMailDefaultCharset" type="string" max="64" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" callback="MailCharset">
@@ -3446,10 +3440,9 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>whether end-user wants search from GAL. Feature must also be enabled</desc>
 </attr>
 
-<attr id="636" name="zimbraSmtpSendAddMailer" type="boolean" cardinality="single" optionalIn="globalConfig" since="5.0.5" deprecatedSince="26.9.0">
+<attr id="636" name="zimbraSmtpSendAddMailer" type="boolean" cardinality="single" optionalIn="globalConfig" since="5.0.5">
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>Whether X-Mailer will be added to messages sent by Zimbra</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="637" name="zimbraPrefFolderTreeOpen" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" since="5.0.5">
@@ -4108,13 +4101,12 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <deprecateDesc>Feature removed</deprecateDesc>
 </attr>
 
-<attr id="764" name="zimbraMailRedirectSetEnvelopeSender" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.0_BETA1" deprecatedSince="26.9.0">
+<attr id="764" name="zimbraMailRedirectSetEnvelopeSender" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.0_BETA1">
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>
     If TRUE, the envelope sender of a message redirected by mail filters will be set to the users address.  
     If FALSE, the envelope sender will be set to the From address of the redirected message.
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
     
 <attr id="765" name="zimbraPrefZimlets" type="string" cardinality="multi" optionalIn="account,cos" flags="domainAdminModifiable" since="6.0.0_BETA1">
@@ -4264,7 +4256,7 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   </desc>
 </attr>
 
-<attr id="792" name="zimbraStatThreadNamePrefix" type="string" cardinality="multi" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.0_BETA1" deprecatedSince="26.9.0">
+<attr id="792" name="zimbraStatThreadNamePrefix" type="string" cardinality="multi" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.0_BETA1">
   <globalConfigValue>btpool</globalConfigValue>
   <globalConfigValue>pool</globalConfigValue>
   <globalConfigValue>LmtpServer</globalConfigValue>
@@ -4285,12 +4277,10 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
     threads.csv that tracks the number of threads whose
     name starts with the given prefix.
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="793" name="zimbraSmtpEnableTrace" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="6.0.0_BETA1" deprecatedSince="26.9.0">
+<attr id="793" name="zimbraSmtpEnableTrace" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="6.0.0_BETA1">
   <desc>Whether to enable smtp debug trace</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="794" name="zimbraCalendarCalDavUseDistinctAppointmentAndToDoCollection" type="boolean" cardinality="single" optionalIn="globalConfig" since="5.0.12" deprecatedSince="8.0.0">
@@ -4357,10 +4347,9 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>whether a confirmation page should be display after an operation is done in the UI</desc>
 </attr>
 
-<attr id="807" name="zimbraMailContentMaxSize" type="long" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.0_BETA1" deprecatedSince="26.9.0">
+<attr id="807" name="zimbraMailContentMaxSize" type="long" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.0_BETA1">
   <globalConfigValue>10240000</globalConfigValue>
   <desc>Maximum size in bytes for the &lt;content &gt; element in SOAP.  Mail content larger than this limit will be truncated.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="808" name="zimbraCalResMaxNumConflictsAllowed" type="integer" min="0" cardinality="single" optionalIn="calendarResource" flags="domainAdminModifiable" since="5.0.14">
@@ -4657,14 +4646,13 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
    ===============================================================================
  -->
 
-<attr id="1002" name="zimbraMailUseDirectBuffers" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="5.0.22" deprecatedSince="26.9.0">
+<attr id="1002" name="zimbraMailUseDirectBuffers" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="5.0.22">
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>
     Used to control whether Java NIO direct buffers are used. 
     Value is propagated to Jetty configuration.  In the future, other NIO pieces
     (IMAP/POP/LMTP) will also honor this.
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1003" name="zimbraBackupSkipSearchIndex" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.0_BETA2" deprecatedSince="26.9.0">
@@ -4813,14 +4801,13 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   </desc>
 </attr>
 
-<attr id="1026" name="zimbraFreebusyPropagationRetryInterval" type="duration" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="5.0.17" deprecatedSince="26.9.0">
+<attr id="1026" name="zimbraFreebusyPropagationRetryInterval" type="duration" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="5.0.17">
   <globalConfigValue>1m</globalConfigValue>
   <desc>
       The interval to wait when the server encounters problems while 
       propagating Zimbra users free/busy information to external
       provider such as Exchange.
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1027" name="zimbraGalSyncAccountBasedAutoCompleteEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" since="6.0.0_BETA2">
@@ -4900,10 +4887,9 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>The name of the dictionary used for spell checking.  If not set, the locale is used.</desc>
 </attr>
 
-<attr id="1042" name="zimbraSpellAvailableDictionary" type="string" cardinality="multi" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.0_GA" deprecatedSince="26.9.0">
+<attr id="1042" name="zimbraSpellAvailableDictionary" type="string" cardinality="multi" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.0_GA">
   <globalConfigValue>en_US</globalConfigValue>
   <desc>The list of available dictionaries that can be used for spell checking.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1043" name="zimbraHttpDebugHandlerEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.0_GA">
@@ -4935,10 +4921,9 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>whether or not account tree is expanded</desc>
 </attr>
 
-<attr id="1049" name="zimbraSpamReportEnvelopeFrom" type="string" cardinality="single" optionalIn="globalConfig" requiresRestart="mailbox" since="6.0.2" deprecatedSince="26.9.0">
+<attr id="1049" name="zimbraSpamReportEnvelopeFrom" type="string" cardinality="single" optionalIn="globalConfig" requiresRestart="mailbox" since="6.0.2">
   <globalConfigValue>&lt;&gt;</globalConfigValue>
   <desc>value for envelope from (MAIL FROM) in spam report</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1050" name="zimbraFeatureVoiceChangePinEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="5.0.19">
@@ -5060,12 +5045,11 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <deprecateDesc>deprecated in favor of zimbraAmavisDomainDisclaimerHTML</deprecateDesc>
 </attr>
 
-<attr id="1072" name="zimbraPrefMailFoldersCheckedForNewMsgIndicator" type="string" max="1024" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" since="6.0.5" deprecatedSince="26.9.0">
+<attr id="1072" name="zimbraPrefMailFoldersCheckedForNewMsgIndicator" type="string" max="1024" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" since="6.0.5">
   <desc>
      a list of comma separated folder ids of all folders used to count for showing a new message indicator icon for the account, 
      useful in UIs managing multiple accounts: desktop and family mailboxes.
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1073" name="zimbraPrefSpellIgnoreWord" type="string" max="256" cardinality="multi" optionalIn="account,cos,domain" flags="domainAdminModifiable" since="6.0.5">
@@ -5211,12 +5195,11 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Maximum number of messages to delete from a folder during a single purge operation.  If the limit is exceeded, the mailbox is purged again at the end of the purge cycle until all qualifying messages are purged.</desc>
 </attr>
 
-<attr id="1097" name="zimbraMailEmptyFolderBatchSize" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.8" deprecatedSince="26.9.0">
+<attr id="1097" name="zimbraMailEmptyFolderBatchSize" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.8">
   <globalConfigValue>1000</globalConfigValue>
   <desc>
     Maximum number of messages to delete during a single transaction when emptying a large folder. 
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1098" name="zimbraBasicAuthRealm"  type="string" max="256" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited" since="7.0.0">
@@ -5400,9 +5383,8 @@ deprecatedSince="23.9.0">
   <desc>foreign name for mapping an external name to a zimbra domain on domain level, it is in the format of {application}:{foreign name}</desc>
 </attr>
 
-<attr id="1136" name="zimbraForeignNameHandler" type="string" cardinality="multi" optionalIn="domain" since="7.0.0" deprecatedSince="26.9.0">
+<attr id="1136" name="zimbraForeignNameHandler" type="string" cardinality="multi" optionalIn="domain" since="7.0.0">
   <desc>handler for foreign name mapping, it is in the format of {application}:{class name}[:{params}]</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1137" name="zimbraFeatureMailSendLaterEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="7.0.0">
@@ -5595,14 +5577,13 @@ deprecatedSince="23.9.0">
   <desc>whether or not to include spam messages in POP3 access</desc>
 </attr>
 
-<attr id="1167" name="zimbraSpamTrashAlias" type="string" max="128" cardinality="multi" optionalIn="globalConfig,domain" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1167" name="zimbraSpamTrashAlias" type="string" max="128" cardinality="multi" optionalIn="globalConfig,domain" since="8.0.0">
   <globalConfigValue>/Deleted Messages</globalConfigValue>
   <globalConfigValue>/Deleted Items</globalConfigValue>
   <desc>
     Aliases of Trash folder. In case some IMAP clients use different folder names other than Trash, the spam filter
     still special-cases those folders as if they are Trash.
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1168" name="zimbraFeatureAntispamEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="7.1.0">
@@ -5909,7 +5890,7 @@ deprecatedSince="23.9.0">
   <deprecateDesc>deprecated in favor of new SMIME implementation</deprecateDesc>
 </attr>
 
-<attr id="1210" name="zimbraDefaultFolderFlags" type="string" cardinality="single" min="0" max="32" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" since="7.1.1" deprecatedSince="26.9.0">
+<attr id="1210" name="zimbraDefaultFolderFlags" type="string" cardinality="single" min="0" max="32" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" since="7.1.1">
   <desc>
     Default flags on folder. These are set when a new folder is created, has no effect on existing folders.
     Possible values are:
@@ -5922,7 +5903,6 @@ deprecatedSince="23.9.0">
      o - \Noinferiors
      g - \Global
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1211" name="zimbraPrefQuickCommand" type="string" cardinality="multi" optionalIn="account" since="8.0.0" deprecatedSince="26.9.0">
@@ -6009,10 +5989,9 @@ deprecatedSince="23.9.0">
   <desc>All items an account has shared</desc>
 </attr>
 
-<attr id="1220" name="zimbraSharingUpdatePublishInterval" type="duration" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" requiresRestart="mailbox" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1220" name="zimbraSharingUpdatePublishInterval" type="duration" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" requiresRestart="mailbox" since="8.0.0">
   <globalConfigValue>15m</globalConfigValue>
   <desc>Interval between successive executions of the task that publishes shared item updates to LDAP</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1221" name="zimbraAutoProvMode" type="enum" value="EAGER,LAZY,MANUAL" cardinality="multi" optionalIn="domain" since="8.0.0">
@@ -6318,18 +6297,16 @@ deprecatedSince="23.9.0">
   <desc>id of the default COS for external user accounts</desc>
 </attr>
 
-<attr id="1249" name="zimbraExternalGroupLdapSearchBase" type="string" max="256" cardinality="single" optionalIn="domain" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1249" name="zimbraExternalGroupLdapSearchBase" type="string" max="256" cardinality="single" optionalIn="domain" since="8.0.0">
   <desc>LDAP search base for searching external LDAP groups</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1250" name="zimbraExternalGroupLdapSearchFilter" type="string" max="256" cardinality="single" optionalIn="domain" since="8.0.0">
   <desc>LDAP search filter for searching external LDAP groups</desc>
 </attr>
 
-<attr id="1251" name="zimbraExternalGroupHandlerClass" type="string" max="1024" cardinality="single" optionalIn="domain" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1251" name="zimbraExternalGroupHandlerClass" type="string" max="1024" cardinality="single" optionalIn="domain" since="8.0.0">
   <desc>the handler class for getting all groups an account belongs to in the external directory</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1252" name="zimbraAuthMechAdmin" type="string" max="512" cardinality="single" optionalIn="domain" callback="AuthMech" since="8.0.0">
@@ -6380,9 +6357,8 @@ deprecatedSince="23.9.0">
   <desc>switch for turning external user sharing on/off</desc>
 </attr>
 
-<attr id="1263" name="zimbraExternalShareWhitelistDomain" type="string" cardinality="multi" optionalIn="account,cos,domain" flags="accountCosDomainInherited,domainAdminModifiable" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1263" name="zimbraExternalShareWhitelistDomain" type="string" cardinality="multi" optionalIn="account,cos,domain" flags="accountCosDomainInherited,domainAdminModifiable" since="8.0.0">
   <desc>list of external domains that users can share files and folders with</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1264" name="zimbraExternalShareDomainWhitelistEnabled" type="boolean" cardinality="single" optionalIn="account,cos,domain" flags="accountCosDomainInherited,domainAdminModifiable" since="8.0.0">
@@ -6771,9 +6747,8 @@ deprecatedSince="23.9.0">
   <desc>If TRUE, send zimbraPrefOutOfOfficeExternalReply to external senders.  External senders are specified by zimbraInternalSendersDomain and zimbraPrefExternalSendersType.</desc>
 </attr>
 
-<attr id="1319" name="zimbraInternalSendersDomain" type="string" cardinality="multi" optionalIn="account,cos,domain" flags="accountCosDomainInherited" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1319" name="zimbraInternalSendersDomain" type="string" cardinality="multi" optionalIn="account,cos,domain" flags="accountCosDomainInherited" since="8.0.0">
   <desc>additional domains considered as internal w.r.t. recipient</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1320" name="zimbraPrefExternalSendersType" type="enum" value="ALL,ALLNOTINAB,INAB,INSD" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.0.0">
@@ -6798,14 +6773,12 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1324" name="zimbraFileVersioningEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited"  since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1324" name="zimbraFileVersioningEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited"  since="8.0.0">
   <desc>whether file versioning is enabled</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1325" name="zimbraFileVersionLifetime" type="duration" cardinality="single" optionalIn="account,cos" flags="accountInherited"  since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1325" name="zimbraFileVersionLifetime" type="duration" cardinality="single" optionalIn="account,cos" flags="accountInherited"  since="8.0.0">
   <desc>how long a file version is kept around</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1326" name="zimbraMailDomainQuota" type="long" min="0" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0" deprecatedSince="26.9.0">
@@ -6898,30 +6871,25 @@ deprecatedSince="23.9.0">
   </desc>
 </attr>
 
-<attr id="1341" name="zimbraShareNotificationMtaHostname" type="string" max="128" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1341" name="zimbraShareNotificationMtaHostname" type="string" max="128" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0">
   <desc>SMTP hostname for share notification MTA used for sending email notifications.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1342" name="zimbraShareNotificationMtaPort" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1342" name="zimbraShareNotificationMtaPort" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0">
   <desc>SMTP port for share notification MTA used for sending email notifications.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1343" name="zimbraShareNotificationMtaAuthAccount" type="string" max="128" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1343" name="zimbraShareNotificationMtaAuthAccount" type="string" max="128" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0">
   <desc>Account name for authenticating to share notification MTA.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1344" name="zimbraShareNotificationMtaAuthPassword" type="string" max="64" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1344" name="zimbraShareNotificationMtaAuthPassword" type="string" max="64" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0">
   <desc>Password for authenticating to share notification MTA.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1345" name="zimbraShareNotificationMtaConnectionType" type="enum" value="CLEARTEXT,SSL,STARTTLS" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1345" name="zimbraShareNotificationMtaConnectionType" type="enum" value="CLEARTEXT,SSL,STARTTLS" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0">
   <globalConfigValue>CLEARTEXT</globalConfigValue>
   <desc>Connection mode when connecting to share notification MTA.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1346" name="zimbraShareNotificationMtaAuthRequired" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0">
@@ -6937,13 +6905,12 @@ deprecatedSince="23.9.0">
   <defaultCOSValue>0</defaultCOSValue>
 </attr>
 
-<attr id="1349" name="zimbraExternalShareInvitationUrlExpiration" type="duration" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1349" name="zimbraExternalShareInvitationUrlExpiration" type="duration" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0">
   <globalConfigValue>0</globalConfigValue>
   <desc>
     Duration for which the URL sent in the share invitation email to an external user is valid.
     A value of 0 indicates that the URL never expires.
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1350" name="zimbraFileUploadMaxSizePerFile" type="long" cardinality="single" optionalIn="account,cos,domain,globalConfig" flags="accountInfo,domainInfo,accountCosDomainInherited,domainInherited,domainAdminModifiable" since="8.0.0">
@@ -7016,10 +6983,9 @@ deprecatedSince="23.9.0">
   <desc>If set as TRUE, proxy will use SSL to connect to the upstream mail servers for web and mail proxy. Note admin console proxy always use https no matter how this attr is set.</desc>
 </attr>
 
-<attr id="1361" name="zimbraShareNotificationMtaEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1361" name="zimbraShareNotificationMtaEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0">
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>Whether share notification MTA is enabled.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1362" name="zimbraFileShareLifetime" type="duration" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="8.0.0">
@@ -7055,36 +7021,32 @@ deprecatedSince="23.9.0">
   <desc>interface address on which HTTPS server should listen; if empty, binds to all interfaces</desc>
 </attr>
 
-<attr id="1367" name="zimbraMailSSLClientCertBindAddress" type="string" max="128" cardinality="single" optionalIn="server" requiresRestart="mailbox" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1367" name="zimbraMailSSLClientCertBindAddress" type="string" max="128" cardinality="single" optionalIn="server" requiresRestart="mailbox" since="8.0.0">
   <desc>interface address on which HTTPS server accepting client certificates should listen; if empty, binds to all interfaces</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1368" name="zimbraAdminBindAddress" type="string" max="128"  callback="LocalBind" cardinality="single" optionalIn="server" requiresRestart="mailbox" since="8.0.0">
   <desc>interface address on which Admin HTTPS server should listen; if empty, binds to all interfaces</desc>
 </attr>
 
-<attr id="1369" name="zimbraExtensionBindAddress" type="string" max="128" cardinality="single" optionalIn="server" requiresRestart="mailbox" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1369" name="zimbraExtensionBindAddress" type="string" max="128" cardinality="single" optionalIn="server" requiresRestart="mailbox" since="8.0.0">
   <desc>interface address on which zimbra extension server should listen; if empty, binds to all interfaces</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1370" name="zimbraExternalAccountStatusCheckInterval" type="duration" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" requiresRestart="mailbox" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1370" name="zimbraExternalAccountStatusCheckInterval" type="duration" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" requiresRestart="mailbox" since="8.0.0">
   <globalConfigValue>1d</globalConfigValue>
   <desc>
     Interval between successive executions of the task that:
     - disables an external virtual account when all its accessible shares have been revoked or expired.
     - deletes an external virtual account after zimbraExternalAccountLifetimeAfterDisabled of being disabled.
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1371" name="zimbraExternalAccountDisabledTime" type="gentime" cardinality="single" optionalIn="account" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1371" name="zimbraExternalAccountDisabledTime" type="gentime" cardinality="single" optionalIn="account" since="8.0.0">
   <desc>
     Time when external virtual account was last automatically disabled by the system.
     Applicable only when zimbraIsExternalVirtualAccount on the account is set to TRUE.
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1372" name="zimbraExternalAccountLifetimeAfterDisabled" type="duration" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.0.0">
@@ -7141,10 +7103,9 @@ deprecatedSince="23.9.0">
   <desc>whether Crocodoc feature is enabled in the web client</desc>
 </attr>
 
-<attr id="1382" name="zimbraLastPurgeMaxDuration" type="duration" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1382" name="zimbraLastPurgeMaxDuration" type="duration" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0">
   <globalConfigValue>30d</globalConfigValue>
   <desc>Maximum duration beyond which the mailbox must be scheduled for purge irrespective of whether it is loaded into memory or not.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1383" name="zimbraThrottleSafeHosts" type="string" cardinality="multi" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.0.0">
@@ -7163,15 +7124,13 @@ deprecatedSince="23.9.0">
   <desc>whether crash reporting is enabled in the Android client</desc>
 </attr>
 
-<attr id="1386" name="zimbraInternalSharingCrossDomainEnabled" type="boolean" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1386" name="zimbraInternalSharingCrossDomainEnabled" type="boolean" cardinality="single" optionalIn="domain,globalConfig" flags="domainInherited" since="8.0.0">
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>whether sharing with accounts and groups of all other domains hosted on this deployment be considered internal sharing</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1387" name="zimbraInternalSharingDomain" type="string" cardinality="multi" optionalIn="domain" since="8.0.0" deprecatedSince="26.9.0">
+<attr id="1387" name="zimbraInternalSharingDomain" type="string" cardinality="multi" optionalIn="domain" since="8.0.0">
   <desc>Domains hosted on this deployment, accounts and groups of which are considered internal during sharing.  Applicable when zimbraInternalSharingCrossDomainEnabled is set to FALSE.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1388" name="zimbraFeatureSocialcastEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited"  since="8.0.0" deprecatedSince="26.9.0">
@@ -7322,8 +7281,7 @@ deprecatedSince="23.9.0">
     This attribute is applicable for accounts having zimbraIsExternalVirtualAccount set to TRUE.</desc>
 </attr>
 
-<attr id="1415" name="zimbraMessageChannelPort" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" callback="CheckPortConflict" requiresRestart="mailbox" since="8.0.0" deprecatedSince="26.9.0">
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
+<attr id="1415" name="zimbraMessageChannelPort" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" callback="CheckPortConflict" requiresRestart="mailbox" since="8.0.0">
   <globalConfigValue>7285</globalConfigValue>
   <desc>port number on which message channel should listen</desc>
 </attr>
@@ -7338,8 +7296,7 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1417" name="zimbraMessageChannelEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.0.0" deprecatedSince="26.9.0">
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
+<attr id="1417" name="zimbraMessageChannelEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.0.0">
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>whether message channel service is enabled on this server</desc>
 </attr>
@@ -7353,10 +7310,9 @@ deprecatedSince="23.9.0">
   <desc>Type of the email address from header. (sendAs or sendOnBehalfOf)</desc>
 </attr>
 
-<attr id="1420" name="zimbraLdapGalSyncDisabled" type="boolean" cardinality="single" optionalIn="domain,globalConfig" flags="domainInfo,domainInherited" since="7.2.2" deprecatedSince="26.9.0">
+<attr id="1420" name="zimbraLdapGalSyncDisabled" type="boolean" cardinality="single" optionalIn="domain,globalConfig" flags="domainInfo,domainInherited" since="7.2.2">
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>whether ldap based galsync disabled or not</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1421" name="zimbraMobileNotificationEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.5.0">
@@ -7393,16 +7349,14 @@ deprecatedSince="23.9.0">
   <desc>IP addresses to ignore when applying Jetty DosFilter.</desc>
 </attr>
 
-<attr id="1428" name="zimbraHttpConnectorMaxIdleTimeMillis" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="7.2.3" deprecatedSince="26.9.0">
+<attr id="1428" name="zimbraHttpConnectorMaxIdleTimeMillis" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="7.2.3">
   <globalConfigValue>60000</globalConfigValue>
   <desc>Maximum Idle time in milli seconds for a connection. This is applied when waiting for a new request to be received on a connection; when reading the headers and content of a request; when writing the headers and content of a response.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1429" name="zimbraHttpThreadPoolMaxIdleTimeMillis" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="7.2.3" deprecatedSince="26.9.0">
+<attr id="1429" name="zimbraHttpThreadPoolMaxIdleTimeMillis" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="7.2.3">
   <globalConfigValue>10000</globalConfigValue>
   <desc>The maximum thread idle time in milli seconds. Threads that are idle for longer than this period may be stopped.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1430" name="zimbraHttpDosFilterDelayMillis" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.0.3">
@@ -7415,9 +7369,8 @@ deprecatedSince="23.9.0">
   <desc>Maximum number of requests from a connection per second. Requests in excess of this are throttled.</desc>
 </attr>
 
-<attr id="1432" name="zimbraPrefSpellIgnorePattern" type="string" cardinality="single" optionalIn="account,cos," flags="accountInherited,domainAdminModifiable" since="8.0.4" deprecatedSince="26.9.0">
+<attr id="1432" name="zimbraPrefSpellIgnorePattern" type="string" cardinality="single" optionalIn="account,cos," flags="accountInherited,domainAdminModifiable" since="8.0.4">
   <desc>Regular Expression for words to ignore during spell check.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1433" name="zimbraTouchJSErrorTrackingEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="8.5.0" deprecatedSince="26.9.0">
@@ -7506,12 +7459,11 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1451" name="zimbraItemActionBatchSize" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.5" deprecatedSince="26.9.0">
+<attr id="1451" name="zimbraItemActionBatchSize" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.5">
   <globalConfigValue>1000</globalConfigValue>
   <desc>
     Maximum number of item to perform an ItemAction on at a time.
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1452" name="zimbraWebClientOfflineSyncMaxDays" type="integer" cardinality="single" optionalIn="account,cos" flags="accountInherited,accountInfo" since="8.5.0">
@@ -8012,10 +7964,9 @@ deprecatedSince="23.9.0">
   <desc>Value for postconf smtpd_sasl_security_options</desc>
 </attr>
 
-<attr id="1551" name="zimbraConfiguredServerIDForBlobDirEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0" deprecatedSince="26.9.0">
+<attr id="1551" name="zimbraConfiguredServerIDForBlobDirEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>Enabled using the configured server ID for blob dir</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1552" name="zimbraMtaSmtpdSaslTlsSecurityOptions" type="string" cardinality="multi" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
@@ -8149,28 +8100,24 @@ deprecatedSince="23.9.0">
   <desc>Loglevel for SpamAssassin when called via Amavis. Defaults to 0 (info).  Can be 0 or 1 (info, all)</desc>
 </attr>
 
-<attr id="1579" name="zimbraHttpOutputBufferSize" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0" deprecatedSince="26.9.0">
+<attr id="1579" name="zimbraHttpOutputBufferSize" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0">
   <globalConfigValue>32768</globalConfigValue>
   <desc>The size in bytes of the output buffer used to aggregate HTTP output in Jetty</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1580" name="zimbraHttpRequestHeaderSize" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0" deprecatedSince="26.9.0">
+<attr id="1580" name="zimbraHttpRequestHeaderSize" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0">
   <globalConfigValue>8192</globalConfigValue>
   <desc>The maximum allowed size in bytes for a HTTP request header in Jetty</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1581" name="zimbraHttpResponseHeaderSize" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0" deprecatedSince="26.9.0">
+<attr id="1581" name="zimbraHttpResponseHeaderSize" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0">
   <globalConfigValue>8192</globalConfigValue>
   <desc>The maximum allowed size in bytes for a HTTP response header in Jetty</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1582" name="zimbraHttpHeaderCacheSize" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0" deprecatedSince="26.9.0">
+<attr id="1582" name="zimbraHttpHeaderCacheSize" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0">
   <globalConfigValue>512</globalConfigValue>
   <desc>The maximum allowed size in bytes for a HTTP header field cache in Jetty</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1583" name="zimbraThreadMonitorEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0" deprecatedSince="26.9.0">
@@ -8258,12 +8205,11 @@ deprecatedSince="23.9.0">
   <desc>Max number of previous residing folders server tracks for a mail item</desc>
 </attr>
 
-<attr id="1593" name="zimbraHttpContextPathBasedThreadPoolBalancingFilterRules" type="string" cardinality="multi" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0" deprecatedSince="26.9.0">
+<attr id="1593" name="zimbraHttpContextPathBasedThreadPoolBalancingFilterRules" type="string" cardinality="multi" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0">
   <globalConfigValue>/service:max=80%</globalConfigValue>
   <globalConfigValue>/zimbra:max=15%</globalConfigValue>
   <globalConfigValue>/zimbraAdmin:max=5%</globalConfigValue>
   <desc>Rules for governing the allocation of threads to various web contexts for the current thread pool. Sample value: /zimbra:min=10;max=40% or /zimbraAdmin:min=5</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1594" name="zimbraReverseProxyAcceptMutex" type="enum" value="on,off" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="nginxproxy" since="8.5.0">   
@@ -8364,25 +8310,22 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1613" name="zimbraInvalidLoginFilterMaxFailedLogin" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited"  since="8.5.0" deprecatedSince="26.9.0">
+<attr id="1613" name="zimbraInvalidLoginFilterMaxFailedLogin" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited"  since="8.5.0">
   <globalConfigValue>10</globalConfigValue>
   <desc>This attribute is used for failed authentication requests.This is a DOSFilter style check for repeated failed 
         logins from IP, if set to 0 no check happens, else failed login is recorded. </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1614" name="zimbraInvalidLoginFilterDelayInMinBetwnReqBeforeReinstating" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited"  since="8.5.0" deprecatedSince="26.9.0">
+<attr id="1614" name="zimbraInvalidLoginFilterDelayInMinBetwnReqBeforeReinstating" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited"  since="8.5.0">
   <globalConfigValue>15</globalConfigValue>
   <desc>This attribute is used for failed authentication requests. It indicates the minimum time between current req and last req from the same IP before this
         suspended IP will be reinstated</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1615" name="zimbraInvalidLoginFilterReinstateIpTaskIntervalInMin" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited"  since="8.5.0" deprecatedSince="26.9.0">
+<attr id="1615" name="zimbraInvalidLoginFilterReinstateIpTaskIntervalInMin" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited"  since="8.5.0">
   <globalConfigValue>5</globalConfigValue>
   <desc>This attribute is used for failed authentication requests.
         Interval at which Task to reinstate IPs suspended as part of ZimbraInvalidLoging filter are run.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1616" name="zimbraReverseProxyExactServerVersionCheck" type="enum" value="on,off" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="nginxproxy" since="8.5.0">
@@ -8399,11 +8342,10 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1618" name="zimbraInvalidLoginFilterMaxSizeOfFailedIpDb" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited"  since="8.5.0" deprecatedSince="26.9.0">
+<attr id="1618" name="zimbraInvalidLoginFilterMaxSizeOfFailedIpDb" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited"  since="8.5.0">
   <globalConfigValue>7000</globalConfigValue>
   <desc>This attribute is used for failed authentication requests. It indicates the max size of data structures that 
         holds the list of failed logins</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1619" name="zimbraClamAVBindAddress" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mta" since="8.5.0">
@@ -8467,18 +8409,16 @@ deprecatedSince="23.9.0">
 </attr>
 
 <attr id="1630" name="zimbraCsrfAllowedRefererHosts" type="string"
-  cardinality="multi" optionalIn="globalConfig,domain" since="8.5.0" deprecatedSince="26.9.0">
+  cardinality="multi" optionalIn="globalConfig,domain" since="8.5.0">
   <desc>A list of hosts like www.abc.com, www.xyz.com. These are used while doing CSRF referer check.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1631" name="zimbraCsrfRefererCheckEnabled" type="boolean"
-  cardinality="single" optionalIn="globalConfig" since="8.5.0" deprecatedSince="26.9.0">
+  cardinality="single" optionalIn="globalConfig" since="8.5.0">
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>A flag to turn on or off CSRF referer related check. When set to FALSE no CSRF referer check happens.
         When set to true CSRF referer type check happens.
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1632" name="zimbraPrefCalendarAllowedTargetsForInviteDeniedAutoReply" type="enum" value="internal,sameDomain,all" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" since="8.5.0">
@@ -8553,12 +8493,11 @@ deprecatedSince="23.9.0">
   </desc>
 </attr>
 
-<attr id="1643" name="zimbraRegexMaxAccessesWhenMatching" type="integer" cardinality="single" optionalIn="globalConfig" since="8.0.8, 8.5.0" deprecatedSince="26.9.0">
+<attr id="1643" name="zimbraRegexMaxAccessesWhenMatching" type="integer" cardinality="single" optionalIn="globalConfig" since="8.0.8, 8.5.0">
   <globalConfigValue>1000000</globalConfigValue>
   <desc>This attribute is used to limit the amount of computation allowed when matching regex expressions.  For example as part of the IMAP LIST command.
       Set to a higher value if legitimate IMAP list commands fail throwing TooManyAccessesToMatchTargetException.
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1644" name="zimbraCommunityID" type="string" cardinality="single" optionalIn="account" flags="domainAdminModifiable" since="8.5.0" deprecatedSince="26.9.0">
@@ -8594,12 +8533,11 @@ deprecatedSince="23.9.0">
   <desc>Which mailbox to save messages sent via sendAs/sendOnBehalfOf delegation to.</desc>
 </attr>
 
-<attr id="1652" name="zimbraEmptyFolderOpTimeout" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.6.0" deprecatedSince="26.9.0">
+<attr id="1652" name="zimbraEmptyFolderOpTimeout" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.6.0">
   <globalConfigValue>3</globalConfigValue>
   <desc>
      EmptyFolderOpTimeout is the time in seconds for which empty folder operation will wait for the current empty folder operation to complete
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1653" name="zimbraReverseProxySSLProtocols" type="string" cardinality="multi" optionalIn="globalConfig,server" flags="serverInherited" since="8.6.0">
@@ -8814,10 +8752,9 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1832" name="zimbraMailboxdSSLRenegotiationAllowed" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.7.0" deprecatedSince="26.9.0">
+<attr id="1832" name="zimbraMailboxdSSLRenegotiationAllowed" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.7.0">
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>Whether TLS renegotiation is allowed. See also RFC 5746 and CVE-2011-1473 for concerns about possible SSL renegotiation DoS</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1835" name="zimbraMtaHopcountLimit" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0">
@@ -8850,16 +8787,15 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1900" name="zimbraShortTermGranteeCacheSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0" deprecatedSince="26.9.0">
+<attr id="1900" name="zimbraShortTermGranteeCacheSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0">
   <globalConfigValue>128</globalConfigValue>
   <desc>Maximum number of entries in the short term Grantee cache.
   This cache can improve performance by avoiding recomputing details frequently in a short period of time, for instance for each entry in search results.
   Can disable the cache be specifying a value of 0
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1901" name="zimbraShortTermGranteeCacheExpiration" type="duration" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0" deprecatedSince="26.9.0">
+<attr id="1901" name="zimbraShortTermGranteeCacheExpiration" type="duration" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0">
   <globalConfigValue>50s</globalConfigValue>
   <desc>Maximum time an entry in the Grantee cache will be regarded as valid.
   If value is 0, the cache is disabled.
@@ -8869,19 +8805,17 @@ deprecatedSince="23.9.0">
   The longer the value of this setting is, the more stale the view of the details is likely to be.  For this reason, the maximum accepted value is 30m.
   Larger values will be treated as being 30m
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1902" name="zimbraShortTermAllEffectiveRightsCacheSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0" deprecatedSince="26.9.0">
+<attr id="1902" name="zimbraShortTermAllEffectiveRightsCacheSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0">
   <globalConfigValue>128</globalConfigValue>
   <desc>Maximum number of entries in the short term All Effective Rights cache.
   This cache can improve performance by avoiding recomputing All Effective Rights of named entries like accounts frequently in a short period of time.
   Can disable the cache be specifying a value of 0
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1903" name="zimbraShortTermAllEffectiveRightsCacheExpiration" type="duration" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0" deprecatedSince="26.9.0">
+<attr id="1903" name="zimbraShortTermAllEffectiveRightsCacheExpiration" type="duration" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0">
   <globalConfigValue>50s</globalConfigValue>
   <desc>Maximum time an entry in the short term All Effective Rights cache will be regarded as valid.
   If value is 0, the cache is disabled.
@@ -8891,7 +8825,6 @@ deprecatedSince="23.9.0">
   The longer the value of this setting is, the more stale the view of the details is likely to be.  For this reason, the maximum accepted value is 30m.
   Larger values will be treated as being 30m
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1904" name="zimbraPrefShowAllNewMailNotifications" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" since="8.7.0,9.0.0">
@@ -8912,15 +8845,13 @@ deprecatedSince="23.9.0">
   <defaultCOSValue>TRUE</defaultCOSValue>
 </attr>
 
-<attr id="1908" name="zimbraMtaAuthBindAddress" type="string" max="128" cardinality="single" optionalIn="globalConfig,server" requiresRestart="mta" flags="serverInherited" since="8.7.0,9.0.0" deprecatedSince="26.9.0">
+<attr id="1908" name="zimbraMtaAuthBindAddress" type="string" max="128" cardinality="single" optionalIn="globalConfig,server" requiresRestart="mta" flags="serverInherited" since="8.7.0,9.0.0">
   <desc>interface address on which Admin HTTPS connector for MTA Auth should listen; if empty, binds to all interfaces</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="1909" name="zimbraImapDisplayMailFoldersOnly" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.7.0,9.0" deprecatedSince="26.9.0">
+<attr id="1909" name="zimbraImapDisplayMailFoldersOnly" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.7.0,9.0">
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>whether to display IMAP Mail folders only </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1910" name="zimbraDataSourceSmtpEnabled" type="boolean" cardinality="single" optionalIn="dataSource" since="8.7.0,9.0.0">
@@ -9136,11 +9067,10 @@ deprecatedSince="23.9.0">
   <desc>PEM formatted DH parameters for SSL</desc>
 </attr>
 
-<attr id="1971" name="zimbraContactSearchDecomposition" type="integer" cardinality="single" min="0" max="2" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0,9.0.0" deprecatedSince="26.9.0">
+<attr id="1971" name="zimbraContactSearchDecomposition" type="integer" cardinality="single" min="0" max="2" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0,9.0.0">
   <globalConfigValue>2</globalConfigValue>
   <desc>Specify the decomposition mode used for looking up the Contact items by the phonetic last/first name or last/first name.  The accepted value is as follows: 0 = No decomposition.  The accented characters will be compared 'as is' (not be decomposed) (Collator.NO_DECOMPOSITION).  1 = Canonical decomposition mapping rules found in the Unicode Standard is used (Collator.CANONICAL_DECOMPOSITION).  2 = Unicode canonical and Unicode compatibility decomposition mapping rules found in the Unicode Standard is used.  When this mode is selected, compatible characters, such as half-width and full-width katakana characters, are considered equivalent (Collator.FULL_DECOMPOSITION).
   </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="1972" name="zimbraPrefTabInEditorEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" since="8.7.0, 9.0.0">
@@ -9213,17 +9143,15 @@ deprecatedSince="23.9.0">
   <desc>Quota allotted to all data sources</desc>
 </attr>
 
-<attr id="2017" name="zimbraPurgedConversationsQueueSize" type="long" cardinality="single" optionalIn="globalConfig" since="8.7.0,9.0.0" deprecatedSince="26.9.0">
+<attr id="2017" name="zimbraPurgedConversationsQueueSize" type="long" cardinality="single" optionalIn="globalConfig" since="8.7.0,9.0.0">
   <globalConfigValue>1000000</globalConfigValue>
   <desc>The total size (in bytes) of the in-memory queue of conversations to be purged for each data source</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="2018" name="zimbraLdapGentimeFractionalSecondsEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.7.0,9.0.0" deprecatedSince="26.9.0">
+<attr id="2018" name="zimbraLdapGentimeFractionalSecondsEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.7.0,9.0.0">
   <globalConfigValue>TRUE</globalConfigValue>
   <globalConfigValueUpgrade>FALSE</globalConfigValueUpgrade>
   <desc>Whether to include fractional seconds in LDAP gentime values (e.g. zimbraPasswordLockoutFailureTime or zimbraGalLastSuccessfulSyncTimestamp). Releases prior to 8.7 are unable to parse gentime values which include fractional seconds; therefore this value must remain set to FALSE in environments where any release 8.6 or lower is present. It should be changed to TRUE once all systems are upgraded to 8.7 or higher.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="2019" name="zimbraNewMailNotificationMessage" type="string" max="10000" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" since="8.7.0,9.0.0">
@@ -9231,10 +9159,9 @@ deprecatedSince="23.9.0">
   Sample configuration: From: Postmaster &lt;postmaster@${RECIPIENT_DOMAIN}&gt;${NEWLINE}To: &lt;${RECIPIENT_ADDRESS}&gt;${NEWLINE}Subject: New message received at ${RECIPIENT_ADDRESS}${NEWLINE}Date: ${DATE}${NEWLINE}Content-Type: text/plain${NEWLINE}${NEWLINE}New message received at ${RECIPIENT_ADDRESS}.${NEWLINE}Sender: ${SENDER_ADDRESS}${NEWLINE}Subject: ${SUBJECT}</desc>
 </attr>
 
-<attr id="2020" name="zimbraSpamTrainingSubjectPrefix" type="astring" max="32" cardinality="single" optionalIn="globalConfig" since="8.7.0,9.0.0" deprecatedSince="26.9.0">
+<attr id="2020" name="zimbraSpamTrainingSubjectPrefix" type="astring" max="32" cardinality="single" optionalIn="globalConfig" since="8.7.0,9.0.0">
   <globalConfigValue>spam-report:</globalConfigValue>
   <desc>Subject prefix for the spam training messages used to sent to the zimbraSpamIsSpamAccount/zimbraSpamIsNotSpamAccount account.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="2021" name="zimbraDataSourceOAuthClientId" type="string" cardinality="single" optionalIn="dataSource,imapDataSource" since="8.7.0,9.0.0" deprecatedSince="23.9.0">
@@ -9348,10 +9275,9 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Zimbra Chats feature has been removed. Carbonio uses WSC. See: carbonioFeatureWscEnabled</deprecateDesc>
 </attr>
 
-<attr id="2053" name="zimbraMailboxThrottleReapInterval" type="duration" min="1" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0,9.0.0" deprecatedSince="26.9.0">
+<attr id="2053" name="zimbraMailboxThrottleReapInterval" type="duration" min="1" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0,9.0.0">
     <globalConfigValue>60s</globalConfigValue>
     <desc>Time in milliseconds between IMAP/POP/LMTP rate limiter stale entry cleanup cycle.</desc>
-    <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="2054" name="zimbraFeatureTrustedDevicesEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="domainAdminModifiable,accountInfo,accountInherited" since="8.7.0,9.0.0">
@@ -9430,10 +9356,9 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Feature removed</deprecateDesc>
 </attr>
 
-<attr id="2067" name="zimbraScheduledTaskRetry" type="boolean" cardinality="single" optionalIn="globalConfig" since="8.7.0,9.0.0" deprecatedSince="26.9.0">
+<attr id="2067" name="zimbraScheduledTaskRetry" type="boolean" cardinality="single" optionalIn="globalConfig" since="8.7.0,9.0.0">
    <globalConfigValue>TRUE</globalConfigValue>
    <desc>Whether to retry, after a delay, scheduled tasks upon failure</desc>
-   <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="2068" name="zimbraScheduledTaskMaxRetries" type="integer" cardinality="single" optionalIn="globalConfig" since="8.7.0,9.0.0">
@@ -9441,10 +9366,9 @@ deprecatedSince="23.9.0">
    <desc>The maximum number of times a scheduled task can be retried upon failure. A value of 0 means no maximum</desc>
 </attr>
 
-<attr id="2069" name="zimbraScheduledTaskInitialRetryDelay" type="duration" cardinality="single" optionalIn="globalConfig" since="8.7.0,9.0.0" deprecatedSince="26.9.0">
+<attr id="2069" name="zimbraScheduledTaskInitialRetryDelay" type="duration" cardinality="single" optionalIn="globalConfig" since="8.7.0,9.0.0">
    <globalConfigValue>5s</globalConfigValue>
    <desc>The initial retry delay for the exponential backoff algorithm</desc>
-   <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="2070" name="zimbraScheduledTaskMaxRetryDelay" type="duration" cardinality="single" optionalIn="globalConfig" since="8.7.0,9.0.0">
@@ -9452,10 +9376,9 @@ deprecatedSince="23.9.0">
    <desc>The maximum retry delay for the exponential backoff algorithm, or 0 for no maximum</desc>
 </attr>
 
-<attr id="2071" name="zimbraScheduledTaskRetryPolicy" type="enum" value="constant,linear,exponential" cardinality="single" optionalIn="globalConfig" since="8.7.0,9.0.0" deprecatedSince="26.9.0">
+<attr id="2071" name="zimbraScheduledTaskRetryPolicy" type="enum" value="constant,linear,exponential" cardinality="single" optionalIn="globalConfig" since="8.7.0,9.0.0">
    <globalConfigValue>exponential</globalConfigValue>
    <desc>The algorithm for determining how long the task scheduler should delay a task attempt upon failure</desc>
-   <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="2072" name="zimbraAvailabilityServiceProvider" type="boolean" cardinality="single" optionalIn="account" since="8.7.0,9.0.0">
@@ -9583,10 +9506,9 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Variable feature is always enabled, hence this attribute has been deprecated</deprecateDesc>
 </attr>
 
-<attr id="2097" name="zimbraGalSyncSizeLimit" type="integer" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited" since="8.7.2" deprecatedSince="26.9.0">
+<attr id="2097" name="zimbraGalSyncSizeLimit" type="integer" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited" since="8.7.2">
   <globalConfigValue>30000</globalConfigValue>
   <desc>Page size control for SyncGalRequest. By default not more than 30000 entries will be returned for every SyncGalRequest</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="2098" name="zimbraAdminSieveFeatureVariablesEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.7.6" deprecatedSince="8.7.8">
@@ -9779,9 +9701,8 @@ deprecatedSince="23.9.0">
   <desc>Enable contact backup feature</desc>
 </attr>
 
-<attr id="2132" name="zimbraPrefOutOfOfficeSpecificDomains" type="string" cardinality="multi" optionalIn="account,cos" flags="accountInherited" since="8.8.5" deprecatedSince="26.9.0">
+<attr id="2132" name="zimbraPrefOutOfOfficeSpecificDomains" type="string" cardinality="multi" optionalIn="account,cos" flags="accountInherited" since="8.8.5">
   <desc>Specific domains to which custom out of office message is to be sent</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="2133" name="zimbraInvalidJWTokens" type="string" cardinality="multi" optionalIn="account" since="8.8.6" flags="ephemeral,dynamic,expirable">
@@ -9833,9 +9754,8 @@ deprecatedSince="23.9.0">
   <desc>temporary RFC822 email address of this recipient for accepting mail during account rename</desc>
 </attr>
 
-<attr id="2144" name="zimbraPrimaryEmailChangeHistory" type="string" cardinality="multi" optionalIn="account" flags="accountInfo" since="8.8.10" deprecatedSince="26.9.0">
+<attr id="2144" name="zimbraPrimaryEmailChangeHistory" type="string" cardinality="multi" optionalIn="account" flags="accountInfo" since="8.8.10">
   <desc>timestamp of account rename and previous name of the account</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="2994" name="zimbraPrefDefaultCalendarId" type="integer" cardinality="single" optionalIn="account,cos" flags="accountInherited" callback="DefaultCalendarIdCallback" since="8.8.10">
@@ -9941,10 +9861,9 @@ deprecatedSince="23.9.0">
   <desc> Ehcache: the maximum amount of disk space the imap active session cache will consume in Bytes before eviction. By default this value is 100 gigabytes. This is a rough limit,Due to internals of ehcache actual size in memory will often exceed this limit by a modest margin. </desc>
 </attr>
 
-<attr id="3006" name="zimbraImapInactiveSessionEhcacheMaxDiskSize" type="long" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.7.6" deprecatedSince="26.9.0">
+<attr id="3006" name="zimbraImapInactiveSessionEhcacheMaxDiskSize" type="long" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.7.6">
   <globalConfigValue>107374182400</globalConfigValue>
   <desc> Ehcache: the maximum amount of disk space the imap inactive session cache will consume in Bytes before eviction. By default this value is 100 gigabytes. This is a rough limit,Due to internals of ehcache actual size in memory will often exceed this limit by a modest margin. </desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="3007" name="zimbraReverseProxyIPThrottleWhitelistTime" type="duration" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" since="8.7.6">
@@ -9956,28 +9875,24 @@ deprecatedSince="23.9.0">
   <desc>The pool of servers that are available to the proxy for handling IMAP sessions. If empty, the NginxLookupExtension will select the mailbox server that hosts the account.</desc>
 </attr>
 
-<attr id="3009" name="zimbraImapLoadBalancingAlgorithm" type="string" max="512" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" since="8.7.6" deprecatedSince="26.9.0">
+<attr id="3009" name="zimbraImapLoadBalancingAlgorithm" type="string" max="512" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" since="8.7.6">
   <globalConfigValue>AccountIdHash</globalConfigValue>
   <desc>Determines the load-balancing algorithm used to select an IMAP server from the pool of available zimbraReverseProxyUpstreamImapServers. Valid values are AccountIdHash, custom:{handler-algorithm} [arg1 arg2 ...]</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="3010" name="zimbraSSDBResourcePoolSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig" callback="EphemeralBackendCheck" since="8.7.6" deprecatedSince="26.9.0">
+<attr id="3010" name="zimbraSSDBResourcePoolSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig" callback="EphemeralBackendCheck" since="8.7.6">
   <globalConfigValue>0</globalConfigValue>
   <desc>Specifies the JedisPool size used by SSDBEphemeralStore. Higher pool sizes allow for more simultaneous connections to SSDB. A value of 0 will cause the pool size to be unlimited.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="3011" name="zimbraSSDBResourcePoolTimeout" type="duration" cardinality="single" optionalIn="globalConfig" callback="EphemeralBackendCheck" since="8.7.6" deprecatedSince="26.9.0">
+<attr id="3011" name="zimbraSSDBResourcePoolTimeout" type="duration" cardinality="single" optionalIn="globalConfig" callback="EphemeralBackendCheck" since="8.7.6">
   <globalConfigValue>0</globalConfigValue>
   <desc>Specifies the amount of time a thread will wait for a JedisPool resource. A value of 0 will cause the thread to block indefinitely.</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
-<attr id="3012" name="zimbraOpenImapFolderRequestChunkSize" type="integer" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" since="8.8.1" deprecatedSince="26.9.0">
+<attr id="3012" name="zimbraOpenImapFolderRequestChunkSize" type="integer" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" since="8.8.1">
   <globalConfigValue>1000</globalConfigValue>
   <desc>The max number of IMAP messages returned by OpenImapFolderRequest before pagination begins</desc>
-  <deprecateDesc>Feature no longer supported</deprecateDesc>
 </attr>
 
 <attr id="3013" name="zimbraRemoteImapServerEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.8.1" deprecatedSince="22.9.0">
@@ -10566,5 +10481,4 @@ deprecatedSince="23.9.0">
 </attr>
 
 </attrs>
-
 
