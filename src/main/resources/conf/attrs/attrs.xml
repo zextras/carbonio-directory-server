@@ -10341,12 +10341,9 @@ deprecatedSince="23.9.0">
   <desc>OTPs grace period ending time</desc>
 </attr>
 
-<attr id="3171" name="carbonioPublicFreeBusyAllowed" type="boolean" cardinality="single" optionalIn="globalConfig,domain" flags="domainAdminModifiable,domainInherited" since="26.9.0">
-  <globalConfigValue>TRUE</globalConfigValue>
-  <desc>Allow unauthenticated (public) users to query free/busy data via SOAP and REST endpoints. When set to FALSE, public access is blocked and users must authenticate. Can be set globally or per-domain. Domain setting overrides global config. Defaults to TRUE for backward compatibility.</desc>
+<attr id="3171" name="carbonioPublicFreeBusyAllowed" type="boolean" cardinality="single" optionalIn="domain,globalConfig" flags="domainAdminModifiable,domainInherited" since="26.9.0">
+  <globalConfigValue>FALSE</globalConfigValue>
+  <desc>Allow unauthenticated (public) users to query free/busy data via SOAP and REST endpoints. When set to FALSE, public access is blocked and users must authenticate. Can be set globally or per-domain. Domain setting overrides global config. Defaults to FALSE.</desc>
 </attr>
 
 </attrs>
-
-
-
