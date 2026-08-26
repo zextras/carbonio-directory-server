@@ -1,0 +1,8 @@
+{
+  "zimbra_defaultcos": [
+    "carbonioFeatureStoragesEnabled"
+  ],
+  "zimbra_defaultexternalcos": [
+    "carbonioFeatureStoragesEnabled"
+  ]
+}

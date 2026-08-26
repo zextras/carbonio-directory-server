@@ -10347,4 +10347,10 @@ deprecatedSince="23.9.0">
   <desc>Allow unauthenticated (public) users to query free/busy data via SOAP and REST endpoints. When set to FALSE, public access is blocked and users must authenticate. Can be set globally or per-domain. Domain setting overrides global config. Defaults to FALSE.</desc>
 </attr>
 
+<attr id="3172" name="carbonioFeatureStoragesEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="26.9.0">
+  <defaultCOSValue>TRUE</defaultCOSValue>
+  <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
+  <desc>Whether the Storages feature enabled for account or COS</desc>
+</attr>
+
 </attrs>
