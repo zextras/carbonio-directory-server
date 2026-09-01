@@ -36,7 +36,7 @@ pipeline {
     }
 
     triggers {
-        cron(env.BRANCH_NAME == 'devel' ? 'H 5 * * *' : '')
+        cron(env.BRANCH_IS_PRIMARY == 'true' ? 'H 5 * * *' : '')
     }
 
     stages {
@@ -113,7 +113,7 @@ pipeline {
         stage('Docker images') {
             when {
                 expression {
-                    return isBuildingTag() || env.BRANCH_NAME == 'devel'
+                    return isBuildingTag() || env.BRANCH_IS_PRIMARY == 'true'
                 }
             }
             steps {
