@@ -19,7 +19,7 @@ The Maven build invokes `AttributeManagerUtil` during `prepare-package` to gener
 mvn clean install                 # compile, generate LDAP artifacts, run tests
 mvn clean install -DskipTests     # skip tests (what CI uses for the build stage)
 mvn verify                        # run tests + failsafe + JaCoCo report
-mvn -Pprod clean install          # release profile (strips the -SNAPSHOT changelist)
+TAG_NAME=v1.2.3 mvn clean install # release build (blanks the -SNAPSHOT changelist)
 ```
 
 Run a single test:
@@ -90,7 +90,21 @@ Incremental attribute changes for already-installed instances are declared as ti
 
 ## CI
 
-`Jenkinsfile` defines the pipeline, which runs on the `zextras-v1` agent inside a `jdk-21` container. It builds with `mvn clean install -DskipTests`, then runs `mvn verify` and publishes JUnit reports, followed by a SonarQube analysis. On `devel` and tags, it publishes the `carbonio-openldap` container image to `registry.dev.zextras.com` (tagged `devel`/`latest` for `devel`, the tag name plus `stable` for tags). Maven artifacts are deployed to Zextras Artifactory as SNAPSHOTs on non-tag builds and as releases on tags (with the `-Pprod` profile). The pipeline also builds the deb/rpm packages, uploads them, and finally runs `dt2_semanticRelease` to bump the version. A nightly cron (`H 5 * * *`) triggers the pipeline on `devel`.
+`Jenkinsfile` defines the pipeline, which runs on the `zextras-v1` agent and delegates almost everything to shared steps from `jenkins-lib-common`:
+
+| Stage | Step | Notes |
+| --- | --- | --- |
+| Setup | `checkout scm` + `gitMetadata()` | |
+| Skip CI | `semanticRelease.guard()` | aborts builds of the release bot's own version-bump commits |
+| Security Scan | `gitleaksStage()` | secret scan |
+| Maven | `mavenStage()` | expands into Maven Build / Maven Test / SonarQube Analysis / Maven Deploy on `jdk-21`. Sonar runs on `main` and PRs; deploy runs on `main` and tags |
+| Docker images | `dockerStage()` | publishes `carbonio-openldap` for `linux/amd64` + `linux/arm64` |
+| Build deb/rpm | `buildStage()` | YAP packages |
+| Archive attribute docs | `archiveArtifacts` | `target/carbonio-attrs-docs-*.zip` |
+| Upload artifacts | `uploadStage()` | |
+| Bump version | `semanticRelease()` | |
+
+A nightly cron (`H 5 * * *`) triggers the pipeline on `main`.
 
 ## Releases
 
