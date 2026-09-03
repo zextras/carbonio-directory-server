@@ -13,30 +13,20 @@
     <groupId>com.zextras</groupId>
     <artifactId>maven-ci-parent</artifactId>
     <version>1.1.0</version>
+    <relativePath/>
   </parent>
   <packaging>jar</packaging>
   <artifactId>mailbox-attribute-manager</artifactId>
   <version>${revision}${changelist}</version>
   <!-- Also seeds parent-POM resolution: Maven reads these before resolving <parent>,
-       so maven-ci-parent is reachable without a Zextras mirror in settings.xml. -->
+       so maven-ci-parent is reachable without the Nexus mirror in settings.xml. -->
   <repositories>
     <repository>
-      <id>zextras-public-release</id>
-      <name>Zextras public maven release repository</name>
-      <url>https://zextras.jfrog.io/artifactory/public-maven-repo</url>
+      <id>zextras-java-sdk</id>
+      <name>Zextras Artifact Manager (public-maven-repo + maven-snapshot)</name>
+      <url>https://zextras.jfrog.io/artifactory/java-sdk</url>
       <releases>
         <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>zextras-public-snapshots</id>
-      <name>Zextras public maven snapshot repository</name>
-      <url>https://zextras.jfrog.io/artifactory/maven-snapshot</url>
-      <releases>
-        <enabled>false</enabled>
       </releases>
       <snapshots>
         <enabled>true</enabled>
