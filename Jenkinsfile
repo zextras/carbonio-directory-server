@@ -27,10 +27,6 @@ pipeline {
         timeout(time: 2, unit: 'HOURS')
     }
 
-    triggers {
-        cron(env.BRANCH_IS_PRIMARY == 'true' ? 'H 5 * * *' : '')
-    }
-
     stages {
         stage('Setup') {
             steps {

@@ -104,8 +104,6 @@ Incremental attribute changes for already-installed instances are declared as ti
 | Upload artifacts | `uploadStage()` | |
 | Bump version | `semanticRelease()` | |
 
-A nightly cron (`H 5 * * *`) triggers the pipeline on `main`.
-
 ## Releases
 
 `release.config.mjs` drives semantic-release on pushes to `main`. Conventional-commit history determines the version bump (`feat` → minor; `fix` / `refactor` / `build` / `ci` / `perf` → patch), and the bot updates `<revision>` in `pom.xml` and `pkgver` in `directory-server/PKGBUILD` — do not edit those versions by hand.
