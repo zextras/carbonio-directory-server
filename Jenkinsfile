@@ -7,12 +7,6 @@ library(
         ])
 )
 
-boolean isBuildingTag() {
-    return env.TAG_NAME ? true : false
-}
-
-String profile = isBuildingTag() ? '-Pprod' : ''
-
 properties(defaultPipelineProperties())
 
 pipeline {
@@ -23,8 +17,6 @@ pipeline {
     }
 
     environment {
-        MVN_OPTS = "-Ddebug=0 ${profile}"
-        GITHUB_BOT_PR_CREDS = credentials('jenkins-integration-with-github-account')
         JAVA_OPTS = '-Dfile.encoding=UTF8'
         LC_ALL = 'C.UTF-8'
     }
@@ -47,75 +39,27 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Skip CI') {
             steps {
-                container('jdk-21') {
-                    sh "mvn ${MVN_OPTS} clean install -DskipTests"
-                }
+                script { semanticRelease.guard() }
             }
         }
 
-        stage('Test') {
+        stage('Security Scan') {
             steps {
-                container('jdk-21') {
-                    sh "mvn ${MVN_OPTS} verify"
-                    junit allowEmptyResults: true,
-                            testResults: '**/target/surefire-reports/*.xml,**/target/failsafe-reports/*.xml'
-                }
+                gitleaksStage()
             }
         }
 
-        stage('Sonarqube Analysis') {
+        stage('Maven') {
             steps {
-                container('jdk-21') {
-                    withSonarQubeEnv(credentialsId: 'sonarqube-user-token', installationName: 'SonarQube instance') {
-                        sh """
-                            mvn ${MVN_OPTS} -DskipTests \
-                                sonar:sonar \
-                                -Dsonar.junit.reportPaths=target/surefire-reports,target/failsafe-reports
-                        """
-                    }
+                script {
+                    mavenStage()
                 }
             }
         }
-
-        stage('Publish SNAPSHOT to maven') {
-            when {
-                not { buildingTag() }
-            }
-            steps {
-                container('jdk-21') {
-                    mavenDeploy(
-                            mvnOpts: MVN_OPTS,
-                            extraArgs: '-DskipTests=true',
-                            logFile: 'mvn-deploy-snapshot.log'
-                    )
-                }
-            }
-        }
-
-        stage('Publish to maven') {
-            when {
-                buildingTag()
-            }
-            steps {
-                container('jdk-21') {
-                    mavenDeploy(
-                            mvnOpts: MVN_OPTS,
-                            extraArgs: '-Dchangelist= -DskipTests=true',
-                            logFile: 'mvn-deploy-release.log'
-                    )
-                }
-            }
-        }
-
 
         stage('Docker images') {
-            when {
-                expression {
-                    return isBuildingTag() || env.BRANCH_IS_PRIMARY == 'true'
-                }
-            }
             steps {
                 dockerStage([
                         dockerfile: 'docker/openldap/Dockerfile',
@@ -131,7 +75,6 @@ pipeline {
 
         stage('Build deb/rpm') {
             steps {
-                echo 'Building deb/rpm packages'
                 buildStage(buildFlags: ' -sd ', useDefaultExcludes: false)
             }
         }
@@ -155,9 +98,9 @@ pipeline {
             }
         }
 
-        stage('Semantic Release') {
+        stage('Bump version') {
             steps {
-                semanticRelease()
+                script { semanticRelease() }
             }
         }
     }
