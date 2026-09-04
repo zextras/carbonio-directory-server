@@ -494,7 +494,7 @@
     </plugins>
   </build>
   <properties>
-    <revision>5.3.1</revision>
+    <revision>5.3.2</revision>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <maven-exec-plugin.version>3.1.0</maven-exec-plugin.version>
