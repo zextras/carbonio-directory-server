@@ -10355,4 +10355,9 @@ deprecatedSince="23.9.0">
   <desc>Whether the Storages feature enabled for account or COS</desc>
 </attr>
 
+<attr id="3173" name="carbonioPrefTimeFormat" type="enum" value="12h,24h" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="26.9.0">
+  <defaultCOSValue>24h</defaultCOSValue>
+  <desc>Preferred time format for account: 12h (12-hour with AM/PM) or 24h (24-hour)</desc>
+</attr>
+
 </attrs>
