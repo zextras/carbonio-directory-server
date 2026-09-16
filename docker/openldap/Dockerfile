@@ -23,8 +23,8 @@ RUN apt-get update \
       && printf 'Types: deb\nURIs: http://ports.ubuntu.com/ubuntu-ports/\nSuites: jammy jammy-updates jammy-security\nComponents: main restricted universe multiverse\nArchitectures: %s\nSigned-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg\n' "${TARGETARCH}" \
          > /etc/apt/sources.list.d/ports-${TARGETARCH}.sources; \
     fi \
- # Add zextras devel repo (area51 public mirror of JFrog ubuntu-devel)
- && printf 'deb [arch=%s trusted=yes] https://repo.area51-zextras.com/devel/ubuntu jammy main\n' "${TARGETARCH}" \
+ # Add zextras devel repo (Nexus mirror of ubuntu-devel)
+ && printf 'deb [arch=%s trusted=yes] https://repo.zextras.tools/repository/ubuntu-devel-jammy jammy main\n' "${TARGETARCH}" \
     > /etc/apt/sources.list.d/zextras.list \
  && apt-get update \
  # Download only the packages needed to run slapd — no dep resolution, no carbonio-core
