@@ -124,6 +124,10 @@
   </attrs>
 </right>
 
+<right name="setAccountQuota" type="preset" targetType="account">
+  <desc>set account quota</desc>
+</right>
+
 <right name="viewAccountAdminUI" type="preset" targetType="account">
   <desc>
     execute the GetAdminConsoleUIComp SOAP when an account
