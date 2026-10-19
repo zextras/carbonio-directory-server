@@ -10,7 +10,7 @@ When a change alters user-facing build commands, package targets, directory layo
 
 Two deliverables live together in this repo:
 
-1. **Maven artifact `com.zextras:mailbox-attribute-manager`** — a Java 21 library that parses Zimbra/Carbonio attribute definitions (`src/main/resources/conf/attrs/*.xml`) and exposes `AttributeManager` to the mailbox server. Published to Zextras Artifactory.
+1. **Maven artifact `com.zextras:mailbox-attribute-manager`** — a Java 21 library that parses Zimbra/Carbonio attribute definitions (`src/main/resources/conf/attrs/*.xml`) and exposes `AttributeManager` to the mailbox server. Published to Zextras Nexus (`repo.zextras.tools`).
 2. **OS package `carbonio-directory-server`** — a deb/rpm that ships the generated OpenLDAP schema, LDIF seeds, external directory sync templates, and systemd target for Carbonio's OpenLDAP instance. Packaged via YAP from `directory-server/PKGBUILD`.
 
 The same Maven build produces both: running the package phase triggers `AttributeManagerUtil` to generate LDAP schema + LDIFs into `src/ldap/generated/`, which the PKGBUILD then installs under `/opt/zextras/common/etc/openldap/zimbra/`.

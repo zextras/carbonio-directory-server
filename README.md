@@ -2,7 +2,7 @@
 
 This repository produces two related deliverables from a single Maven build:
 
-- **`mailbox-attribute-manager`** — a Java 21 library (`com.zextras:mailbox-attribute-manager`) that parses the Carbonio attribute definitions in `src/main/resources/conf/attrs/` and exposes `AttributeManager` to the mailbox server. Published to Zextras Artifactory.
+- **`mailbox-attribute-manager`** — a Java 21 library (`com.zextras:mailbox-attribute-manager`) that parses the Carbonio attribute definitions in `src/main/resources/conf/attrs/` and exposes `AttributeManager` to the mailbox server. Published to Zextras Nexus (`repo.zextras.tools`).
 - **`carbonio-directory-server`** — a deb/rpm package that ships the generated OpenLDAP schema, LDIF seeds, external directory sync templates, and the systemd target for Carbonio's OpenLDAP instance.
 
 The Maven build invokes `AttributeManagerUtil` during `prepare-package` to generate the LDAP schema and LDIFs into `src/ldap/generated/`, which the `directory-server/PKGBUILD` then installs under `/opt/zextras/common/etc/openldap/zimbra/`.
