@@ -37,9 +37,6 @@ RUN apt-get update \
       libcap2-bin:${TARGETARCH} \
       libltdl7:${TARGETARCH} \
       libsystemd0:${TARGETARCH} \
-      netcat-openbsd:${TARGETARCH} \
-      libbsd0:${TARGETARCH} \
-      libmd0:${TARGETARCH} \
       openssl:${TARGETARCH} \
  # Extract all debs with dpkg -x — no postinst scripts run
  && for deb in /tmp/debs/*.deb; do dpkg -x "$deb" /staging; done \
@@ -48,10 +45,6 @@ RUN apt-get update \
  && mkdir -p /staging/usr/local/lib \
  && find /staging/lib /staging/usr/lib -name '*.so*' -not -path '*/opt/*' \
     -exec cp -P {} /staging/usr/local/lib/ \; 2>/dev/null || true \
- # Fix netcat: binary may land in bin/ or usr/bin/ depending on arch — normalise to bin/
- && find /staging/bin /staging/usr/bin -name 'nc.openbsd' -exec cp {} /staging/bin/nc.openbsd \; 2>/dev/null || true \
- && ln -sf nc.openbsd /staging/bin/netcat \
- && ln -sf nc.openbsd /staging/bin/nc \
  # Pre-create zextras user/group entries for the final stage (passwd/group only)
  && groupadd -r zextras \
  && useradd -r -g zextras -d /opt/zextras -s /bin/bash zextras \
@@ -65,7 +58,6 @@ FROM --platform=$TARGETPLATFORM docker.io/library/ubuntu:jammy
 COPY --from=openldap-installer /staging/opt /opt
 COPY --from=openldap-installer /staging/usr/local/lib /usr/local/lib/
 COPY --from=openldap-installer /staging/usr/bin/openssl /usr/bin/openssl
-COPY --from=openldap-installer /staging/bin /bin/
 COPY --from=openldap-installer /staging/sbin /sbin/
 COPY --from=openldap-installer /staging/etc/passwd /etc/passwd
 COPY --from=openldap-installer /staging/etc/group /etc/group
