@@ -10,7 +10,7 @@ startLDAPDaemon() {
     /opt/zextras/common/libexec/slapd -l LOCAL0 -h ldap://0.0.0.0:1389 \
     -F /opt/zextras/data/ldap/config -d 256 >> /tmp/openldap.log &
     echo $! > /run/carbonio/slapd.pid
-    while ! netcat -z localhost 1389; do
+    until (exec 3<>/dev/tcp/localhost/1389) 2>/dev/null; do
       sleep 0.5
     done
     echo "OpenLDAP started."
