@@ -5329,8 +5329,9 @@ deprecatedSince="23.9.0">
   <desc>foreign name for mapping an external name to a zimbra domain on domain level, it is in the format of {application}:{foreign name}</desc>
 </attr>
 
-<attr id="1136" name="zimbraForeignNameHandler" type="string" cardinality="multi" optionalIn="domain" since="7.0.0">
+<attr id="1136" name="zimbraForeignNameHandler" type="string" cardinality="multi" optionalIn="domain" since="7.0.0" deprecatedSince="26.12.0">
   <desc>handler for foreign name mapping, it is in the format of {application}:{class name}[:{params}]</desc>
+  <deprecateDesc>Foreign name mapping handlers are not supported anymore</deprecateDesc>
 </attr>
 
 <attr id="1137" name="zimbraFeatureMailSendLaterEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="7.0.0">
@@ -9742,9 +9743,10 @@ deprecatedSince="23.9.0">
   <desc>The pool of servers that are available to the proxy for handling IMAP sessions. If empty, the NginxLookupExtension will select the mailbox server that hosts the account.</desc>
 </attr>
 
-<attr id="3009" name="zimbraImapLoadBalancingAlgorithm" type="string" max="512" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" since="8.7.6">
+<attr id="3009" name="zimbraImapLoadBalancingAlgorithm" type="string" max="512" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" since="8.7.6" deprecatedSince="26.12.0">
   <globalConfigValue>AccountIdHash</globalConfigValue>
   <desc>Determines the load-balancing algorithm used to select an IMAP server from the pool of available zimbraReverseProxyUpstreamImapServers. Valid values are AccountIdHash, custom:{handler-algorithm} [arg1 arg2 ...]</desc>
+  <deprecateDesc>Standalone IMAP server load balancing is not supported anymore</deprecateDesc>
 </attr>
 
 <attr id="3010" name="zimbraSSDBResourcePoolSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig" callback="EphemeralBackendCheck" since="8.7.6">
@@ -9869,16 +9871,19 @@ deprecatedSince="23.9.0">
   <deprecateDesc>HAB is not supported anymore</deprecateDesc>
 </attr>
 
-<attr id="3074" name="zimbraAddressListGalFilter" type="string" cardinality="single" requiredIn="addressList" flags="domainAdminModifiable" since="8.8.10">
+<attr id="3074" name="zimbraAddressListGalFilter" type="string" cardinality="single" requiredIn="addressList" flags="domainAdminModifiable" since="8.8.10" deprecatedSince="26.12.0">
   <desc>filter to decide members of the address list using gal</desc>
+  <deprecateDesc>Address list feature is not supported anymore</deprecateDesc>
 </attr>
 
-<attr id="3075" name="zimbraIsAddressListActive" type="boolean" cardinality="single" requiredIn="addressList" flags="domainAdminModifiable" since="8.8.10">
+<attr id="3075" name="zimbraIsAddressListActive" type="boolean" cardinality="single" requiredIn="addressList" flags="domainAdminModifiable" since="8.8.10" deprecatedSince="26.12.0">
   <desc>whether address list is active or not</desc>
+  <deprecateDesc>Address list feature is not supported anymore</deprecateDesc>
 </attr>
 
-<attr id="3076" name="zimbraAddressListLdapFilter" type="string" cardinality="single" requiredIn="addressList" flags="domainAdminModifiable" since="8.8.10">
+<attr id="3076" name="zimbraAddressListLdapFilter" type="string" cardinality="single" requiredIn="addressList" flags="domainAdminModifiable" since="8.8.10" deprecatedSince="26.12.0">
   <desc>filter to decide members of the address list using ldap</desc>
+  <deprecateDesc>Address list feature is not supported anymore</deprecateDesc>
 </attr>
 
 <attr id="3079" name="zimbraFeatureZXWebEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.9.0">
