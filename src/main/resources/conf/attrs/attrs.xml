@@ -7208,9 +7208,10 @@ deprecatedSince="23.9.0">
     This attribute is applicable for accounts having zimbraIsExternalVirtualAccount set to TRUE.</desc>
 </attr>
 
-<attr id="1415" name="zimbraMessageChannelPort" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" callback="CheckPortConflict" requiresRestart="mailbox" since="8.0.0">
+<attr id="1415" name="zimbraMessageChannelPort" type="integer" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" callback="CheckPortConflict" requiresRestart="mailbox" since="8.0.0" deprecatedSince="26.12.0">
   <globalConfigValue>7285</globalConfigValue>
   <desc>port number on which message channel should listen</desc>
+  <deprecateDesc>The message channel is not supported anymore</deprecateDesc>
 </attr>
 
 <attr id="1416" name="zimbraClientTypeRegex" type="cstring" max="256" cardinality="multi" optionalIn="globalConfig" since="8.0.0">
@@ -7222,9 +7223,10 @@ deprecatedSince="23.9.0">
   <desc>Regex for identifying client types</desc>
 </attr>
 
-<attr id="1417" name="zimbraMessageChannelEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.0.0">
+<attr id="1417" name="zimbraMessageChannelEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.0.0" deprecatedSince="26.12.0">
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>whether message channel service is enabled on this server</desc>
+  <deprecateDesc>The message channel is not supported anymore</deprecateDesc>
 </attr>
 
 <attr id="1418" name="zimbraDataSourceImportOnLogin" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited,accountInfo" since="7.2.2">
