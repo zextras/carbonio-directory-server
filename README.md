@@ -75,7 +75,7 @@ docker build -f docker/openldap/Dockerfile -t carbonio-openldap .
 - `src/ldap/` — hand-maintained LDAP assets (`carbonio.ldif`, `carbonio.schema-template`, `cn=config` tree, etc.).
 - `src/ldap/src/updates/attrs/` — timestamped JSON files declaring per-release attribute additions applied on upgrade.
 - `src/ldap/src/migrations/pre_flight/` — pre-upgrade migration scripts.
-- `directory-server/` — `PKGBUILD`, systemd target, and tmpfile config for the OS package.
+- `directory-server/` — `PKGBUILD`, systemd target, tmpfile config, and the `carbonio-openldap-monitor-db` service and timer (every 30 minutes, runs `zmldapmonitordb` from carbonio-core; Ubuntu 24.04 and RHEL 9 only, older distros keep the zextras crontab) for the OS package.
 - `docker/openldap/` — `Dockerfile` and entrypoint for the `carbonio-openldap` container image.
 
 ## Modifying attributes
