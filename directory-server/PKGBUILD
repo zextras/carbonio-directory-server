@@ -15,14 +15,14 @@ section="mail"
 priority="optional"
 arch=('any')
 depends=(
-  "carbonio-core>=4.10.0"
+  "carbonio-core>=4.11.0"
   "carbonio-openldap"
   "carbonio-prometheus-openldap-exporter"
 )
 
 # Noble only: the units moved here from carbonio-core. On RPM yap would turn
 # replaces into Obsoletes, which would remove this package on upgrade.
-replaces__ubuntu_noble=("carbonio-core (<< 4.10.0)")
+replaces__ubuntu_noble=("carbonio-core (<< 4.11.0)")
 
 source=(
   "${pkgname}.target"
