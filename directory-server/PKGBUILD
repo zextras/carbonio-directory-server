@@ -22,7 +22,7 @@ depends=(
 
 # Noble only: the units moved here from carbonio-core. On RPM yap would turn
 # replaces into Obsoletes, which would remove this package on upgrade.
-replaces__ubuntu_noble=("carbonio-core<4.10.0")
+replaces__ubuntu_noble=("carbonio-core (<< 4.10.0)")
 
 source=(
   "${pkgname}.target"
