@@ -15,18 +15,26 @@ section="mail"
 priority="optional"
 arch=('any')
 depends=(
-  "carbonio-core"
+  "carbonio-core>=4.10.0"
   "carbonio-openldap"
   "carbonio-prometheus-openldap-exporter"
 )
 
+# Noble only: the units moved here from carbonio-core. On RPM yap would turn
+# replaces into Obsoletes, which would remove this package on upgrade.
+replaces__ubuntu_noble=("carbonio-core (<< 4.10.0)")
+
 source=(
   "${pkgname}.target"
   'systemd-tmpfile.conf'
+  'carbonio-openldap-monitor-db.service'
+  'carbonio-openldap-monitor-db.timer'
 )
 sha256sums=(
   '845e893eebd6b382c0340e9e10bfa36643286c1498535b2eed73286d7031a970'
   'c726e5af1eb1b6ae531add9bd980e0af798a1ac51fe0e63aeb734c0e2eb87be5'
+  'df1dd949cb2f1a9760cf9a348c5efff9e05eb2ffdce563e7a1c4e5f94aa1319b'
+  'e592435f9ad46517f87775dd867d12da94717dad8fb6b091268d62acb988fb4d'
 )
 
 _package() {
@@ -67,6 +75,10 @@ _package_systemd() {
 
   install -Dm644 "${srcdir}/${pkgname}.target" \
     "${sysdir}/${pkgname}.target"
+  install -Dm644 "${srcdir}/carbonio-openldap-monitor-db.service" \
+    "${sysdir}/carbonio-openldap-monitor-db.service"
+  install -Dm644 "${srcdir}/carbonio-openldap-monitor-db.timer" \
+    "${sysdir}/carbonio-openldap-monitor-db.timer"
 }
 
 _ldap_fix_setcap() {
@@ -113,6 +125,10 @@ _postinst_systemd_enable() {
   if [ -d /run/systemd/system ]; then
     systemctl daemon-reload &>/dev/null || :
     systemctl enable carbonio-directory-server.target &>/dev/null || :
+    systemctl enable carbonio-openldap-monitor-db.timer &>/dev/null || :
+    if systemctl -q is-active carbonio-directory-server.target; then
+      systemctl start carbonio-openldap-monitor-db.timer &>/dev/null || :
+    fi
   fi
 }
 
@@ -210,13 +226,15 @@ postinst__ubuntu_noble() {
 prerm__rocky_9() {
   [ -d /run/systemd/system ] \
     && systemctl --no-reload disable --now \
-      carbonio-directory-server.target &>/dev/null || :
+      carbonio-directory-server.target \
+      carbonio-openldap-monitor-db.timer &>/dev/null || :
 }
 
 prerm__ubuntu_noble() {
   [ -d /run/systemd/system ] \
     && systemctl --no-reload disable --now \
-      carbonio-directory-server.target &>/dev/null || :
+      carbonio-directory-server.target \
+      carbonio-openldap-monitor-db.timer &>/dev/null || :
 }
 
 postrm__rocky_9() {

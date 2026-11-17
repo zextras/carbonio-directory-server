@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 Zextras <https://www.zextras.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+[Unit]
+Description=Carbonio OpenLDAP Database Size Monitor Every 30 Minutes
+Documentation=https://docs.zextras.com/
+PartOf=carbonio-directory-server.target
+
+[Timer]
+OnCalendar=*:00/30
+Persistent=true
+
+[Install]
+WantedBy=carbonio-directory-server.target
