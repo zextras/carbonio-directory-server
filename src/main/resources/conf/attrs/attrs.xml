@@ -3225,23 +3225,28 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Zimlet target apps</desc>
 </attr>
 
-<attr id="607" name="zimbraFreebusyExchangeURL" type="string" max="256" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" callback="FreeBusyProviderURLCheck" since="5.0.3">
+<attr id="607" name="zimbraFreebusyExchangeURL" type="string" max="256" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3" deprecatedSince="26.12.0">
+  <deprecateDesc>Exchange free/busy over WebDAV is not supported anymore</deprecateDesc>
   <desc>URL to Exchange server for free/busy lookup and propagation</desc>
 </attr>
 
-<attr id="608" name="zimbraFreebusyExchangeAuthUsername" type="string" max="256" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3">
+<attr id="608" name="zimbraFreebusyExchangeAuthUsername" type="string" max="256" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3" deprecatedSince="26.12.0">
+  <deprecateDesc>Exchange free/busy over WebDAV is not supported anymore</deprecateDesc>
   <desc>Exchange username for free/busy lookup and propagation</desc>
 </attr>
 
-<attr id="609" name="zimbraFreebusyExchangeAuthPassword" type="string" max="256" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3">
+<attr id="609" name="zimbraFreebusyExchangeAuthPassword" type="string" max="256" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3" deprecatedSince="26.12.0">
+  <deprecateDesc>Exchange free/busy over WebDAV is not supported anymore</deprecateDesc>
   <desc>Exchange user password for free/busy lookup and propagation</desc>
 </attr>
 
-<attr id="610" name="zimbraFreebusyExchangeUserOrg" type="string" max="256" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3">
+<attr id="610" name="zimbraFreebusyExchangeUserOrg" type="string" max="256" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3" deprecatedSince="26.12.0">
+  <deprecateDesc>Exchange free/busy over WebDAV is not supported anymore</deprecateDesc>
   <desc>O and OU used in legacyExchangeDN attribute</desc>
 </attr>
 
-<attr id="611" name="zimbraFreebusyExchangeAuthScheme" type="enum" value="basic,form" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3">
+<attr id="611" name="zimbraFreebusyExchangeAuthScheme" type="enum" value="basic,form" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3" deprecatedSince="26.12.0">
+  <deprecateDesc>Exchange free/busy over WebDAV is not supported anymore</deprecateDesc>
   <desc>auth scheme to use</desc>
 </attr>
 
@@ -3290,12 +3295,14 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Batch size to use when indexing data</desc>
 </attr>
 
-<attr id="620" name="zimbraFreebusyExchangeCachedIntervalStart" type="duration" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3">
+<attr id="620" name="zimbraFreebusyExchangeCachedIntervalStart" type="duration" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3" deprecatedSince="26.12.0">
+  <deprecateDesc>Exchange free/busy over WebDAV is not supported anymore</deprecateDesc>
   <globalConfigValue>7d</globalConfigValue>
   <desc>The value of duration is used to indicate the start date (in the past relative to today) of the f/b interval pushed to Exchange server.</desc>
 </attr>
 
-<attr id="621" name="zimbraFreebusyExchangeCachedInterval" type="duration" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3">
+<attr id="621" name="zimbraFreebusyExchangeCachedInterval" type="duration" cardinality="single" optionalIn="globalConfig,domain,cos,account" flags="domainInherited,accountCosDomainInherited" since="5.0.3" deprecatedSince="26.12.0">
+  <deprecateDesc>Exchange free/busy over WebDAV is not supported anymore</deprecateDesc>
   <globalConfigValue>60d</globalConfigValue>
   <desc>The duration of f/b block pushed to Exchange server.</desc>
 </attr>
@@ -5571,7 +5578,8 @@ deprecatedSince="23.9.0">
   <desc>show just the display name of email addresses in the message header area and compose pane</desc>
 </attr>
 
-<attr id="1174" name="zimbraFreebusyExchangeServerType" type="enum" value="webdav" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited,domainAdminModifiable" since="6.0.11">
+<attr id="1174" name="zimbraFreebusyExchangeServerType" type="enum" value="webdav" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited,domainAdminModifiable" since="6.0.11" deprecatedSince="26.12.0">
+  <deprecateDesc>Exchange free/busy over WebDAV is not supported anymore</deprecateDesc>
   <globalConfigValue>webdav</globalConfigValue>
   <desc>Can be set to webdav for Exchange 2007 or older</desc>
 </attr>
@@ -6257,7 +6265,7 @@ deprecatedSince="23.9.0">
   <desc>mechanism to use for verifying password for admin.  See zimbraAuthMech</desc>
 </attr>
 
-<attr id="1253" name="zimbraFreebusyExternalZimbraURL" type="string" max="256" cardinality="multi" optionalIn="globalConfig" callback="FreeBusyProviderURLCheck" since="8.0.0">
+<attr id="1253" name="zimbraFreebusyExternalZimbraURL" type="string" max="256" cardinality="multi" optionalIn="globalConfig" since="8.0.0">
   <desc>URLs of external Zimbra servers for free/busy lookup in the form of http[s]://[user:pass@]host:port</desc>
 </attr>
 
