@@ -9551,8 +9551,9 @@ deprecatedSince="23.9.0">
   </desc>
 </attr>
 
-<attr id="2125" name="zimbraFeatureContactBackupLifeTime" type="duration" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.8.5">
+<attr id="2125" name="zimbraFeatureContactBackupLifeTime" type="duration" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.8.5" deprecatedSince="26.12.0">
   <globalConfigValue>15d</globalConfigValue>
+  <deprecateDesc>Contact backup is not supported anymore</deprecateDesc>
   <desc>
     Duration for which the backups should be preserved.
   </desc>
@@ -9581,8 +9582,9 @@ deprecatedSince="23.9.0">
   <desc>Whether to enable zimbra network new generation admin module.</desc>
 </attr>
 
-<attr id="2131" name="zimbraFeatureContactBackupEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="8.8.5">
+<attr id="2131" name="zimbraFeatureContactBackupEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="8.8.5" deprecatedSince="26.12.0">
   <defaultCOSValue>FALSE</defaultCOSValue>
+  <deprecateDesc>Contact backup is not supported anymore</deprecateDesc>
   <desc>Enable contact backup feature</desc>
 </attr>
 
