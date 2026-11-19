@@ -827,7 +827,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>whether or not new address in outgoing email are auto added to address book</desc>
 </attr>
 
-<attr id="132" name="zimbraIsMonitorHost" type="boolean" cardinality="single" optionalIn="server">
+<attr id="132" name="zimbraIsMonitorHost" type="boolean" cardinality="single" optionalIn="server" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>true if this server is the monitor host</desc>
 </attr>
 
@@ -860,7 +861,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>calendar features</desc>
 </attr>
 
-<attr id="137" name="zimbraFeatureTaggingEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited">
+<attr id="137" name="zimbraFeatureTaggingEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>tagging feature</desc>
@@ -872,7 +874,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <deprecateDesc>Deprecated as of bug 56924</deprecateDesc>
 </attr>
 
-<attr id="139" name="zimbraFeatureSavedSearchesEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited">
+<attr id="139" name="zimbraFeatureSavedSearchesEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>saved search feature</desc>
@@ -888,12 +891,14 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>password changing</desc>
 </attr>
 
-<attr id="142" name="zimbraFeatureInitialSearchPreferenceEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited">
+<attr id="142" name="zimbraFeatureInitialSearchPreferenceEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>preference to set initial search</desc>
 </attr>
 
-<attr id="143" name="zimbraFeatureFiltersEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited">
+<attr id="143" name="zimbraFeatureFiltersEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>filter prefs enabled</desc>
@@ -1326,7 +1331,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>whether or not to use same format (text or html) of message we are replying to</desc>
 </attr>
 
-<attr id="219" name="zimbraFeatureHtmlComposeEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited">
+<attr id="219" name="zimbraFeatureHtmlComposeEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>enabled html composing</desc>
 </attr>
@@ -1430,7 +1436,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Names of additional components that have been installed</desc>
 </attr>
 
-<attr id="243" name="zimbraCalendarCompatibilityMode" type="enum" value="standard,exchange" cardinality="single" optionalIn="globalConfig">
+<attr id="243" name="zimbraCalendarCompatibilityMode" type="enum" value="standard,exchange" cardinality="single" optionalIn="globalConfig" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>standard</globalConfigValue>
   <desc>compatibility mode for calendar server</desc>
 </attr>
@@ -1527,27 +1534,32 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <deprecateDesc>Spell check is not supported anymore</deprecateDesc>
 </attr>
 
-<attr id="268" name="zimbraImapBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox">
+<attr id="268" name="zimbraImapBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>Whether to bind to port on startup irrespective of whether the server is enabled.  Useful when port to bind is privileged and must be bound early.</desc>
 </attr>
 
-<attr id="269" name="zimbraImapSSLBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox">
+<attr id="269" name="zimbraImapSSLBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>Whether to bind to port on startup irrespective of whether the server is enabled.  Useful when port to bind is privileged and must be bound early.</desc>
 </attr>
 
-<attr id="270" name="zimbraLmtpBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox">
+<attr id="270" name="zimbraLmtpBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>Whether to bind to port on startup irrespective of whether the server is enabled.  Useful when port to bind is privileged and must be bound early.</desc>
 </attr>
 
-<attr id="271" name="zimbraPop3BindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox">
+<attr id="271" name="zimbraPop3BindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>Whether to bind to port on startup irrespective of whether the server is enabled.  Useful when port to bind is privileged and must be bound early.</desc>
 </attr>
 
-<attr id="272" name="zimbraPop3SSLBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox">
+<attr id="272" name="zimbraPop3SSLBindOnStartup" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>Whether to bind to port on startup irrespective of whether the server is enabled.  Useful when port to bind is privileged and must be bound early.</desc>
 </attr>
@@ -1574,11 +1586,13 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>always show the mini calendar</desc>
 </attr>
 
-<attr id="277" name="zimbraSslCaCert" type="astring" max="2048" cardinality="single" optionalIn="globalConfig">
+<attr id="277" name="zimbraSslCaCert" type="astring" max="2048" cardinality="single" optionalIn="globalConfig" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>CA Cert used to sign all self signed certs</desc>
 </attr>
 
-<attr id="278" name="zimbraSslCaKey" type="astring" max="2048" cardinality="single" optionalIn="globalConfig">
+<attr id="278" name="zimbraSslCaKey" type="astring" max="2048" cardinality="single" optionalIn="globalConfig" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>CA Key used to sign all self signed certs</desc>
 </attr>
 
@@ -1745,7 +1759,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>value of postfix mynetworks</desc>
 </attr>
 
-<attr id="312" name="zimbraFeatureViewInHtmlEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited">
+<attr id="312" name="zimbraFeatureViewInHtmlEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>option to view attachments in html</desc>
 </attr>
@@ -1833,7 +1848,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>capacity</desc>
 </attr>
 
-<attr id="331" name="zimbraCalResContactName" type="string" max="256" cardinality="single" optionalIn="calendarResource" flags="domainAdminModifiable">
+<attr id="331" name="zimbraCalResContactName" type="string" max="256" cardinality="single" optionalIn="calendarResource" flags="domainAdminModifiable" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>name of contact in charge of resource</desc>
 </attr>
 
@@ -1841,7 +1857,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>email of contact in charge of resource</desc>
 </attr>
 
-<attr id="333" name="zimbraCalResContactPhone" type="phone" max="32" cardinality="single" optionalIn="calendarResource" flags="domainAdminModifiable">
+<attr id="333" name="zimbraCalResContactPhone" type="phone" max="32" cardinality="single" optionalIn="calendarResource" flags="domainAdminModifiable" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>phone number of contact in charge of resource</desc>
 </attr>
 
@@ -1854,7 +1871,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   </desc>
 </attr>
 
-<attr id="335" name="zimbraFeatureSharingEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited">
+<attr id="335" name="zimbraFeatureSharingEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>enabled sharing</desc>
@@ -2009,7 +2027,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Whether out of office reply feature should be allowed for this account or in this cos</desc>
 </attr>
 
-<attr id="367" name="zimbraFeatureNewMailNotificationEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited">
+<attr id="367" name="zimbraFeatureNewMailNotificationEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>Whether new mail notification feature should be allowed for this account or in this cos</desc>
 </attr>
@@ -2043,11 +2062,13 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>whether end-user wants auto-complete from GAL. Feature must also be enabled.</desc>
 </attr>
 
-<attr id="374" name="zimbraNetworkLicense" type="string" cardinality="single" optionalIn="globalConfig" immutable="1" requiresRestart="mailbox">
+<attr id="374" name="zimbraNetworkLicense" type="string" cardinality="single" optionalIn="globalConfig" immutable="1" requiresRestart="mailbox" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>Contents of a signed Zimbra license key - an XML string.</desc>
 </attr>
 
-<attr id="375" name="zimbraNetworkActivation" type="string" cardinality="single" optionalIn="globalConfig" immutable="1">
+<attr id="375" name="zimbraNetworkActivation" type="string" cardinality="single" optionalIn="globalConfig" immutable="1" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>A signed activation key that authorizes this installation.</desc>
 </attr>
 
@@ -2231,7 +2252,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>whether to allow use of identities feature</desc>
 </attr>
 
-<attr id="416" name="zimbraFeaturePop3DataSourceEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited">
+<attr id="416" name="zimbraFeaturePop3DataSourceEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>whether user is allowed to retrieve mail from an external POP3 data source</desc>
@@ -2347,7 +2369,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>whether to allow use of tasks feature</desc>
 </attr>
 
-<attr id="437" name="zimbraSyncWindowSize" type="integer" min="0" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable">
+<attr id="437" name="zimbraSyncWindowSize" type="integer" min="0" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>0</defaultCOSValue>
   <desc>
     The maximum batch size for each ZimbraSync transaction.  Default value of 0 means to follow client requested size.  If set to any positive integer, the value will be the maximum number of items to sync even if client requests more.  This setting affects all sync categories including email, contacts, calendar and tasks.
@@ -2400,7 +2423,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Voicemail features enabled</desc>
 </attr>
 
-<attr id="446" name="zimbraAdminSavedSearches" type="string" max="512" cardinality="multi" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable">
+<attr id="446" name="zimbraAdminSavedSearches" type="string" max="512" cardinality="multi" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>admin saved searches</desc>
 </attr>
 
@@ -2599,12 +2623,14 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <deprecateDesc>Deprecated followed by the complete cleanup</deprecateDesc>
 </attr>
 
-<attr id="483" name="zimbraQuotaWarnPercent" type="integer" min="0" max="100" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable">
+<attr id="483" name="zimbraQuotaWarnPercent" type="integer" min="0" max="100" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>90</defaultCOSValue>
   <desc>Threshold for quota warning messages.</desc>
 </attr>
 
-<attr id="484" name="zimbraQuotaLastWarnTime" type="gentime" cardinality="single" optionalIn="account">
+<attr id="484" name="zimbraQuotaLastWarnTime" type="gentime" cardinality="single" optionalIn="account" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>Last time a quota warning was sent.</desc>
 </attr>
 
@@ -2618,7 +2644,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Quota warning message template.</desc>
 </attr>
 
-<attr id="487" name="zimbraAvailableLocale" type="string" max="80" cardinality="multi" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable">
+<attr id="487" name="zimbraAvailableLocale" type="string" max="80" cardinality="multi" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>Locales available for this account</desc>
 </attr>
 
@@ -2725,7 +2752,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>logout URL for web client to send the user to upon explicit logging out</desc>
 </attr>
 
-<attr id="508" name="zimbraClusterType" type="enum" value="none,RedHat,Veritas" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited">
+<attr id="508" name="zimbraClusterType" type="enum" value="none,RedHat,Veritas" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>none</globalConfigValue>
   <desc>
     Type of HA cluster software in use; "none" by default, "RedHat" for Red Hat cluster
@@ -2796,7 +2824,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>whether mailbox server should log to syslog</desc>
 </attr>
 
-<attr id="521" name="zimbraFeatureInstantNotify" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited">
+<attr id="521" name="zimbraFeatureInstantNotify" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>Enable instant notifications</desc>
 </attr>
@@ -2806,7 +2835,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Maximum number of scheduled tasks that can run simultaneously.</desc>
 </attr>
 
-<attr id="523" name="zimbraSignatureMinNumEntries" type="integer" min="0" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable">
+<attr id="523" name="zimbraSignatureMinNumEntries" type="integer" min="0" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>1</defaultCOSValue>
   <desc>minimum number of signatures allowed on an account, this is only used in the client</desc>
 </attr>
@@ -3087,7 +3117,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <deprecateDesc>Zimbra IM has been discontinued. Zimbra Chat feature uses a new set of configuration attributes.</deprecateDesc>
 </attr>
 
-<attr id="568" name="zimbraFeatureImapDataSourceEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="5.0.0">
+<attr id="568" name="zimbraFeatureImapDataSourceEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="5.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>whether user is allowed to retrieve mail from an external IMAP data source</desc>
@@ -3175,12 +3206,14 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   </desc>
 </attr>
 
-<attr id="584" name="zimbraFeatureComposeInNewWindowEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="5.0.1">
+<attr id="584" name="zimbraFeatureComposeInNewWindowEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="5.0.1" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>whether or not compose messages in a new windows is allowed</desc>
 </attr>
 
-<attr id="585" name="zimbraFeatureOpenMailInNewWindowEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="5.0.1">
+<attr id="585" name="zimbraFeatureOpenMailInNewWindowEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="5.0.1" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>whether or not open a new msg/conv in a new windows is allowed</desc>
 </attr>
@@ -3262,7 +3295,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>whether to tokenize key and AND or OR the tokenized queries for GAL search, if not set, key is not tokenized</desc>
 </attr>
 
-<attr id="601" name="zimbraIsCustomerCareAccount" type="boolean" cardinality="single" optionalIn="account" flags="accountInfo" since="5.0.2">
+<attr id="601" name="zimbraIsCustomerCareAccount" type="boolean" cardinality="single" optionalIn="account" flags="accountInfo" since="5.0.2" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>set to true for customer care accounts</desc>
 </attr>
 
@@ -3283,7 +3317,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
         being automatically filed into the Junk folder.</desc>
 </attr>
 
-<attr id="605" name="zimbraCustomerCareTier" type="integer" max="3" cardinality="single" optionalIn="account" flags="accountInfo" order="integerOrderingMatch" since="5.0.3">
+<attr id="605" name="zimbraCustomerCareTier" type="integer" max="3" cardinality="single" optionalIn="account" flags="accountInfo" order="integerOrderingMatch" since="5.0.3" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>set to 1 or 3 to specify customer care account tier level</desc>
 </attr>
 
@@ -3690,7 +3725,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>help URL for advanced client</desc>
 </attr>
 
-<attr id="677" name="zimbraHelpStandardURL" type="string" max="256" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited,domainInfo,domainAdminModifiable" since="5.0.7">
+<attr id="677" name="zimbraHelpStandardURL" type="string" max="256" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited,domainInfo,domainAdminModifiable" since="5.0.7" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>help URL for standard client</desc>
 </attr>
 
@@ -3839,7 +3875,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <deprecateDesc>Zimbra IM has been discontinued. Zimbra Chat feature uses a new set of configuration attributes.</deprecateDesc>
 </attr>
 
-<attr id="708" name="zimbraSoapExposeVersion" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="5.0.10">
+<attr id="708" name="zimbraSoapExposeVersion" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="5.0.10" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>If TRUE, enables support for GetVersionInfo for account SOAP requests.  If FALSE, GetVersionInfoRequest returns a SOAP fault.</desc>
 </attr>
@@ -4040,7 +4077,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Time interval after which NGINX will fail over to the next route lookup handler, if a handler does not respond to the route lookup request within this time</desc>
 </attr>
 
-<attr id="746" name="zimbraAdminConsoleCatchAllAddressEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited" since="5.0.10">
+<attr id="746" name="zimbraAdminConsoleCatchAllAddressEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited" since="5.0.10" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>whether to show catchall addresses in admin console</desc>
 </attr>
@@ -4205,16 +4243,19 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>whether folder color is enabled</desc>
 </attr>
 
-<attr id="772" name="zimbraAdminConsoleLoginMessage" type="string" cardinality="multi" optionalIn="globalConfig,domain" flags="domainInherited" since="5.0.12">
+<attr id="772" name="zimbraAdminConsoleLoginMessage" type="string" cardinality="multi" optionalIn="globalConfig,domain" flags="domainInherited" since="5.0.12" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>admin console login message</desc>
 </attr>
 
-<attr id="773" name="zimbraFeatureDiscardInFiltersEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="6.0.0_BETA1">
+<attr id="773" name="zimbraFeatureDiscardInFiltersEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="6.0.0_BETA1" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>enable end-user mail discarding defined in mail filters features</desc>
 </attr>
 
-<attr id="774" name="zimbraAdminConsoleLDAPAuthEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited" since="5.0.12">
+<attr id="774" name="zimbraAdminConsoleLDAPAuthEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited" since="5.0.12" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>whether configuring external LDAP auth is enabled in admin console</desc>
 </attr>
@@ -4382,7 +4423,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>set to true for admin groups</desc>
 </attr>
 
-<attr id="803" name="zimbraAdminExtDisableUIUndeploy" type="boolean" cardinality="single" optionalIn="zimletEntry" since="6.0.0_BETA1">
+<attr id="803" name="zimbraAdminExtDisableUIUndeploy" type="boolean" cardinality="single" optionalIn="zimletEntry" since="6.0.0_BETA1" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>Zimlet Util will set this attribute based on the value in zimlet definition XML file</desc>
 </attr>
 
@@ -4392,7 +4434,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>where the message reading pane is displayed in list views</desc>
 </attr>
 
-<attr id="806" name="zimbraFeatureConfirmationPageEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="6.0.0_BETA1">
+<attr id="806" name="zimbraFeatureConfirmationPageEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="6.0.0_BETA1" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>whether a confirmation page should be display after an operation is done in the UI</desc>
 </attr>
@@ -4455,7 +4498,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>see description of zimbraCalendarCalDavSyncStart</desc>
 </attr>
 
-<attr id="817" name="zimbraCalendarCalDavSharedFolderCacheDuration" type="duration" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" since="5.0.14">
+<attr id="817" name="zimbraCalendarCalDavSharedFolderCacheDuration" type="duration" cardinality="single" optionalIn="account,cos" flags="accountInherited,domainAdminModifiable" since="5.0.14" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>1m</defaultCOSValue>
   <desc>CalDAV shared folder cache duration</desc>
 </attr>
@@ -4568,7 +4612,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   </desc>
 </attr>
 
-<attr id="836" name="zimbraMobilePolicyRefreshInterval" type="integer" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="6.0.0_BETA1">
+<attr id="836" name="zimbraMobilePolicyRefreshInterval" type="integer" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="6.0.0_BETA1" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>1440</defaultCOSValue>
   <desc>
     time interval in minutes before forcing device to refresh policy;
@@ -4753,7 +4798,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>where the message reading pane is displayed in conv view</desc>
 </attr>
 
-<attr id="1011" name="zimbraMaxMailItemsPerPage" type="integer" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="6.0.0_BETA2">
+<attr id="1011" name="zimbraMaxMailItemsPerPage" type="integer" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="6.0.0_BETA2" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>100</defaultCOSValue>
   <desc>
       max number of messages/conversations per page, 
@@ -4761,7 +4807,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   </desc>
 </attr>
 
-<attr id="1012" name="zimbraMaxContactsPerPage" type="integer" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="6.0.0_BETA2">
+<attr id="1012" name="zimbraMaxContactsPerPage" type="integer" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="6.0.0_BETA2" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>100</defaultCOSValue>
   <desc>
       max number of contacts per page, 
@@ -4906,7 +4953,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Maximum number of file descriptors that are opened for accessing message content.</desc>
 </attr>
 
-<attr id="1035" name="zimbraMailFileDescriptorBufferSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.0_RC1">
+<attr id="1035" name="zimbraMailFileDescriptorBufferSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.0_RC1" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>4096</globalConfigValue>
   <desc>Number of bytes to buffer in memory per file descriptor in the cache.  Larger values result in fewer disk reads, but increase memory consumption.</desc>
 </attr>
@@ -4967,7 +5015,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>After deleting a message in list, which message should be selected</desc>
 </attr>
 
-<attr id="1047" name="zimbraWebClientShowOfflineLink" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="6.0.0_GA">
+<attr id="1047" name="zimbraWebClientShowOfflineLink" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="6.0.0_GA" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>whether or not to show link to offline version in the web UI top bar</desc>
 </attr>
@@ -5146,7 +5195,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   </desc>
 </attr>
 
-<attr id="1078" name="zimbraCalendarCalDavDefaultCalendarId" type="integer" min="1" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.6">
+<attr id="1078" name="zimbraCalendarCalDavDefaultCalendarId" type="integer" min="1" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="6.0.6" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>10</globalConfigValue>
   <desc>Id of calendar folder to advertise as the default calendar to CalDAV client.</desc>
 </attr>
@@ -5192,7 +5242,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Comma separated list of Contact attributes that should be hidden from clients and export of contacts.</desc>
 </attr>
 
-<attr id="1087" name="zimbraCalendarResourceDoubleBookingAllowed" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="6.0.7">
+<attr id="1087" name="zimbraCalendarResourceDoubleBookingAllowed" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="6.0.7" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>whether calendar resources can be double booked</desc>
 </attr>
@@ -5228,7 +5279,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>whether to end auto-complete on comma</desc>
 </attr>
 
-<attr id="1092" name="zimbraCalendarShowResourceTabs" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="6.0.7">
+<attr id="1092" name="zimbraCalendarShowResourceTabs" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="6.0.7" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>whether to show Find Locations and Find Resources tabs for editing appointments</desc>
 </attr>
@@ -5439,7 +5491,8 @@ deprecatedSince="23.9.0">
   </desc>
 </attr>
 
-<attr id="1134" name="zimbraFeatureDistributionListExpandMembersEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="7.0.0">
+<attr id="1134" name="zimbraFeatureDistributionListExpandMembersEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="7.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <defaultExternalCOSValue>FALSE</defaultExternalCOSValue>
   <desc>whether expanding distribution list members feature is enabled</desc>
@@ -5491,7 +5544,8 @@ deprecatedSince="23.9.0">
          ".*MSIE.*Windows NT.*" will match IE browsers on Windows.  </desc>
 </attr>
 
-<attr id="1143" name="zimbraFeatureFreeBusyViewEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="7.0.0">
+<attr id="1143" name="zimbraFeatureFreeBusyViewEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="7.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>whether free busy view is enabled in the web UI</desc>
 </attr>
@@ -5529,7 +5583,8 @@ deprecatedSince="23.9.0">
   <desc>phonetic last name</desc>
 </attr>
 
-<attr id="1149" name="zimbraPhoneticCompany" type="string" max="256" cardinality="single" optionalIn="account" flags="domainAdminModifiable" since="7.0.0">
+<attr id="1149" name="zimbraPhoneticCompany" type="string" max="256" cardinality="single" optionalIn="account" flags="domainAdminModifiable" since="7.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>phonetic company name</desc>
 </attr>
 
@@ -5624,7 +5679,8 @@ deprecatedSince="23.9.0">
   <desc>regex of allowed characters in password</desc>
 </attr>
 
-<attr id="1164" name="zimbraFeatureContactsDetailedSearchEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="7.1.0">
+<attr id="1164" name="zimbraFeatureContactsDetailedSearchEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="7.1.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>whether detailed contact search UI is enabled</desc>
 </attr>
@@ -5663,7 +5719,8 @@ deprecatedSince="23.9.0">
   </desc>
 </attr>
 
-<attr id="1169" name="zimbraMyoneloginSamlSigningCert"  type="astring" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited" since="7.0.1">
+<attr id="1169" name="zimbraMyoneloginSamlSigningCert"  type="astring" cardinality="single" optionalIn="globalConfig,domain" flags="domainInherited" since="7.0.1" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>certificate to be used for validating the SAML assertions received from myonelogin (tricipher)</desc>
 </attr>
 
@@ -5828,7 +5885,8 @@ deprecatedSince="23.9.0">
   <desc>sort order for list view in the WEB UI</desc>
 </attr>
 
-<attr id="1189" name="zimbraOpenidConsumerStatelessModeEnabled" type="boolean" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" since="7.1.0">
+<attr id="1189" name="zimbraOpenidConsumerStatelessModeEnabled" type="boolean" cardinality="single" optionalIn="server,globalConfig" flags="serverInherited" since="7.1.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>whether stateless mode (not establishing an association with the OpenID Provider) in OpenID Consumer is enabled</desc>
 </attr>
@@ -5846,7 +5904,8 @@ deprecatedSince="23.9.0">
   </desc>
 </attr>
 
-<attr id="1191" name="zimbraOpenidConsumerAllowedOPEndpointURL" type="string" max="256" cardinality="multi" optionalIn="domain,globalConfig" flags="domainInherited" since="7.1.0">
+<attr id="1191" name="zimbraOpenidConsumerAllowedOPEndpointURL" type="string" max="256" cardinality="multi" optionalIn="domain,globalConfig" flags="domainInherited" since="7.1.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>allowed OpenID Provider Endpoint URLs for authentication</desc>
 </attr>
 
@@ -5987,7 +6046,8 @@ deprecatedSince="23.9.0">
   <desc>SSL client certificate port for HTTP proxy</desc>
 </attr>
 
-<attr id="1213" name="zimbraMailHighlightObjectsMaxSize" type="integer" min="0" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="7.1.2">
+<attr id="1213" name="zimbraMailHighlightObjectsMaxSize" type="integer" min="0" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="7.1.2" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>70</defaultCOSValue>
   <desc>max size in KB of text emails that will automatically highlight objects</desc>
 </attr>
@@ -6052,7 +6112,8 @@ deprecatedSince="23.9.0">
   <desc>whether web UI should always request read receipts for outgoing messages</desc>
 </attr>
 
-<attr id="1218" name="zimbraCalendarLocationDisabledFields" type="string" cardinality="single" optionalIn="account,cos,domain" flags="accountInfo,accountCosDomainInherited" since="8.0.0">
+<attr id="1218" name="zimbraCalendarLocationDisabledFields" type="string" cardinality="single" optionalIn="account,cos,domain" flags="accountInfo,accountCosDomainInherited" since="8.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>list of disabled fields in calendar location web UI</desc>
 </attr>
 
@@ -6337,7 +6398,8 @@ deprecatedSince="23.9.0">
   <desc>whether to retain exception instances when the recurrence series is changed to new time; set to FALSE for Exchange compatibility</desc>
 </attr>
 
-<attr id="1241" name="zimbraMailAddressValidationRegex" type="string" max="512" cardinality="multi" optionalIn="domain,globalConfig" flags="domainInherited,accountInfo" since="7.1.2">
+<attr id="1241" name="zimbraMailAddressValidationRegex" type="string" max="512" cardinality="multi" optionalIn="domain,globalConfig" flags="domainInherited,accountInfo" since="7.1.2" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>optional regex used by web client to validate email address</desc>
 </attr>
 
@@ -6384,11 +6446,13 @@ deprecatedSince="23.9.0">
   <desc>mechanism to use for verifying password for admin.  See zimbraAuthMech</desc>
 </attr>
 
-<attr id="1253" name="zimbraFreebusyExternalZimbraURL" type="string" max="256" cardinality="multi" optionalIn="globalConfig" since="8.0.0">
+<attr id="1253" name="zimbraFreebusyExternalZimbraURL" type="string" max="256" cardinality="multi" optionalIn="globalConfig" since="8.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>URLs of external Zimbra servers for free/busy lookup in the form of http[s]://[user:pass@]host:port</desc>
 </attr>
 
-<attr id="1254" name="zimbraGlobalConfigExtraObjectClass" type="string" max="256" cardinality="multi" optionalIn="globalConfig" since="7.1.3">
+<attr id="1254" name="zimbraGlobalConfigExtraObjectClass" type="string" max="256" cardinality="multi" optionalIn="globalConfig" since="7.1.3" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>
     Object classes added on the global config entry.  Unlike other zimbra***ExtraObjectClass attributes, object classes specified
     in this attributes will not be automatically added to the global config entry.  Extra object class on the global config entry 
@@ -6462,7 +6526,8 @@ deprecatedSince="23.9.0">
   <desc>whether zimlets that send sensitive data are disabled in "mixed" zimbraMailMode</desc>
 </attr>
 
-<attr id="1271" name="zimbraFeaturePriorityInboxEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited"  since="8.0.0">
+<attr id="1271" name="zimbraFeaturePriorityInboxEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited"  since="8.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>whether priority inbox feature is enabled</desc>
 </attr>
@@ -6745,7 +6810,8 @@ deprecatedSince="23.9.0">
   </desc>
 </attr>
 
-<attr id="1305" name="zimbraMobilePolicyApprovedApplication" type="string" max="256" cardinality="multi" optionalIn="account,cos" flags="accountInherited"  since="8.0.0">
+<attr id="1305" name="zimbraMobilePolicyApprovedApplication" type="string" max="256" cardinality="multi" optionalIn="account,cos" flags="accountInherited"  since="8.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>
     approved application for the mobile device
     the value contains a SHA1 hash (typically 40 characters long) for the application file (.exe, .dll etc)
@@ -7058,7 +7124,8 @@ deprecatedSince="23.9.0">
   <desc>If set as TRUE, proxy will use SSL to connect to the upstream mail servers for web and mail proxy. Note admin console proxy always use https no matter how this attr is set.</desc>
 </attr>
 
-<attr id="1361" name="zimbraShareNotificationMtaEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0">
+<attr id="1361" name="zimbraShareNotificationMtaEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>Whether share notification MTA is enabled.</desc>
 </attr>
@@ -7096,7 +7163,8 @@ deprecatedSince="23.9.0">
   <desc>interface address on which HTTPS server should listen; if empty, binds to all interfaces</desc>
 </attr>
 
-<attr id="1367" name="zimbraMailSSLClientCertBindAddress" type="string" max="128" cardinality="single" optionalIn="server" requiresRestart="mailbox" since="8.0.0">
+<attr id="1367" name="zimbraMailSSLClientCertBindAddress" type="string" max="128" cardinality="single" optionalIn="server" requiresRestart="mailbox" since="8.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>interface address on which HTTPS server accepting client certificates should listen; if empty, binds to all interfaces</desc>
 </attr>
 
@@ -7151,7 +7219,8 @@ deprecatedSince="23.9.0">
 </attr>
 
 <!--
-<attr id="1376" name="zimbraSharedFolderUuid" type="id" cardinality="single" requiredIn="shareLocator" since="8.0.0">
+<attr id="1376" name="zimbraSharedFolderUuid" type="id" cardinality="single" requiredIn="shareLocator" since="8.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>UUID of the shared folder</desc>
 </attr>
 -->
@@ -7372,7 +7441,8 @@ deprecatedSince="23.9.0">
   <deprecateDesc>The message channel is not supported anymore</deprecateDesc>
 </attr>
 
-<attr id="1416" name="zimbraClientTypeRegex" type="cstring" max="256" cardinality="multi" optionalIn="globalConfig" since="8.0.0">
+<attr id="1416" name="zimbraClientTypeRegex" type="cstring" max="256" cardinality="multi" optionalIn="globalConfig" since="8.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>Web UI:(.*)ZimbraWebClient(.*)</globalConfigValue>
   <globalConfigValue>ipad:(.*)iPad(.*)</globalConfigValue>
   <globalConfigValue>iphone:(.*)iPhone(.*)</globalConfigValue>
@@ -7387,7 +7457,8 @@ deprecatedSince="23.9.0">
   <deprecateDesc>The message channel is not supported anymore</deprecateDesc>
 </attr>
 
-<attr id="1418" name="zimbraDataSourceImportOnLogin" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited,accountInfo" since="7.2.2">
+<attr id="1418" name="zimbraDataSourceImportOnLogin" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited,accountInfo" since="7.2.2" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>whether to invoke data imports for all data sources owned by an account after successful user login from the login page</desc>
 </attr>
@@ -7401,16 +7472,19 @@ deprecatedSince="23.9.0">
   <desc>whether ldap based galsync disabled or not</desc>
 </attr>
 
-<attr id="1421" name="zimbraMobileNotificationEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.5.0">
+<attr id="1421" name="zimbraMobileNotificationEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>whether mobile sync notification enabled or not</desc>
 </attr>
 
-<attr id="1422" name="zimbraMobileNotificationAdminAddress" type="email" max="256" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.5.0">
+<attr id="1422" name="zimbraMobileNotificationAdminAddress" type="email" max="256" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>admin email address used for receiving notifications</desc>
 </attr>
 
-<attr id="1423" name="zimbraMobileAttachSkippedItemEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.5.0">
+<attr id="1423" name="zimbraMobileAttachSkippedItemEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>whether mobile sync should zip the skipped item and attach it to the notification mail</desc>
 </attr>
@@ -7421,12 +7495,14 @@ deprecatedSince="23.9.0">
   <desc>whether or not to use tag color as the color for message items</desc>
 </attr>
 
-<attr id="1425" name="zimbraMobileMetadataMaxSizeEnabled" type="boolean" cardinality="single" optionalIn="account,cos,domain,globalConfig" flags="accountInfo,domainInfo,accountCosDomainInherited,domainInherited,domainAdminModifiable" since="8.0.3">
+<attr id="1425" name="zimbraMobileMetadataMaxSizeEnabled" type="boolean" cardinality="single" optionalIn="account,cos,domain,globalConfig" flags="accountInfo,domainInfo,accountCosDomainInherited,domainInherited,domainAdminModifiable" since="8.0.3" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>whether or not to enable truncating on client metadata size, if enabled server will only track recent items on client device instead of all</desc>
 </attr>
 
-<attr id="1426" name="zimbraMobileItemsToTrackPerFolderMaxSize" type="string" max="30" cardinality="multi" optionalIn="account,cos,domain,globalConfig" flags="accountInfo,domainInfo,accountCosDomainInherited,domainInherited,domainAdminModifiable" since="8.0.3">
+<attr id="1426" name="zimbraMobileItemsToTrackPerFolderMaxSize" type="string" max="30" cardinality="multi" optionalIn="account,cos,domain,globalConfig" flags="accountInfo,domainInfo,accountCosDomainInherited,domainInherited,domainAdminModifiable" since="8.0.3" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>Max size of items in a folder that server tracks, categorized by collection type (Email,Calendar,Contacts,Tasks). e.g. Email:3000 makes the max size of items to track for an Email folder to be 3000. If not specify, default value is Integer.MAX_VALUE</desc>
 </attr>
 
@@ -7478,12 +7554,14 @@ deprecatedSince="23.9.0">
   <desc>Whether to force clear zimbra auth cookies when SOAP session ends (i.e. force logout on browser tab close)</desc>
 </attr>
 
-<attr id="1438" name="zimbraFeatureDistributionListFolderEnabled" type="boolean" cardinality="single" optionalIn="account,cos,domain,globalConfig" flags="accountInfo,domainInfo,accountCosDomainInherited,domainInherited,domainAdminModifiable" since="8.0.4">
+<attr id="1438" name="zimbraFeatureDistributionListFolderEnabled" type="boolean" cardinality="single" optionalIn="account,cos,domain,globalConfig" flags="accountInfo,domainInfo,accountCosDomainInherited,domainInherited,domainAdminModifiable" since="8.0.4" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>Whether to display the distribution list folder in address book</desc>
 </attr>
 
-<attr id="1439" name="zimbraMobileSyncKeyFormatConvertedFolders" type="string" cardinality="multi" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable"  since="8.0.4">
+<attr id="1439" name="zimbraMobileSyncKeyFormatConvertedFolders" type="string" cardinality="multi" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable"  since="8.0.4" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>folders whose sync key are already converted, each device has a list of folders. e.g. ApplDN6GJSQJDFHW:0,2,10 meaning device ApplDN6GJSQJDFHW's folders, inbox and calendar folder sync key format are converted, use 0 for FolderSync</desc>
 </attr>
 
@@ -7505,7 +7583,8 @@ deprecatedSince="23.9.0">
   <desc>Maximum size in bytes for file preview in web client</desc>
 </attr>
 
-<attr id="1444" name="zimbraMobilePolicyRequireStorageCardEncryption" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.5.0">
+<attr id="1444" name="zimbraMobilePolicyRequireStorageCardEncryption" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>
     require data encryption on storage card;
@@ -7513,7 +7592,8 @@ deprecatedSince="23.9.0">
   </desc>
 </attr>
 
-<attr id="1445" name="zimbraWebClientURL" type="string" max="512" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
+<attr id="1445" name="zimbraWebClientURL" type="string" max="512" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>weclient URL to directly connect when making service to JS calls from mail server in split mode</desc>
 </attr>
 
@@ -7557,7 +7637,8 @@ deprecatedSince="23.9.0">
   <desc>limit for the number of days that the web client would use to sync any mail folder's data for offline use</desc>
 </attr>
 
-<attr id="1453" name="zimbraMobileOutlookSyncEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.0.5">
+<attr id="1453" name="zimbraMobileOutlookSyncEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.0.5" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>Whether to permit Outlook to sync via Active Sync</desc>
 </attr>
@@ -7571,7 +7652,8 @@ deprecatedSince="23.9.0">
   </desc>
 </attr>
 
-<attr id="1455" name="zimbraFeatureFromDisplayEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="8.0.5">
+<attr id="1455" name="zimbraFeatureFromDisplayEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited" since="8.0.5" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>whether to display from address control in user preferences</desc>
 </attr>
@@ -7634,7 +7716,8 @@ deprecatedSince="23.9.0">
   <desc>Whether or not to enable HTTP compression. Defaults to true.</desc>
 </attr>
 
-<attr id="1468" name="zimbraWebGzipEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="7.2.5">
+<attr id="1468" name="zimbraWebGzipEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="7.2.5" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>TRUE</globalConfigValue>
   <desc>Whether or not to gzip static web content. Defaults to true.</desc>
 </attr>
@@ -7788,12 +7871,14 @@ deprecatedSince="23.9.0">
   <desc>Value for postconf bounce_queue_lifetime</desc>
 </attr>
 
-<attr id="1498" name="zimbraMtaCommandDirectory" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
+<attr id="1498" name="zimbraMtaCommandDirectory" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>/opt/zextras/common/sbin</globalConfigValue>
   <desc>Value for postconf command_directory</desc>
 </attr>
 
-<attr id="1499" name="zimbraMtaDaemonDirectory" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
+<attr id="1499" name="zimbraMtaDaemonDirectory" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>/opt/zextras/common/libexec</globalConfigValue>
   <desc>Value for postconf daemon_directory</desc>
 </attr>
@@ -7836,27 +7921,32 @@ deprecatedSince="23.9.0">
   <desc>Value for postconf lmtp_host_lookup</desc>
 </attr>
 
-<attr id="1508" name="zimbraMtaMailqPath" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
+<attr id="1508" name="zimbraMtaMailqPath" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>/opt/zextras/common/sbin/mailq</globalConfigValue>
   <desc>Value for postconf mailq_path</desc>
 </attr>
 
-<attr id="1509" name="zimbraMtaManpageDirectory" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
+<attr id="1509" name="zimbraMtaManpageDirectory" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>/opt/zextras/common/share/man</globalConfigValue>
   <desc>Value for postconf manpage_directory</desc>
 </attr>
 
-<attr id="1510" name="zimbraMtaNewaliasesPath" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
+<attr id="1510" name="zimbraMtaNewaliasesPath" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>/opt/zextras/common/sbin/newaliases</globalConfigValue>
   <desc>Value for postconf newaliases_path</desc>
 </attr>
 
-<attr id="1511" name="zimbraMtaQueueDirectory" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
+<attr id="1511" name="zimbraMtaQueueDirectory" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>/opt/zextras/data/postfix/spool</globalConfigValue>
   <desc>Value for postconf queue_directory</desc>
 </attr>
 
-<attr id="1512" name="zimbraMtaSendmailPath" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
+<attr id="1512" name="zimbraMtaSendmailPath" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>/opt/zextras/common/sbin/sendmail</globalConfigValue>
   <desc>Value for postconf sendmail_path</desc>
 </attr>
@@ -7916,7 +8006,8 @@ deprecatedSince="23.9.0">
   <desc>Value for postconf milter_default_action</desc>
 </attr>
 
-<attr id="1524" name="zimbraMtaSmtpCnameOverridesServername" type="enum" value="yes,no" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
+<attr id="1524" name="zimbraMtaSmtpCnameOverridesServername" type="enum" value="yes,no" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>no</globalConfigValue>
   <desc>Value for postconf smtp_cname_overrides_servername</desc>
 </attr>
@@ -8142,7 +8233,8 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Feature removed</deprecateDesc>
 </attr>
 
-<attr id="1570" name="zimbraMobileShareContactEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.5.0">
+<attr id="1570" name="zimbraMobileShareContactEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>Whether to permit syncing shared contact folders</desc>
 </attr>
@@ -8152,12 +8244,14 @@ deprecatedSince="23.9.0">
   <desc>set of known keys corresponding to browsers used by the user for web client offline access</desc>
 </attr>
 
-<attr id="1572" name="zimbraMobileForceSamsungProtocol25" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.0.7">
+<attr id="1572" name="zimbraMobileForceSamsungProtocol25" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.0.7" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>Whether to force Samsung devices using Active Sync 2.5</desc>
 </attr>
 
-<attr id="1573" name="zimbraMobileForceProtocol25" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.0.7">
+<attr id="1573" name="zimbraMobileForceProtocol25" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.0.7" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>Whether to force devices using Active Sync 2.5</desc>
 </attr>
@@ -8207,7 +8301,8 @@ deprecatedSince="23.9.0">
   <desc>The maximum allowed size in bytes for a HTTP header field cache in Jetty</desc>
 </attr>
 
-<attr id="1583" name="zimbraThreadMonitorEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0">
+<attr id="1583" name="zimbraThreadMonitorEnabled" type="boolean" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>FALSE</globalConfigValue>
   <desc>Whether or not Jetty thread monitor is enabled. Used for debugging Jetty, not recommended for extended use in production environment. Defaults to FALSE</desc>
 </attr>
@@ -8309,12 +8404,14 @@ deprecatedSince="23.9.0">
   <desc>The servers running mailbox with EWS functionality to be included in the "ews" block in the nginx web proxy config file</desc>
 </attr>
 
-<attr id="1596" name="zimbraMobileMaxMessageSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.8, 8.5.0" requiresRestart="mailbox">
+<attr id="1596" name="zimbraMobileMaxMessageSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.0.8, 8.5.0" requiresRestart="mailbox" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>10240000</globalConfigValue>
   <desc>Maximum total size of a mail message that can be synced to device without truncation. 0 means no limit</desc>
 </attr>
 
-<attr id="1597" name="zimbraDNSTCPUpstream" type="enum" value="yes,no" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
+<attr id="1597" name="zimbraDNSTCPUpstream" type="enum" value="yes,no" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>no</globalConfigValue>
   <desc>For zimbra dnscache, whether or not to only use TCP when talking to the upstream Master DNS servers. Defaults to no</desc>
 </attr>
@@ -8390,7 +8487,8 @@ deprecatedSince="23.9.0">
   <desc>admin setting to enable/disable the web client offline access feature</desc>
 </attr>
 
-<attr id="1612" name="zimbraHttpMaxFormContentSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0">
+<attr id="1612" name="zimbraHttpMaxFormContentSize" type="integer" min="0" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>200000</globalConfigValue>
   <desc>The maximum allowed size in bytes for a HTTP form content in Jetty. Can be set to 0 to block all web form submission</desc>
 </attr>
@@ -8419,7 +8517,8 @@ deprecatedSince="23.9.0">
         Setting this to off will make nginx compare only the major and minor server versions (eg. all 8.5.x will be treated same by nginx)</desc>
 </attr>
 
-<attr id="1617" name="zimbraMobileMetadataRetentionPolicy" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0">
+<attr id="1617" name="zimbraMobileMetadataRetentionPolicy" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>180:30:1</globalConfigValue>
   <desc>Retention policy for stale mobile metadata. Format is "aa:bb:c", "aa" being the number of days to define stale data. e.g. 180 means if device's last_used_date is 180 days ago,
         its metadata need to be removed. "bb" being the days between two retentions are run, e.g. 30 means to run retention every 30 days. "hh" being the hour of day to run retention,
@@ -8514,7 +8613,8 @@ deprecatedSince="23.9.0">
   </desc>
 </attr>
 
-<attr id="1633" name="zimbraMobileTombstoneEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.5.0">
+<attr id="1633" name="zimbraMobileTombstoneEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>
     whether to enable tombstone syncing. If disabled, changes of tombstones won't be synced to device
@@ -8570,7 +8670,8 @@ deprecatedSince="23.9.0">
   <globalConfigValue>/integration/zimbracollaboration</globalConfigValue>
 </attr>
 
-<attr id="1642" name="zimbraMobileSyncRedoMaxAttempts" type="string" cardinality="multi" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.5.0">
+<attr id="1642" name="zimbraMobileSyncRedoMaxAttempts" type="string" cardinality="multi" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="8.5.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>windows:2</defaultCOSValue>
   <defaultCOSValue>default:1</defaultCOSValue>
   <desc>
@@ -8739,7 +8840,8 @@ deprecatedSince="23.9.0">
   <desc>OAuth token for authentication using OAuth</desc>
 </attr>
 
-<attr id="1782" name="zimbraMtaSmtpTlsMandatoryProtocols" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0">
+<attr id="1782" name="zimbraMtaSmtpTlsMandatoryProtocols" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>!SSLv2, !SSLv3, !TLSv1, !TLSv1.1</globalConfigValue>
   <desc>Value for postconf smtp_tls_mandatory_protocols</desc>
 </attr>
@@ -9028,7 +9130,8 @@ deprecatedSince="23.9.0">
   <desc>Value for postconf postscreen_dnsbl_threshold.</desc>
 </attr>
 
-<attr id="1928" name="zimbraMtaPostscreenDnsblTimeout" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0,9.0.0">
+<attr id="1928" name="zimbraMtaPostscreenDnsblTimeout" type="string" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" since="8.7.0,9.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>10s</globalConfigValue>
   <desc>Value for postconf postscreen_dnsbl_timeout.</desc>
 </attr>
@@ -9209,7 +9312,8 @@ deprecatedSince="23.9.0">
   <desc>HTTPs port on which zimbra extension server should listen</desc>
 </attr>
 
-<attr id="2012" name="zimbraWebClientSupportedHelps" type="string" cardinality="multi" optionalIn="globalConfig,domain" flags="domainInherited,accountInfo,domainAdminModifiable" since="8.7.0,9.0.0">
+<attr id="2012" name="zimbraWebClientSupportedHelps" type="string" cardinality="multi" optionalIn="globalConfig,domain" flags="domainInherited,accountInfo,domainAdminModifiable" since="8.7.0,9.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>productHelp</globalConfigValue>
   <globalConfigValue>onlineHelp</globalConfigValue>
   <globalConfigValue>newFeatures</globalConfigValue>
@@ -9339,7 +9443,8 @@ deprecatedSince="23.9.0">
   <deprecateDesc>Zimbra Mobile Gateway feature has been removed</deprecateDesc>
 </attr>
 
-<attr id="2037" name="zimbraDataSourceIsZmgProxy" type="boolean" cardinality="single" optionalIn="dataSource" since="8.7.0,9.0.0">
+<attr id="2037" name="zimbraDataSourceIsZmgProxy" type="boolean" cardinality="single" optionalIn="dataSource" since="8.7.0,9.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>whether this data source corresponds to an account on the Zimbra system being proxied</desc>
 </attr>
 
@@ -9382,7 +9487,8 @@ deprecatedSince="23.9.0">
   <defaultCOSValue>TRUE</defaultCOSValue>
 </attr>
 
-<attr id="2055" name="zimbraMobileSearchMimeSupportEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.7.0,9.0.0">
+<attr id="2055" name="zimbraMobileSearchMimeSupportEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited" since="8.7.0,9.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>Specifies whether MIME body parts are supported in search responses or not.
       Some devices, like Samsung S5 with Lollipop OS, specify a body preference for either MIME or HTML in search requests.
       However they do not handle the MIME sent in responses correctly, and are unable to display messages in search results.(Bugs - 99686, 100436)
@@ -9965,7 +10071,8 @@ deprecatedSince="23.9.0">
   <desc> Ehcache: the maximum amount of disk space the imap active session cache will consume in Bytes before eviction. By default this value is 100 gigabytes. This is a rough limit,Due to internals of ehcache actual size in memory will often exceed this limit by a modest margin. </desc>
 </attr>
 
-<attr id="3006" name="zimbraImapInactiveSessionEhcacheMaxDiskSize" type="long" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.7.6">
+<attr id="3006" name="zimbraImapInactiveSessionEhcacheMaxDiskSize" type="long" cardinality="single" optionalIn="globalConfig,server" flags="serverInherited" requiresRestart="mailbox" since="8.7.6" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <globalConfigValue>107374182400</globalConfigValue>
   <desc> Ehcache: the maximum amount of disk space the imap inactive session cache will consume in Bytes before eviction. By default this value is 100 gigabytes. This is a rough limit,Due to internals of ehcache actual size in memory will often exceed this limit by a modest margin. </desc>
 </attr>
@@ -10074,7 +10181,8 @@ deprecatedSince="23.9.0">
   <desc>OAuth consumer API scope. It is in the format of apiscope1{separator character}apiscope2:consumer-app-name. The separator between apiscope1 and apiscope2 is consumer-app specific</desc>
 </attr>
 
-<attr id="3067" name="zimbraShowClientTOS" type="boolean" cardinality="single" optionalIn="account,cos,domain" flags="accountCosDomainInherited,accountInfo,domainInfo" since="8.8.8">
+<attr id="3067" name="zimbraShowClientTOS" type="boolean" cardinality="single" optionalIn="account,cos,domain" flags="accountCosDomainInherited,accountInfo,domainInfo" since="8.8.8" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>whether or not to show client Terms of Service</desc>
 </attr>
@@ -10088,7 +10196,8 @@ deprecatedSince="23.9.0">
   <deprecateDesc>HAB is not supported anymore</deprecateDesc>
 </attr>
 
-<attr id="3072" name="zimbraHierarchicalAddressBookRoot" type="string" cardinality="multi" optionalIn="domain" flags="domainInfo" since="8.8.10">
+<attr id="3072" name="zimbraHierarchicalAddressBookRoot" type="string" cardinality="multi" optionalIn="domain" flags="domainInfo" since="8.8.10" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <desc>root group id of hierarchical address book</desc>
 </attr>
 
@@ -10167,7 +10276,8 @@ deprecatedSince="23.9.0">
   </desc>
 </attr>
 
-<attr id="3088" name="zimbraFeatureWebClientEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="9.0.0">
+<attr id="3088" name="zimbraFeatureWebClientEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInfo,accountInherited,domainAdminModifiable" since="9.0.0" deprecatedSince="26.12.0">
+  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
   <defaultCOSValue>TRUE</defaultCOSValue>
   <desc>whether to use Web Client feature</desc>
 </attr>
