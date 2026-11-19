@@ -7273,8 +7273,7 @@ deprecatedSince="23.9.0">
   <desc>passcode lockout duration</desc>
 </attr>
 
-<attr id="1399" name="zimbraDeviceLockWhenInactive" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited,accountInfo" since="8.0.0" deprecatedSince="26.12.0">
-  <deprecateDesc>Not used by any Carbonio component</deprecateDesc>
+<attr id="1399" name="zimbraDeviceLockWhenInactive" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited,accountInfo" since="8.0.0">
   <defaultCOSValue>FALSE</defaultCOSValue>
   <desc>For native apps - whether to lock device when inactive.</desc>
 </attr>
