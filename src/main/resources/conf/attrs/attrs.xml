@@ -1600,11 +1600,13 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Version of the Zimlet</desc>
 </attr>
 
-<attr id="283" name="zimbraZimletDescription" type="string" max="256" cardinality="single" optionalIn="zimletEntry">
+<attr id="283" name="zimbraZimletDescription" type="string" max="256" cardinality="single" optionalIn="zimletEntry" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>Zimlet description</desc>
 </attr>
 
-<attr id="284" name="zimbraZimletIndexingEnabled" type="boolean" cardinality="single" optionalIn="zimletEntry">
+<attr id="284" name="zimbraZimletIndexingEnabled" type="boolean" cardinality="single" optionalIn="zimletEntry" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>Whether server side keyword indexing enabled</desc>
 </attr>
 
@@ -1613,11 +1615,13 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>Whether store is matched for this type</desc>
 </attr>
 
-<attr id="286" name="zimbraZimletHandlerClass" type="cstring" max="256" cardinality="single" optionalIn="zimletEntry">
+<attr id="286" name="zimbraZimletHandlerClass" type="cstring" max="256" cardinality="single" optionalIn="zimletEntry" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>The handler class for server side Zimlet extension</desc>
 </attr>
 
-<attr id="287" name="zimbraZimletHandlerConfig" type="string" max="10240" cardinality="multi" optionalIn="zimletEntry">
+<attr id="287" name="zimbraZimletHandlerConfig" type="string" max="10240" cardinality="multi" optionalIn="zimletEntry" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>The global config for the Zimlet</desc>
 </attr>
 
@@ -1636,7 +1640,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>URL of extra scripts used by the Zimlet</desc>
 </attr>
 
-<attr id="291" name="zimbraZimletAvailableZimlets" type="string" max="256" cardinality="multi" optionalIn="account,cos" flags="accountInfo,domainAdminModifiable,accountInherited" callback="AvailableZimlets">
+<attr id="291" name="zimbraZimletAvailableZimlets" type="string" max="256" cardinality="multi" optionalIn="account,cos" flags="accountInfo,domainAdminModifiable,accountInherited" callback="AvailableZimlets" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>
       List of Zimlets available to this COS
       Values can be prefixed with ! or + or -
@@ -1646,7 +1651,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   </desc>
 </attr>
 
-<attr id="292" name="zimbraZimletServerIndexRegex" type="cstring" max="256" cardinality="single" optionalIn="zimletEntry">
+<attr id="292" name="zimbraZimletServerIndexRegex" type="cstring" max="256" cardinality="single" optionalIn="zimletEntry" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>Regex of content object</desc>
 </attr>
 
@@ -1684,11 +1690,13 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <deprecateDesc>deprecated in favor of the domainAdminAdminModifiable flag</deprecateDesc>
 </attr>
 
-<attr id="301" name="zimbraZimletEnabled" type="boolean" cardinality="single" requiredIn="zimletEntry">
+<attr id="301" name="zimbraZimletEnabled" type="boolean" cardinality="single" requiredIn="zimletEntry" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>whether this Zimlet is enabled</desc>
 </attr>
 
-<attr id="302" name="zimbraZimletPriority" type="string" max="32" cardinality="single" optionalIn="zimletEntry">
+<attr id="302" name="zimbraZimletPriority" type="string" max="32" cardinality="single" optionalIn="zimletEntry" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>Object match priority</desc>
 </attr>
 
@@ -1699,7 +1707,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <deprecateDesc>Deprecated per bug 74769</deprecateDesc>
 </attr>
 
-<attr id="304" name="zimbraZimletIsExtension" type="boolean" cardinality="single" optionalIn="zimletEntry">
+<attr id="304" name="zimbraZimletIsExtension" type="boolean" cardinality="single" optionalIn="zimletEntry" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>Whether this zimlet is an extension</desc>
 </attr>
 
@@ -3840,7 +3849,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>maximum number of revisions to keep for calendar items (appointments and tasks). 0 means unlimited.</desc>
 </attr>
 
-<attr id="710" name="zimbraZimletDomainAvailableZimlets" type="string" max="256" cardinality="multi" optionalIn="domain,globalConfig" flags="domainInherited" callback="AvailableZimlets" since="5.0.10">
+<attr id="710" name="zimbraZimletDomainAvailableZimlets" type="string" max="256" cardinality="multi" optionalIn="domain,globalConfig" flags="domainInherited" callback="AvailableZimlets" since="5.0.10" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>
       List of Zimlets available to this domain.
       Zimlets available to accounts in the domain is the union of account/cos attribute zimbraZimletAvailableZimlets and this attribute. 
@@ -4148,7 +4158,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   </desc>
 </attr>
     
-<attr id="765" name="zimbraPrefZimlets" type="string" cardinality="multi" optionalIn="account,cos" flags="domainAdminModifiable" since="6.0.0_BETA1">
+<attr id="765" name="zimbraPrefZimlets" type="string" cardinality="multi" optionalIn="account,cos" flags="domainAdminModifiable" since="6.0.0_BETA1" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>zimlets user wants to see in the UI</desc>
 </attr>
 
@@ -5121,7 +5132,8 @@ TODO - add support for multi-line values in globalConfigValue and defaultCOSValu
   <desc>URL for posting error report popped up in WEB client</desc>
 </attr>
 
-<attr id="1076" name="zimbraPrefDisabledZimlets" type="string" cardinality="multi" optionalIn="account,cos" flags="domainAdminModifiable" since="6.0.5">
+<attr id="1076" name="zimbraPrefDisabledZimlets" type="string" cardinality="multi" optionalIn="account,cos" flags="domainAdminModifiable" since="6.0.5" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>zimlets user does not want to see in the UI</desc>
 </attr>
 
@@ -10045,7 +10057,8 @@ deprecatedSince="23.9.0">
   <globalConfigValue>1518163473</globalConfigValue>
 </attr>
 
-<attr id="3024" name="zimbraXZimletCompatibleSemVer" type="string" max="256" cardinality="single" optionalIn="zimletEntry" since="8.8.9">
+<attr id="3024" name="zimbraXZimletCompatibleSemVer" type="string" max="256" cardinality="single" optionalIn="zimletEntry" since="8.8.9" deprecatedSince="26.12.0">
+  <deprecateDesc>Zimlets are not supported anymore</deprecateDesc>
   <desc>ZimbraX compatible semantic version expression</desc>
 </attr>
 
