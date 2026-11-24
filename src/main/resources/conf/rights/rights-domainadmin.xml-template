@@ -157,13 +157,6 @@ ${DOMAIN_ATTRS}
         <r n="flushCache"/>
       </rights>
     </right>
-    <right name="domainAdminZimletRights" type="combo">
-      <desc>domain admin zimlet right</desc>
-      <rights>
-        <r n="getZimlet"/>
-        <r n="listZimlet"/>
-      </rights>
-    </right>
     
 <!--
   =========================================================

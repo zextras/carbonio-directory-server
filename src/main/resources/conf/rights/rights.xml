@@ -241,10 +241,6 @@
   <desc>assign the cos (to domains or accounts)</desc>
 </right>
 
-<right name="manageZimlet" type="preset" targetType="cos">
-  <desc>activate/deactivate zimlets on a cos</desc>
-</right>
-
 <right name="configureCosConstraint" type="setAttrs" targetType="cos">
   <desc>configure cos constraint</desc>
   <attrs>
@@ -557,10 +553,6 @@
   <desc>catchall, appliance</desc>
 </right>
 
-<right name="deployZimlet" type="preset" targetType="server">
-  <desc>deploy and undeploy zimlets on a server</desc>
-</right>
-
 <right name="backupAccount" type="preset" targetType="server">
   <desc>backup accounts on a server</desc>
 </right>
@@ -621,28 +613,6 @@
     <desc>generate CSR on the target server</desc>
 </right>
 
-<!--
-========================================================
-                    zimlet rights
-========================================================
--->
-
-<right name="getZimlet" type="getAttrs" targetType="zimlet">
-  <desc>get all zimlet attributes</desc>
-</right>
-
-<right name="modifyZimlet" type="setAttrs" targetType="zimlet">
-  <desc>set all zimlet attributes</desc>
-</right>
-
-<right name="listZimlet" type="preset" targetType="zimlet">
-  <desc>see zimlet in GetAllZimlets</desc>
-</right>
-
-<right name="deleteZimlet" type="preset" targetType="zimlet">
-  <desc>delete zimlet</desc>
-</right>
-
 
 <!--
 ========================================================
@@ -675,10 +645,6 @@
 
 <right name="createXMPPComponent" type="preset" targetType="global">
   <desc>create XMPP component</desc>
-</right>
-
-<right name="createZimlet" type="preset" targetType="global">
-  <desc>create zimlet</desc>
 </right>
 
 <right name="installZCSLicense" type="preset" targetType="global">
@@ -729,7 +695,7 @@
 </right>
 
 
-<right name="viewGrants" type="getAttrs" targetType="account,calresource,cos,dl,domain,server,xmppcomponent,zimlet,config,global">
+<right name="viewGrants" type="getAttrs" targetType="account,calresource,cos,dl,domain,server,xmppcomponent,config,global">
   <desc>view grants on all target types</desc>
   <!--
       Use just the one same right on all target types for now.
@@ -755,7 +721,6 @@
                 get.domain.zimbraACE
                 get.server.zimbraACE
                 get.xmppcomponent.zimbraACE
-                get.zimlet.zimbraACE
                 get.config.zimbraACE
                 get.global.zimbraACE
   -->
