@@ -176,10 +176,6 @@
 <ui name="Configure-Servers-Server-ACL(modify)">Home -> Configure -> Servers -> [pick a server] -> ACL (modify)</ui>
 <ui name="Configure-Servers-Server-ACL(view)">Home -> Configure -> Servers -> [pick a server] -> ACL (view)</ui>
 
-<ui name="Configure-Zimlets-Zimlet-ACL">Home -> Configure -> Zimlets -> [pick a zimlet] -> ACL</ui>
-<ui name="Configure-Zimlets-Zimlet-ACL(modify)">Home -> Configure -> Zimlets -> [pick a zimlet] -> ACL (modify)</ui>
-<ui name="Configure-Zimlets-Zimlet-ACL(view)">Home -> Configure -> Zimlets -> [pick a zimlet] -> ACL (view)</ui>
-
 <ui name="Configure-AdminExtensions-AdminExtension-ACL">Home -> Configure -> Admin Extensions -> [pick an admin extension] -> ACL</ui>
 <ui name="Configure-AdminExtensions-AdminExtension-ACL(modify)">Home -> Configure -> Admin Extensions -> [pick an admin extension] -> ACL (modify)</ui>
 <ui name="Configure-AdminExtensions-AdminExtension-ACL(view)">Home -> Configure -> Admin Extensions -> [pick an admin extension] -> ACL (view)</ui>
@@ -245,7 +241,6 @@
 <ui name="Configure-Certificates">Home -> Configure -> Certificates</ui>
 <ui name="Configure-Domains">Home -> Configure -> Domains</ui>
 <ui name="Configure-Servers">Home -> Configure -> Servers</ui>
-<ui name="Configure-Zimlets">Home -> Configure -> Zimlets</ui>
 <ui name="Configure-Zimlets-Deploy">Home -> Configure -> Zimlets -> Deploy tool</ui>
 <ui name="Configure-AdminExtensions">Home -> Configure -> Admin Extensions</ui>
 <ui name="Configure-GlobalSettings">Home -> Configure -> Global Settings</ui>

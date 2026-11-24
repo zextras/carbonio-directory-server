@@ -2122,31 +2122,6 @@
   </right>
 
 
-<!-- Admin Console Zimlets -->
-  <!-- Admin Console Zimlets ACL Tab -->
-  <right name="setAdminConsoleZimletACLTab" type="setAttrs" targetType="zimlet">
-    <desc> Admin Console set attr rights for Zimlet ACL Tab </desc>
-    <ui name="Configure-Zimlets-Zimlet-ACL(modify)"/>
-    <attrs>
-      <a n="zimbraACE"/>
-    </attrs>
-  </right>
-  <right name="viewAdminConsoleZimletACLTab" type="getAttrs" targetType="zimlet">
-    <desc> Admin Console view attr rights for Zimlet ACL Tab </desc>
-    <ui name="Configure-Zimlets-Zimlet-ACL(view)"/>
-    <attrs>
-      <a n="zimbraACE"/>
-    </attrs>
-  </right>
-  <right name="adminConsoleZimletACLTabRights" type="combo">
-    <desc> Admin Console rights for Zimlet ACL Tab </desc>
-    <ui name="Configure-Zimlets-Zimlet-ACL"/>
-    <rights>
-      <r n="setAdminConsoleZimletACLTab"/>
-      <r n="viewAdminConsoleZimletACLTab"/>
-    </rights>
-  </right>
-
 <!-- Admin Console Admin Extensions -->
   <!-- Admin Console Admin Extension ACL Tab  -->
   <right name="setAdminConsoleExtensionACLTab" type="setAttrs" targetType="domain">
@@ -2726,20 +2701,6 @@
   </rights>
 </right>
 
-<right type="combo" name="adminConsoleZimletRights">
-  <desc>Admin Console Zimlet Rights</desc>
-  <ui name="Configure-Zimlets"/>
-  <rights>
-    <r n="adminConsoleZimletACLTabRights"/>
-    <r n="listZimlet"/>
-    <r n="deleteZimlet"/>
-    <r n="modifyZimlet"/>
-    <!-- todo deploy zimlet ? -->
-    <!-- todo toggle status zimlet ? -->
-    <!-- todo undeploy zimlet ? -->
-  </rights>
-</right>
-
 <right type="combo" name="adminConsoleExtensionRights">
   <desc>Admin Console Extension Rights</desc>
   <ui name="Configure-AdminExtensions"/>
@@ -2808,8 +2769,6 @@
     <r n="moveCalendarResourceMailbox"/>
     <r n="moveMailboxFromServer"/>
     <r n="moveMailboxToServer"/>
-    <r n="modifyZimlet"/>
-    <r n="listZimlet"/>
     <r n="listServer"/>
   </rights>
 </right>
@@ -2888,8 +2847,6 @@
     <ui name="Configure-Zimlets-Deploy"/>
     <rights>
         <r n="uploadClientSoftware" />
-        <r n="modifyZimlet"/>
-        <r n="listZimlet"/>
     </rights>
 </right>
 
@@ -2904,7 +2861,6 @@
     <r n="adminConsoleCOSRights"/>
     <r n="adminConsoleDomainRights"/>
     <r n="adminConsoleServerRights"/>
-    <r n="adminConsoleZimletRights"/>
     <r n="adminConsoleExtensionRights"/>
     <r n="adminConsoleGlobalRights"/>
     <r n="adminConsoleServerStatusRights"/>
