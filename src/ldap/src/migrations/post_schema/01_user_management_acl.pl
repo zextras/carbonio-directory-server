@@ -29,6 +29,14 @@ sub normalized {
     return $rule;
 }
 
+# zmldapanon writes the same attribute lists in a different order
+sub what_key {
+    my ($what) = @_;
+    $what = normalized($what);
+    $what =~ s{\battrs=(\S+)}{'attrs=' . join( ',', sort split( /,/, $1 ) )}e;
+    return $what;
+}
+
 sub split_rule {
     my ($rule) = @_;
     $rule = without_index($rule);
@@ -122,7 +130,7 @@ foreach my $rule (@wanted) {
     }
 
     my ($index) =
-      grep { defined $live[$_] && normalized( ( split_rule( $live[$_] ) )[0] ) eq normalized($what) }
+      grep { defined $live[$_] && what_key( ( split_rule( $live[$_] ) )[0] ) eq what_key($what) }
       0 .. $#live;
     if ( !defined $index ) {
         print "* Warning: no olcAccess rule '$what' in $dn, $user_management_dn not added to it\n";
