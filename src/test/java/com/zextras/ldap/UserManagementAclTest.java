@@ -1,7 +1,7 @@
 package com.zextras.ldap;
 
 import java.io.IOException;
-import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -12,9 +12,6 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamConstants;
-import javax.xml.stream.XMLStreamReader;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -29,7 +26,7 @@ class UserManagementAclTest {
 	private static final Set<String> STANDARD_ATTRIBUTES = Set.of("mail", "cn", "displayName");
 
 	@Test
-	void readRuleCoversEveryFeatureAndCapabilitySetting() throws Exception {
+	void readRuleCoversEveryFeatureAndCapabilitySetting() throws IOException {
 		Set<String> granted = grantedAttributes();
 		Set<String> missing = new TreeSet<>();
 		for (String name : catalogAttributes()) {
@@ -41,7 +38,7 @@ class UserManagementAclTest {
 	}
 
 	@Test
-	void readRuleNamesOnlyKnownAttributes() throws Exception {
+	void readRuleNamesOnlyKnownAttributes() throws IOException {
 		Set<String> catalog = catalogAttributes();
 		Set<String> unknown = new TreeSet<>();
 		for (String name : grantedAttributes()) {
@@ -53,7 +50,7 @@ class UserManagementAclTest {
 	}
 
 	@Test
-	void readRuleIsLastAndBreaksForEveryoneElse() throws Exception {
+	void readRuleIsLastAndBreaksForEveryoneElse() throws IOException {
 		List<String> rules = rules();
 		String last = rules.get(rules.size() - 1);
 		Assertions.assertTrue(last.contains(USER_MANAGEMENT + " read"), last);
@@ -62,7 +59,7 @@ class UserManagementAclTest {
 
 	@ParameterizedTest
 	@ValueSource(ints = {1, 2, 8, 9})
-	void userManagementPassesThroughBeforeAnyOtherClause(int index) throws Exception {
+	void userManagementPassesThroughBeforeAnyOtherClause(int index) throws IOException {
 		String rule = rules().get(index);
 		int firstBy = rule.indexOf("  by ");
 		Assertions.assertTrue(rule.startsWith(USER_MANAGEMENT + " +0 break", firstBy + "  by ".length()), rule);
@@ -70,7 +67,7 @@ class UserManagementAclTest {
 
 	@ParameterizedTest
 	@ValueSource(ints = {3, 7, 8})
-	void rulesRewrittenByLdapAnonKeepTheirIndex(int index) throws Exception {
+	void rulesRewrittenByLdapAnonKeepTheirIndex(int index) throws IOException {
 		String rule = rules().get(index);
 		String expected = switch (index) {
 			case 3 -> "to attrs=objectclass ";
@@ -107,19 +104,14 @@ class UserManagementAclTest {
 		return rules;
 	}
 
-	private static Set<String> catalogAttributes() throws Exception {
+	private static Set<String> catalogAttributes() throws IOException {
 		Set<String> names = new TreeSet<>();
-		try (InputStream in = UserManagementAclTest.class.getResourceAsStream("/conf/attrs/attrs.xml")) {
-			Assertions.assertNotNull(in);
-			XMLInputFactory factory = XMLInputFactory.newFactory();
-			factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
-			XMLStreamReader reader = factory.createXMLStreamReader(in);
-			while (reader.hasNext()) {
-				if (reader.next() == XMLStreamConstants.START_ELEMENT && "attr".equals(reader.getLocalName())) {
-					names.add(reader.getAttributeValue(null, "name"));
-				}
-			}
+		String catalog = Files.readString(Path.of("src/main/resources/conf/attrs/attrs.xml"), StandardCharsets.UTF_8);
+		Matcher matcher = Pattern.compile("<attr\\s[^>]*\\bname=\"([^\"]+)\"").matcher(catalog);
+		while (matcher.find()) {
+			names.add(matcher.group(1));
 		}
+		Assertions.assertTrue(names.size() > 1000, "attrs.xml not parsed");
 		return names;
 	}
 }
