@@ -58,7 +58,9 @@ Read the comment block at the top of `src/main/resources/conf/attrs/attrs.xml` b
 
 ### LDAP upgrades
 
-Runtime upgrade scripts live in `src/ldap/src/` (`LdapPreFlight.pl`, `LdapMigrationUtils.pm`) and `src/ldap/src/migrations/pre_flight/`. Incremental attribute changes for already-installed instances are declared as timestamped JSON files under `src/ldap/src/updates/attrs/<unix-timestamp>.json` — the timestamps define application order and must be unique. `PKGBUILD`'s `_ldap_upgrade_*` functions run `LdapPreFlight.pl`, `zmldapupdateldif`, and `ldapattributeupdate` on package upgrade.
+Runtime upgrade scripts live in `src/ldap/src/` (`LdapPreFlight.pl`, `LdapPostSchema.pl`, `LdapMigrationUtils.pm`), `src/ldap/src/migrations/pre_flight/` (before the schema update) and `src/ldap/src/migrations/post_schema/` (after the schema update and slapd restart; `cn=config` changes that name attributes added by the new schema belong here). Incremental attribute changes for already-installed instances are declared as timestamped JSON files under `src/ldap/src/updates/attrs/<unix-timestamp>.json` — the timestamps define application order and must be unique. `PKGBUILD`'s `_ldap_upgrade_*` functions run `LdapPreFlight.pl`, `zmldapupdateldif`, `ldapattributeupdate` and, after the slapd restart, `LdapPostSchema.pl` on package upgrade.
+
+`olcAccess` rules `{3}`, `{7}` and `{8}` of the main mdb database are rewritten by index by core-utils `zmldapanon`: never insert rules before them, append new ones. `uid=carbonio-user-management,cn=appaccts,cn=zimbra` is the read-only identity of carbonio-user-management: rules `{1}`, `{2}`, `{8}`, `{9}` let it through (`+0 break`) and the last rule grants it read on the attributes it uses; `UserManagementAclTest` checks that rule against `attrs.xml`.
 
 ### Packaging targets
 

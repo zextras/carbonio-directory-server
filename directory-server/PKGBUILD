@@ -61,6 +61,8 @@ _package() {
     "${pkgdir}/opt/zextras/common/lib/perl5/Zextras/LdapMigrationUtils.pm"
   install -D "${repodir}/src/ldap/src/LdapPreFlight.pl" \
     "${pkgdir}/opt/zextras/libexec/scripts/LDAP/LdapPreFlight.pl"
+  install -D "${repodir}/src/ldap/src/LdapPostSchema.pl" \
+    "${pkgdir}/opt/zextras/libexec/scripts/LDAP/LdapPostSchema.pl"
 
   local schemadir="${pkgdir}/opt/zextras/common/etc/openldap/zimbra"
   install -Ddm755 "${repodir}/src/ldap/generated/" "${schemadir}/"
@@ -101,6 +103,7 @@ _ldap_upgrade_legacy() {
   /opt/zextras/libexec/zmldapupdateldif
   /opt/zextras/libexec/ldapattributeupdate
   su - zextras -c "/opt/zextras/bin/ldap restart"
+  su - zextras -c "/opt/zextras/libexec/scripts/LDAP/LdapPostSchema.pl"
 }
 
 _ldap_upgrade_systemd() {
@@ -112,6 +115,7 @@ _ldap_upgrade_systemd() {
   /opt/zextras/libexec/zmldapupdateldif
   /opt/zextras/libexec/ldapattributeupdate
   systemctl restart carbonio-openldap.service &>/dev/null || :
+  su - zextras -c "/opt/zextras/libexec/scripts/LDAP/LdapPostSchema.pl"
 }
 
 _postinst_common() {
