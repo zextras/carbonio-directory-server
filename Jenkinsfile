@@ -1,5 +1,5 @@
 library(
-        identifier: 'jenkins-lib-common@v5.0.2',
+        identifier: 'jenkins-lib-common@lane/mavenstage-version-from-tags',
         retriever: modernSCM([
                 $class       : 'GitSCMSource',
                 credentialsId: 'jenkins-integration-with-github-account',
